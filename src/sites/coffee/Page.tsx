@@ -10,7 +10,7 @@ import { ShopLayout } from '../../shared/shop/ShopLayout'
 import { Catalog } from '../../shared/shop/Catalog'
 import { ProductPage } from '../../shared/shop/ProductPage'
 import { Checkout } from '../../shared/shop/Checkout'
-import { Picks, ShopReviews, DeliveryPage } from '../../shared/shop/blocks'
+import { Picks, DeliveryPage } from '../../shared/shop/blocks'
 import { cfg } from './data'
 import './style.css'
 
@@ -75,8 +75,13 @@ function Home() {
 
       <section className="s-sec">
         <div className="swrap">
-          <Reveal><h2 className="s-h2">Отзывы</h2></Reveal>
-          <ShopReviews items={[{ name: 'Артём', item: 'Эфиопия Иргачеффе', text: 'Заказываю каждый месяц уже год. Кофе всегда свежий — на пачке дата обжарки, и она всегда за 1–2 дня до получения.' }, { name: 'Лейсан', item: 'дрип-пакеты', text: 'Взяла на работу — коллеги теперь тоже заказывают. Вкусно даже без кофемашины.' }, { name: 'Игорь', item: 'Бразилия Серрадо', text: 'Идеальный кофе для капучино в рожковой. Никакой горечи, как у супермаркетного.' }]} />
+          <div className="s-head"><Reveal><h2 className="s-h2" style={{ margin: 0 }}>Какой помол выбрать</h2></Reveal><Link to={`${base}/catalog`}>В каталог →</Link></div>
+          <div className="cf-grind">
+            {[['Турка', 'Очень мелкий, почти пудра', 1], ['Эспрессо', 'Мелкий, как соль «Экстра»', 2], ['Воронка и аэропресс', 'Средний, как сахарный песок', 3], ['Френч-пресс', 'Крупный, как морская соль', 4]].map(([t, d, n], i) => (
+              <Reveal key={t as string} delay={i * 0.06} className="cf-grind-i"><span className="cf-dots">{Array.from({ length: 12 }).map((_, k) => <i key={k} style={{ width: 2 + (n as number) * 2.2, height: 2 + (n as number) * 2.2 }} />)}</span><b>{t as string}</b><p>{d as string}</p></Reveal>
+            ))}
+          </div>
+          <p className="cf-grind-note">Не уверены — берите в зёрнах: так кофе дольше сохраняет аромат. Смолоть можно в любой кофейне.</p>
         </div>
       </section>
     </>

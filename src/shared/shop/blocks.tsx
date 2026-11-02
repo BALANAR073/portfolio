@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import { Star } from 'lucide-react'
 import type { ReactNode } from 'react'
 import { Reveal } from '../Reveal'
 import { u } from '../img'
@@ -30,21 +29,6 @@ export function CatTiles({ base, tiles }: { base: string; tiles: { cat: string; 
             <img src={u(t.img, 700)} alt="" loading="lazy" />
             <span><b>{t.cat}</b>{t.note && <small>{t.note}</small>}</span>
           </Link>
-        </Reveal>
-      ))}
-    </div>
-  )
-}
-
-/** Отзывы покупателей */
-export function ShopReviews({ items }: { items: { name: string; text: string; item: string }[] }) {
-  return (
-    <div className="srv">
-      {items.map((r, i) => (
-        <Reveal key={r.name} delay={i * 0.08} className="srv-i">
-          <span className="srv-stars">{[0, 1, 2, 3, 4].map(k => <Star key={k} size={15} fill="currentColor" />)}</span>
-          <p>«{r.text}»</p>
-          <small><b>{r.name}</b> · {r.item}</small>
         </Reveal>
       ))}
     </div>

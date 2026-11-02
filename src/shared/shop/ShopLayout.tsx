@@ -49,7 +49,7 @@ export function ShopLayout({ base, logo, announce, children, footerNote }: Props
           <div><Link to={base} className="sh-logo">{logo}</Link><p>{footerNote}</p></div>
           <div><h4>Покупателям</h4><Link to={`${base}/catalog`}>Каталог</Link>{cfg.nav.map(n => <Link key={n.to} to={`${base}/${n.to}`}>{n.label}</Link>)}<Link to={`${base}/checkout`}>Оформление заказа</Link></div>
           <div><h4>Категории</h4>{cfg.cats.slice(0, 5).map(c => <Link key={c} to={`${base}/catalog?cat=${encodeURIComponent(c)}`}>{c}</Link>)}</div>
-          <div><h4>Контакты</h4><a href={`tel:${cfg.phone.replace(/[^\d+]/g, '')}`}>{cfg.phone}</a><span>{cfg.city}</span><span>Ежедневно 9:00–21:00</span></div>
+          <div><h4>Контакты</h4><a href={`tel:${cfg.phone.replace(/[^\d+]/g, '')}`}>{cfg.phone}</a><span>{cfg.address}</span><span>{cfg.hours}</span></div>
         </div>
         <div className="swrap sf-bot"><span>© {cfg.brand}, 2026</span><span>Демо-магазин для портфолио. Товары и компания вымышленные.</span></div>
       </footer>

@@ -10,7 +10,7 @@ import { ShopLayout } from '../../shared/shop/ShopLayout'
 import { Catalog } from '../../shared/shop/Catalog'
 import { ProductPage } from '../../shared/shop/ProductPage'
 import { Checkout } from '../../shared/shop/Checkout'
-import { Picks, CatTiles, ShopReviews, DeliveryPage } from '../../shared/shop/blocks'
+import { Picks, CatTiles, DeliveryPage } from '../../shared/shop/blocks'
 import { cfg } from './data'
 import './style.css'
 
@@ -63,12 +63,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="s-sec">
-        <div className="swrap">
-          <Reveal><h2 className="s-h2">Что говорят</h2></Reveal>
-          <ShopReviews items={[{ name: 'Тимур', item: 'худи Heavy, L', text: 'Ношу второй год, стираю каждую неделю — не скаталось и не село. Взял ещё одно в песочном.' }, { name: 'Алина', item: 'карго «Утилити», S', text: 'Курьер дал примерить, размер подошёл с первого раза. Таблица размеров честная.' }, { name: 'Марат', item: 'футболка Base Tee', text: 'Наконец-то белая футболка, которая не просвечивает. Купил сразу три.' }]} />
-        </div>
-      </section>
+      <Picks base={base} ids={['jacket', 'coat', 'tee-print', 'bag']} title="Новинки" />
     </>
   )
 }

@@ -1,3 +1,5 @@
+export type Review = { name: string; text: string; rating?: number; date?: string; opt?: string }
+
 export type Product = {
   id: string
   name: string
@@ -12,6 +14,7 @@ export type Product = {
   specs?: [string, string][]
   rating?: number
   reviews?: number
+  feedback?: Review[]     // отзывы именно об этом товаре (показываются первыми)
 }
 
 export type ShopConfig = {
@@ -25,5 +28,8 @@ export type ShopConfig = {
   nav: { to: string; label: string }[]  // дополнительные пункты меню (страницы магазина)
   phone: string
   city: string
-  guarantee?: string      // вторая строка преимуществ на странице товара
+  address?: string
+  hours?: string
+  guarantee?: string
+  reviewPool?: Review[]   // общие отзывы покупателей магазина, добираются к товару до 3 штук      // вторая строка преимуществ на странице товара
 }

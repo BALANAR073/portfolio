@@ -10,7 +10,7 @@ import { ShopLayout } from '../../shared/shop/ShopLayout'
 import { Catalog } from '../../shared/shop/Catalog'
 import { ProductPage } from '../../shared/shop/ProductPage'
 import { Checkout } from '../../shared/shop/Checkout'
-import { Picks, ShopReviews, DeliveryPage } from '../../shared/shop/blocks'
+import { Picks, DeliveryPage } from '../../shared/shop/blocks'
 import { cfg } from './data'
 import './style.css'
 
@@ -73,12 +73,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="s-sec">
-        <div className="swrap">
-          <Reveal><h2 className="s-h2">Отзывы</h2></Reveal>
-          <ShopReviews items={[{ name: 'Айгуль', item: 'кружка «Утренняя»', text: 'Купила одну — через месяц вернулась за набором. Ручка идеально ложится в ладонь.' }, { name: 'Денис', item: 'мастер-класс для двоих', text: 'Подарил девушке на годовщину. Через три недели забрали свои кривенькие, но самые любимые чашки.' }, { name: 'Наталья', item: 'набор на двоих', text: 'Доставили в Москву без единой царапины — упаковка правда в три слоя.' }]} />
-        </div>
-      </section>
+      <Picks base={base} ids={['class', 'cert', 'vase-s', 'cup']} title="Для подарка" />
     </>
   )
 }

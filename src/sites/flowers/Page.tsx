@@ -10,7 +10,7 @@ import { ShopLayout } from '../../shared/shop/ShopLayout'
 import { Catalog } from '../../shared/shop/Catalog'
 import { ProductPage } from '../../shared/shop/ProductPage'
 import { Checkout } from '../../shared/shop/Checkout'
-import { Picks, CatTiles, ShopReviews, DeliveryPage } from '../../shared/shop/blocks'
+import { Picks, CatTiles, DeliveryPage } from '../../shared/shop/blocks'
 import { cfg } from './data'
 import './style.css'
 
@@ -62,12 +62,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="s-sec">
-        <div className="swrap">
-          <Reveal><h2 className="s-h2">Отзывы</h2></Reveal>
-          <ShopReviews items={[{ name: 'Анастасия', item: 'букет «Нежность»', text: 'Заказала маме на юбилей в другой город — прислали фото до отправки, мама сказала, что букет ещё красивее, чем на картинке.' }, { name: 'Руслан', item: '51 красная роза', text: 'Привезли за полтора часа, хотя заказывал в пятницу вечером. Розы стояли почти две недели.' }, { name: 'Диляра', item: 'букет невесты', text: 'Собрали букет невесты точно по референсу и сделали бутоньерку в тон. Спасибо за наш день!' }]} />
-        </div>
-      </section>
+      <Picks base={base} ids={['spring', 'garden', 'meadow', 'boxwhite']} title="Сезонная коллекция" />
     </>
   )
 }

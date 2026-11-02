@@ -1,3 +1,4 @@
+import { word } from './Reviews'
 import { motion } from 'motion/react'
 import { Link } from 'react-router-dom'
 import { Heart, Plus, Star } from 'lucide-react'
@@ -27,7 +28,7 @@ export function ProductCard({ p, base }: { p: Product; base: string }) {
       <div className="pc-body">
         <Link to={`${base}/p/${p.id}`} className="pc-name">{p.name}</Link>
         <p className="pc-short">{p.short}</p>
-        {p.rating && <p className="pc-rate"><Star size={13} fill="currentColor" /> {p.rating.toFixed(1)} <span>· {p.reviews} отзывов</span></p>}
+        {p.rating && <p className="pc-rate"><Star size={13} fill="currentColor" /> {p.rating.toFixed(1)} <span>· {p.reviews} {word(p.reviews || 0)}</span></p>}
         <div className="pc-foot">
           <span className="pc-price">{rub(p.price)}{p.old && <s>{rub(p.old)}</s>}</span>
           <button type="button" className="pc-add" onClick={quick} aria-label={`Добавить «${p.name}» в корзину`}><Plus size={18} /></button>

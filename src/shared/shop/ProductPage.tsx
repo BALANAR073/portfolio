@@ -6,6 +6,7 @@ import { u } from '../img'
 import { useShop, rub } from './cart'
 import { useToast } from '../Toast'
 import { ProductCard } from './ProductCard'
+import { Reviews, word } from './Reviews'
 
 /** Страница товара: галерея, варианты, количество, вкладки, похожие товары. */
 export function ProductPage({ base }: { base: string }) {
@@ -37,7 +38,7 @@ export function ProductPage({ base }: { base: string }) {
           <div className="pp-info">
             <p className="pp-cat">{p.cat}</p>
             <h1>{p.name}</h1>
-            {p.rating && <p className="pp-rate"><Star size={16} fill="currentColor" /> {p.rating.toFixed(1)} <span>· {p.reviews} отзывов</span></p>}
+            {p.rating && <a href="#reviews" className="pp-rate" onClick={e => { e.preventDefault(); document.getElementById('reviews')?.scrollIntoView({ behavior: 'smooth' }) }}><Star size={16} fill="currentColor" /> {p.rating.toFixed(1)} <span>· {p.reviews} {word(p.reviews || 0)}</span></a>}
             <p className="pp-short">{p.short}</p>
             <p className="pp-price">{rub(p.price)}{p.old && <s>{rub(p.old)}</s>}</p>
             {p.options && <div className="pp-opt"><span>{p.options.label}</span><div>{p.options.values.map(v => <button key={v} type="button" aria-pressed={opt === v} onClick={() => setOpt(v)}>{v}</button>)}</div></div>}
@@ -57,6 +58,7 @@ export function ProductPage({ base }: { base: string }) {
             </div>
           </div>
         </div>
+        <Reviews p={p} />
         <h2 className="s-h2">Вам может понравиться</h2>
         <div className="pgrid four">{related.map(r => <ProductCard key={r.id} p={r} base={base} />)}</div>
       </div>

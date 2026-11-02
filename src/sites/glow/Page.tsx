@@ -11,7 +11,7 @@ import { ShopLayout } from '../../shared/shop/ShopLayout'
 import { Catalog } from '../../shared/shop/Catalog'
 import { ProductPage } from '../../shared/shop/ProductPage'
 import { Checkout } from '../../shared/shop/Checkout'
-import { Picks, CatTiles, ShopReviews, DeliveryPage } from '../../shared/shop/blocks'
+import { Picks, CatTiles, DeliveryPage } from '../../shared/shop/blocks'
 import { cfg } from './data'
 import './style.css'
 
@@ -64,11 +64,11 @@ function Home() {
       </section>
       <Routine />
       <Picks base={base} ids={['serum-c', 'cream', 'foam', 'set']} title="Любимое покупательниц" />
-      <section className="s-sec">
-        <div className="swrap">
-          <Reveal><h2 className="s-h2">Отзывы</h2></Reveal>
-          <ShopReviews items={[{ name: 'Эльвира', item: 'сыворотка с витамином C', text: 'Через месяц ушли следы от прыщей, а тон стал ровнее. Беру уже третий флакон.' }, { name: 'Кристина', item: 'крем-барьер', text: 'Косметолог в чате посоветовала крем после ретинола — шелушения прошли за неделю.' }, { name: 'Ольга', item: 'набор «Базовый уход»', text: 'Подарила сестре, теперь заказываем вместе. Красивая коробка и пробники в подарок.' }]} />
-        </div>
+      <section className="gl-consult">
+        <div className="swrap"><div className="gl-consult-in">
+          <Reveal><h2 className="s-h2">Не знаете, что подойдёт?</h2><p>Напишите в чат — косметолог бесплатно подберёт уход под ваш тип кожи и бюджет. Обычно отвечаем за 10 минут.</p></Reveal>
+          <Reveal delay={0.1} className="gl-consult-steps">{['Опишите кожу и что беспокоит', 'Получите подборку из 2–4 средств', 'Закажите с пробниками в подарок'].map((t, i) => <div key={t}><span>{i + 1}</span>{t}</div>)}</Reveal>
+        </div></div>
       </section>
     </>
   )

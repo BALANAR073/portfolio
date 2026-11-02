@@ -40,3 +40,11 @@
   .s-coffee .cf-stamp{right:10px;width:104px;height:104px}
 }
 @media (max-width:520px){.s-coffee .cf-card{grid-template-columns:1fr}.s-coffee .cf-card img{min-height:180px;max-height:200px}}
+.s-coffee .cf-grind{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.s-coffee .cf-grind-i{background:var(--s-card);border-radius:var(--s-radius);padding:24px}
+.s-coffee .cf-dots{display:flex;flex-wrap:wrap;gap:5px;align-items:center;height:44px;margin-bottom:16px}
+.s-coffee .cf-dots i{display:block;border-radius:50%;background:#6B4A33}
+.s-coffee .cf-grind-i b{font:700 22px Alegreya;display:block}
+.s-coffee .cf-grind-i p{color:var(--s-muted);margin-top:4px}
+.s-coffee .cf-grind-note{margin-top:20px;color:var(--s-muted)}
+@media (max-width:900px){.s-coffee .cf-grind{grid-template-columns:1fr 1fr}}
