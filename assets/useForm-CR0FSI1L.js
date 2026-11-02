@@ -1,0 +1,1 @@
+import{t as e}from"./index-BUz6RvHo.js";function t(t){let n=e();return e=>{e.preventDefault(),n(t),e.currentTarget.reset()}}export{t};
