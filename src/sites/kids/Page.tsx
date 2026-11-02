@@ -168,7 +168,7 @@ export default function Page() {
   useSiteMeta({ title: 'Солнышко — детский центр в Казани', color: '#FF7A59', letter: 'С', fonts: 'family=Comfortaa:wght@500;600;700&family=Nunito:wght@400;600;700;800' })
   return (
     <SiteShell slug="kids">
-      <BizLayout base={base} logo={<span className="kd-logo"><i />солнышко</span>} links={[{ to: 'programs', label: 'Направления' }, { to: 'teachers', label: 'Педагоги' }, { to: 'schedule', label: 'Расписание' }, { to: 'contacts', label: 'Контакты' }]} cta={{ label: 'Пробное занятие', to: 'contacts' }} info={info}>
+      <BizLayout base={base} brand="солнышко" logo={<span className="kd-logo"><i />солнышко</span>} links={[{ to: 'programs', label: 'Направления' }, { to: 'teachers', label: 'Педагоги' }, { to: 'schedule', label: 'Расписание' }, { to: 'contacts', label: 'Контакты' }]} cta={{ label: 'Пробное занятие', to: 'contacts' }} info={info}>
         <Routes>
           <Route index element={<Home />} />
           <Route path="programs" element={<Programs />} />

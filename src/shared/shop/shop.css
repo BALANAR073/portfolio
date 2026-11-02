@@ -300,3 +300,20 @@
 .pp-dots{position:absolute;z-index:2;left:0;right:0;bottom:14px;display:flex;justify-content:center;gap:6px}
 .pp-dots i{width:7px;height:7px;border-radius:7px;background:rgba(255,255,255,.6);transition:width .3s,background .3s}
 .pp-dots i.on{width:22px;background:#fff}
+
+/* Премиальный слой */
+.sh{transition:background .35s,border-color .35s,color .35s}
+.sh.has-over{margin-bottom:-72px}
+.sh.over{background:transparent;border-color:transparent;backdrop-filter:none;-webkit-backdrop-filter:none}
+.sh.over .sh-logo,.sh.over .sh-nav a,.sh.over .sh-icons a,.sh.over .sh-icons button,.sh.over .sh-burger{color:#fff}
+.sh.over .sh-nav a.active::after{background:#fff}
+.sh.over .sh-icons a:hover,.sh.over .sh-icons button:hover{background:rgba(255,255,255,.15)}
+.sh.has-over + * .slh-slide,.sh.has-over ~ main .slh-slide{height:100vh;max-height:none;min-height:600px}
+.s-sec{padding:110px 0}
+.s-h2,.rail-title{letter-spacing:-.02em}
+.sf-word{font-family:var(--s-display);font-weight:var(--s-dw,700);color:var(--s-fg)}
+.sf{padding-bottom:24px}
+.sf-bot{margin-top:10px}
+.pc-name{font-size:16px}
+.pc-img{border-radius:calc(var(--s-radius) * .8)}
+@media (max-width:640px){.s-sec{padding:72px 0}}

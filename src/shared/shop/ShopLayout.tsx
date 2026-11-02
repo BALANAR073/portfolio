@@ -6,21 +6,24 @@ import { useShop } from './cart'
 import { CartDrawer } from './CartDrawer'
 import './shop.css'
 
-type Props = { base: string; logo: ReactNode; announce: string; children: ReactNode; footerNote: string }
+type Props = { base: string; logo: ReactNode; announce: string; children: ReactNode; footerNote: string; overlay?: boolean }
 
 /** Каркас магазина: объявление, шапка с корзиной, мобильное меню, подвал. */
-export function ShopLayout({ base, logo, announce, children, footerNote }: Props) {
+export function ShopLayout({ base, logo, announce, children, footerNote, overlay }: Props) {
   const { count, setOpen, fav, cfg } = useShop()
   const [menu, setMenu] = useState(false)
   const [bump, setBump] = useState(false)
   const loc = useLocation()
+  const [scrolled, setScrolled] = useState(false)
+  useEffect(() => { const on = () => setScrolled(scrollY > 40); on(); addEventListener('scroll', on, { passive: true }); return () => removeEventListener('scroll', on) }, [])
+  const over = !!overlay && loc.pathname === base && !scrolled
   useEffect(() => { setMenu(false); setOpen(false) }, [loc.pathname, setOpen])
   useEffect(() => { if (!count) return; setBump(true); const t = setTimeout(() => setBump(false), 450); return () => clearTimeout(t) }, [count])
   const links = [{ to: base, label: 'Главная', end: true }, { to: `${base}/catalog`, label: 'Каталог' }, ...cfg.nav.map(n => ({ to: `${base}/${n.to}`, label: n.label, end: false }))]
   return (
     <div className="shop">
       <div className="announce">{announce}</div>
-      <header className="sh">
+      <header className={'sh' + (overlay && loc.pathname === base ? ' has-over' : '') + (over ? ' over' : '')}>
         <div className="swrap sh-in">
           <button type="button" className="sh-burger" aria-label="Меню" onClick={() => setMenu(true)}><Menu /></button>
           <Link to={base} className="sh-logo">{logo}</Link>
@@ -51,6 +54,7 @@ export function ShopLayout({ base, logo, announce, children, footerNote }: Props
           <div><h4>Категории</h4>{cfg.cats.slice(0, 5).map(c => <Link key={c} to={`${base}/catalog?cat=${encodeURIComponent(c)}`}>{c}</Link>)}</div>
           <div><h4>Контакты</h4><a href={`tel:${cfg.phone.replace(/[^\d+]/g, '')}`}>{cfg.phone}</a><span>{cfg.address}</span><span>{cfg.hours}</span></div>
         </div>
+        <div className="wordmark sf-word" aria-hidden>{cfg.brand}</div>
         <div className="swrap sf-bot"><span>© {cfg.brand}, 2026</span><span>Демо-магазин для портфолио. Товары и компания вымышленные.</span></div>
       </footer>
       <CartDrawer base={base} />

@@ -63,7 +63,7 @@ export default function Page() {
   return (
     <SiteShell slug="base">
       <ShopProvider cfg={cfg}>
-        <ShopLayout base={base} logo={<span className="bs-logo">BASE</span>} announce="−10% на первый заказ по промокоду ПЕРВЫЙ · Примерка при получении" footerNote="Базовая одежда из плотного хлопка. Шьём небольшими партиями в Казани с 2021 года.">
+        <ShopLayout base={base} overlay logo={<span className="bs-logo">BASE</span>} announce="−10% на первый заказ по промокоду ПЕРВЫЙ · Примерка при получении" footerNote="Базовая одежда из плотного хлопка. Шьём небольшими партиями в Казани с 2021 года.">
           <Routes>
             <Route index element={<Home />} />
             <Route path="catalog" element={<Catalog base={base} title="Каталог" />} />

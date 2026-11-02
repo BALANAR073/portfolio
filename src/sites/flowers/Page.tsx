@@ -1,5 +1,6 @@
 import { Link, Route, Routes } from 'react-router-dom'
 import { Clock, Camera, Gift, Leaf } from 'lucide-react'
+import { Marquee } from '../../shared/Marquee'
 import { SiteShell } from '../../shared/SiteShell'
 import { Reveal } from '../../shared/Reveal'
 import { useSiteMeta } from '../../shared/hooks'
@@ -26,6 +27,8 @@ function Home() {
       ]} />
 
       <QuickCats base={base} items={[{ cat: 'Букеты', img: '1564070814872-a2e801dbf413' }, { cat: 'Розы', img: '1605477758687-973ba14c43b1' }, { cat: 'Сезонные', img: '1604137488398-b1d691713d96' }, { cat: 'В коробке', img: '1558879787-4c4aea1fbb83' }, { cat: 'Свадебные', img: '1530488228536-37ae1dbb20a4' }]} />
+
+      <Marquee className="fl-mq" items={['Доставка за 2 часа', 'Фото букета до отправки', 'Собираем в день заказа', 'Открытка в подарок', 'Свежесть 7 дней или замена']} />
 
       <ProductRail base={base} title="Хиты недели" ids={['tender', 'red', 'box', 'garden', 'pink', 'spring']} />
 
@@ -65,7 +68,7 @@ export default function Page() {
   return (
     <SiteShell slug="flowers">
       <ShopProvider cfg={cfg}>
-        <ShopLayout base={base} logo={<span className="fl-logo">Пион<i>•</i></span>} announce="Бесплатная доставка по Казани при заказе от 4 000 ₽ · Промокод ПЕРВЫЙ — скидка 10%" footerNote="Цветочная мастерская. Собираем букеты в день доставки, работаем каждый день с 8:00 до 22:00.">
+        <ShopLayout base={base} overlay logo={<span className="fl-logo">Пион<i>•</i></span>} announce="Бесплатная доставка по Казани при заказе от 4 000 ₽ · Промокод ПЕРВЫЙ — скидка 10%" footerNote="Цветочная мастерская. Собираем букеты в день доставки, работаем каждый день с 8:00 до 22:00.">
           <Routes>
             <Route index element={<Home />} />
             <Route path="catalog" element={<Catalog base={base} title="Букеты и композиции" />} />

@@ -44,3 +44,5 @@
   .s-barber .bb-stats .bwrap>div:nth-child(n+3){border-top:1px solid var(--b-line)}
 }
 @media (max-width:520px){.s-barber .bb-why{grid-template-columns:1fr}.s-barber .bb-stats b{font-size:40px}}
+
+.s-barber .bb-mq{--mq-font:Oswald,sans-serif;--mq-size:24px;--mq-weight:600;--mq-accent:#C8A165;text-transform:uppercase;border:0;background:#C8A165;color:#141414;--mq-accent:#141414}

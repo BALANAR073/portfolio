@@ -48,3 +48,5 @@
 .s-coffee .cf-grind-i p{color:var(--s-muted);margin-top:4px}
 .s-coffee .cf-grind-note{margin-top:20px;color:var(--s-muted)}
 @media (max-width:900px){.s-coffee .cf-grind{grid-template-columns:1fr 1fr}}
+
+.s-coffee .cf-mq{--mq-font:Alegreya,serif;--mq-size:30px;--mq-weight:700;--mq-bg:#2A1E17;--mq-fg:#F3EDE3;--mq-accent:#C9752E;border:0}

@@ -64,3 +64,12 @@
   .s-kitchen .kt-tag.t1{left:16px;top:16px}.s-kitchen .kt-tag.t2{right:16px;bottom:16px}
 }
 @media (max-width:520px){.s-kitchen .kt-nums b{font-size:40px}.s-kitchen .kt-est-l,.s-kitchen .kt-est-r{padding:22px}}
+
+.s-kitchen .kt-hero-img .swiper{width:100%}
+.s-kitchen .kt-hero-img .swiper-slide{position:relative}
+.s-kitchen .kt-hero-img .swiper-slide img{width:100%;aspect-ratio:21/9;object-fit:cover;display:block}
+.s-kitchen .kt-cap{position:absolute;right:16px;top:16px;background:var(--b-fg);color:var(--b-bg);font-size:13px;font-weight:500;letter-spacing:.06em;padding:8px 14px}
+.s-kitchen .kt-hero-img .swiper-pagination-bullet{background:#fff;opacity:.6;width:28px;height:3px;border-radius:0}
+.s-kitchen .kt-hero-img .swiper-pagination-bullet-active{opacity:1;background:var(--b-accent)}
+.s-kitchen .kt-mq{--mq-font:Montserrat,sans-serif;--mq-weight:300;--mq-size:26px;--mq-accent:var(--b-accent);margin-top:60px}
+@media (max-width:900px){.s-kitchen .kt-hero-img .swiper-slide img{aspect-ratio:4/3}}

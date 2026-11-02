@@ -43,3 +43,11 @@
   .slh-arrows{display:none}
   .slh-bars button{width:36px}
 }
+
+.slh-count{font-variant-numeric:tabular-nums;font-size:14px;letter-spacing:.08em;opacity:.8;pointer-events:none;min-width:64px}
+.slh-count b{font-size:22px;font-weight:600}
+.slh-ui{justify-content:flex-start}
+.slh-arrows{margin-left:auto}
+.slh-slide.light .slh-count{color:var(--sl-fg,#111)}
+.slh h2{font-size:clamp(42px,6.4vw,104px);line-height:.95}
+.slh-in{padding-bottom:120px}

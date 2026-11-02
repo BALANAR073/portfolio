@@ -2,6 +2,7 @@ import { motion } from 'motion/react'
 import { useState } from 'react'
 import { Link, Route, Routes } from 'react-router-dom'
 import { Sparkles, Sun } from 'lucide-react'
+import { Marquee } from '../../shared/Marquee'
 import { SiteShell } from '../../shared/SiteShell'
 import { Reveal } from '../../shared/Reveal'
 import { useSiteMeta } from '../../shared/hooks'
@@ -50,6 +51,8 @@ function Home() {
       ]} />
 
       <QuickCats base={base} items={[{ cat: 'Очищение', img: '1598528738936-c50861cc75a9' }, { cat: 'Сыворотки', img: '1608571423902-eed4a5ad8108' }, { cat: 'Кремы', img: '1764694187688-454d172e5ca0' }, { cat: 'Маски', img: '1780952934157-f541e70c7ece' }, { cat: 'Наборы', img: '1761864293811-d6e937225df4' }]} />
+
+      <Marquee className="gl-mq" items={['0% отдушек', 'Веган и cruelty free', 'Корейские формулы', 'Пробник в каждом заказе', 'Подбор ухода у косметолога']} />
 
       <ProductRail base={base} title="Любимое покупательниц" ids={['serum-c', 'cream', 'foam', 'spf', 'serum-ha', 'set']} />
       <Routine />

@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform } from 'motion/react'
 import { useRef } from 'react'
 import { Link, Route, Routes } from 'react-router-dom'
 import { Scissors, Coffee, Clock, Award } from 'lucide-react'
+import { Marquee } from '../../shared/Marquee'
 import { SiteShell } from '../../shared/SiteShell'
 import { Reveal } from '../../shared/Reveal'
 import { CountUp } from '../../shared/CountUp'
@@ -44,6 +45,8 @@ function Home() {
           </motion.div>
         </motion.div>
       </section>
+
+      <Marquee className="bb-mq" items={['Мужские стрижки', 'Королевское бритьё', 'Моделирование бороды', 'Камуфляж седины', 'Отец + сын', 'Кофе и виски для гостей']} />
 
       <section className="bb-stats">
         <div className="bwrap">
@@ -141,7 +144,7 @@ export default function Page() {
   useSiteMeta({ title: 'Борода — барбершоп в Казани', color: '#C8A165', letter: 'Б', fonts: 'family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700' })
   return (
     <SiteShell slug="barber">
-      <BizLayout base={base} logo={<span className="bb-logo">БОРОДА<small>barbershop</small></span>} links={[{ to: 'services', label: 'Услуги' }, { to: 'masters', label: 'Мастера' }, { to: 'works', label: 'Галерея' }, { to: 'contacts', label: 'Контакты' }]} cta={{ label: 'Записаться', to: 'contacts' }} info={info}>
+      <BizLayout base={base} brand="БОРОДА" logo={<span className="bb-logo">БОРОДА<small>barbershop</small></span>} links={[{ to: 'services', label: 'Услуги' }, { to: 'masters', label: 'Мастера' }, { to: 'works', label: 'Галерея' }, { to: 'contacts', label: 'Контакты' }]} cta={{ label: 'Записаться', to: 'contacts' }} info={info}>
         <Routes>
           <Route index element={<Home />} />
           <Route path="services" element={<Services />} />

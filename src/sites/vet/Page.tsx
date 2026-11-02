@@ -154,7 +154,7 @@ export default function Page() {
   useSiteMeta({ title: 'Лапа — ветклиника 24/7 в Казани', color: '#0E7C7B', letter: 'Л', fonts: 'family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Manrope:wght@400;500;600;700' })
   return (
     <SiteShell slug="vet">
-      <BizLayout base={base} logo={<span className="vt-logo"><span><PawPrint size={20} color="#fff" /></span>Лапа</span>} links={[{ to: 'services', label: 'Услуги' }, { to: 'doctors', label: 'Врачи' }, { to: 'owners', label: 'Владельцам' }, { to: 'contacts', label: 'Контакты' }]} cta={{ label: 'Записаться', to: 'contacts' }} info={info}>
+      <BizLayout base={base} brand="Лапа" logo={<span className="vt-logo"><span><PawPrint size={20} color="#fff" /></span>Лапа</span>} links={[{ to: 'services', label: 'Услуги' }, { to: 'doctors', label: 'Врачи' }, { to: 'owners', label: 'Владельцам' }, { to: 'contacts', label: 'Контакты' }]} cta={{ label: 'Записаться', to: 'contacts' }} info={info}>
         <Routes>
           <Route index element={<Home />} />
           <Route path="services" element={<Services />} />

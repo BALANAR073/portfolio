@@ -150,3 +150,7 @@
 .cr-meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
 .cr-meta i{font-style:normal;font-size:13px;font-weight:600;border:1px solid var(--b-line);border-radius:30px;padding:4px 10px}
 @media (max-width:900px){.mr{grid-template-columns:1fr}.mr-sum{flex-direction:row;flex-wrap:wrap;align-items:center;gap:6px 14px}.mr-sum>b{font-size:44px}.mr-sum small{width:100%;margin:0}}
+
+.bf-word{font-family:var(--b-display);font-weight:var(--b-dw);color:var(--b-dark-fg);opacity:.12;margin-top:30px}
+.bsec{padding:110px 0}
+@media (max-width:900px){.bsec{padding:70px 0}}

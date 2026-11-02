@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from 'motion/react'
 import { useRef } from 'react'
 import { Link, Route, Routes } from 'react-router-dom'
+import { Marquee } from '../../shared/Marquee'
 import { SiteShell } from '../../shared/SiteShell'
 import { Reveal } from '../../shared/Reveal'
 import { useSiteMeta } from '../../shared/hooks'
@@ -56,6 +57,8 @@ function Home() {
           <img src={u('1699391197173-511a372040ed', 1800)} alt="Керамические кружки на деревянном столе" />
         </motion.div>
       </section>
+
+      <Marquee className="cl-mq" items={['Ручная работа', 'Каменная масса, обжиг 1240°', 'Можно в посудомойку', 'Каждый предмет уникален', 'Мастер-классы по выходным']} />
 
       <ProductRail base={base} title="Из последнего обжига" ids={['mug', 'plate', 'vase', 'bowl', 'cup', 'set']} />
       <Process />

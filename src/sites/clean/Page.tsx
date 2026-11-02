@@ -170,7 +170,7 @@ export default function Page() {
   useSiteMeta({ title: 'Чисто — клининг в Казани', color: '#1E7BF2', letter: 'Ч', fonts: 'family=Unbounded:wght@500;600;700&family=Manrope:wght@400;500;600;700' })
   return (
     <SiteShell slug="clean">
-      <BizLayout base={base} logo={<span className="cl-logo"><i />чисто</span>} links={[{ to: 'services', label: 'Цены' }, { to: 'about', label: 'Как работаем' }, { to: 'works', label: 'Работы' }, { to: 'contacts', label: 'Контакты' }]} cta={{ label: 'Заказать уборку', to: 'contacts' }} info={info}>
+      <BizLayout base={base} brand="чисто" logo={<span className="cl-logo"><i />чисто</span>} links={[{ to: 'services', label: 'Цены' }, { to: 'about', label: 'Как работаем' }, { to: 'works', label: 'Работы' }, { to: 'contacts', label: 'Контакты' }]} cta={{ label: 'Заказать уборку', to: 'contacts' }} info={info}>
         <Routes>
           <Route index element={<Home />} />
           <Route path="services" element={<Services />} />

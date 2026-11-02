@@ -39,6 +39,7 @@ export function HeroSlider({ slides, className = '', delay = 6000 }: { slides: H
         ))}
       </Swiper>
       <div className="slh-ui">
+        <div className="slh-count"><b>{String(i + 1).padStart(2, '0')}</b> / {String(slides.length).padStart(2, '0')}</div>
         <div className="slh-bars">{slides.map((_, k) => <button key={k} type="button" aria-label={`Слайд ${k + 1}`} className={i === k ? 'on' : k < i ? 'done' : ''} onClick={() => sw?.slideToLoop(k)}><i style={{ animationDuration: `${delay}ms` }} /></button>)}</div>
         <div className="slh-arrows"><button type="button" aria-label="Назад" onClick={() => sw?.slidePrev()}><ChevronLeft /></button><button type="button" aria-label="Вперёд" onClick={() => sw?.slideNext()}><ChevronRight /></button></div>
       </div>

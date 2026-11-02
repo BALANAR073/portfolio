@@ -30,3 +30,5 @@
   .s-clay .cl-proc-i{grid-template-columns:48px 1fr}
   .s-clay .cl-proc-i img{grid-column:2}
 }
+
+.s-clay .cl-mq{--mq-font:Spectral,serif;--mq-size:28px;--mq-weight:400;--mq-accent:#5F6B3A;font-style:italic}

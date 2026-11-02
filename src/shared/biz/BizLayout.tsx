@@ -6,10 +6,10 @@ import { useScrolled } from '../hooks'
 import './biz.css'
 
 export type BizInfo = { phone: string; address: string; hours: string; about: string }
-type Props = { base: string; logo: ReactNode; links: { to: string; label: string }[]; cta: { label: string; to: string }; info: BizInfo; children: ReactNode }
+type Props = { base: string; brand?: string; logo: ReactNode; links: { to: string; label: string }[]; cta: { label: string; to: string }; info: BizInfo; children: ReactNode }
 
 /** Каркас многостраничного сайта-визитки: шапка с разделами, мобильное меню, переходы страниц, подвал. */
-export function BizLayout({ base, logo, links, cta, info, children }: Props) {
+export function BizLayout({ base, brand, logo, links, cta, info, children }: Props) {
   const [menu, setMenu] = useState(false)
   const loc = useLocation()
   const scrolled = useScrolled(20)
@@ -44,6 +44,7 @@ export function BizLayout({ base, logo, links, cta, info, children }: Props) {
           <div><h4>Разделы</h4>{all.map(l => <Link key={l.to} to={href(l.to)}>{l.label}</Link>)}</div>
           <div><h4>Контакты</h4><p><Phone size={16} /> {info.phone}</p><p><MapPin size={16} /> {info.address}</p><p><Clock size={16} /> {info.hours}</p></div>
         </div>
+        {brand && <div className="wordmark bf-word" aria-hidden>{brand}</div>}
         <div className="bwrap bf-bottom"><span>© {new Date().getFullYear()}</span><span>Демо-сайт для портфолио. Компания вымышленная.</span></div>
       </footer>
     </div>

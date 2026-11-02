@@ -33,3 +33,5 @@
 @media (max-width:560px){.s-flowers .fl-perks{grid-template-columns:1fr}}
 .s-flowers .slh h2 em{font-style:italic;color:#F7C6D3}
 .s-flowers .fl-perks{margin-top:0}
+
+.s-flowers .fl-mq{--mq-font:'Playfair Display',serif;--mq-size:26px;--mq-weight:400;--mq-accent:#9E2A4A;font-style:italic;margin-top:36px}

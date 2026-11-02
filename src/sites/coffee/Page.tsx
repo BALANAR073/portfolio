@@ -1,6 +1,7 @@
 import { motion } from 'motion/react'
 import { useState } from 'react'
 import { Link, Route, Routes } from 'react-router-dom'
+import { Marquee } from '../../shared/Marquee'
 import { SiteShell } from '../../shared/SiteShell'
 import { Reveal } from '../../shared/Reveal'
 import { useSiteMeta } from '../../shared/hooks'
@@ -69,6 +70,8 @@ function Home() {
       <section className="cf-steps swrap">
         {[['Вт и Пт', 'Обжариваем небольшими партиями по 15 кг'], ['48 часов', 'Отправляем, пока кофе на пике аромата'], ['SCA 83+', 'Только спешелти-зерно с оценкой выше 83'], ['от 2 500 ₽', 'Доставка бесплатно по всей России']].map(([b, t], i) => <Reveal key={b} delay={i * 0.06}><b>{b}</b><p>{t}</p></Reveal>)}
       </section>
+
+      <Marquee className="cf-mq" items={['Эфиопия', 'Кения', 'Колумбия', 'Бразилия', 'Руанда', 'Обжарка по вторникам и пятницам']} />
 
       <ProductRail base={base} title="Для эспрессо и молочных напитков" filter={p => p.cat === 'Эспрессо' || p.id === 'colombia' || p.id === 'drip'} moreTo={`${base}/catalog?cat=${encodeURIComponent('Эспрессо')}`} />
       <ProductRail base={base} title="Для воронки и френч-пресса" filter={p => p.cat === 'Фильтр' || p.cat === 'Посуда'} moreTo={`${base}/catalog?cat=${encodeURIComponent('Фильтр')}`} />

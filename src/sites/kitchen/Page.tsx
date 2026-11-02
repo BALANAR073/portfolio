@@ -1,4 +1,10 @@
 import { motion } from 'motion/react'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay, EffectFade, Pagination } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/effect-fade'
+import 'swiper/css/pagination'
+import { Marquee } from '../../shared/Marquee'
 import { useState } from 'react'
 import { Link, Route, Routes } from 'react-router-dom'
 import { Ruler, PenTool, Factory, Wrench } from 'lucide-react'
@@ -55,11 +61,24 @@ function Home() {
           </div>
         </div>
         <motion.div className="kt-hero-img bwrap" initial={{ opacity: 0, y: 60 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 1 }}>
-          <img src={u('1759691337936-ef702afd0714', 2000)} alt="Светлая кухня с островом" />
-          <div className="kt-tag t1"><i />Столешница — кварцевый агломерат</div>
-          <div className="kt-tag t2"><i />Фасады — матовая эмаль</div>
+          <Swiper modules={[Autoplay, EffectFade, Pagination]} effect="fade" speed={1000} loop autoplay={{ delay: 5000, disableOnInteraction: false }} pagination={{ clickable: true }}>
+            {[
+              ['1759691337936-ef702afd0714', 'Кухня с островом · 18 м²', 'Столешница — кварцевый агломерат', 'Фасады — матовая эмаль'],
+              ['1755624222023-621f7718950b', 'Кухня-гостиная · 24 м²', 'Встроенный холодильник Bosch', 'Подсветка рабочей зоны'],
+              ['1781249144275-c04daed37031', 'Кухня «Фьорд» · 8 м²', 'Шпон дуба под маслом', 'Фурнитура Blum с доводчиками'],
+            ].map(([img, cap, t1, t2]) => (
+              <SwiperSlide key={img}>
+                <img src={u(img, 2000)} alt={cap} />
+                <div className="kt-tag t1"><i />{t1}</div>
+                <div className="kt-tag t2"><i />{t2}</div>
+                <span className="kt-cap">{cap}</span>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </motion.div>
       </section>
+
+      <Marquee className="kt-mq" items={['Своё производство в Казани', 'Фурнитура Blum и Hettich', 'Гарантия 5 лет', '3D-проект бесплатно', 'Рассрочка 0% на 12 месяцев']} />
 
       <section className="kt-nums bwrap">
         {[['30', 'дней от замера до установки'], ['5 лет', 'гарантия на корпус и фурнитуру'], ['1 400+', 'кухонь установлено в Казани'], ['0 ₽', 'замер и 3D-проект']].map(([b, t], i) => <Reveal key={b} delay={i * 0.06}><b>{b}</b><span>{t}</span></Reveal>)}
@@ -154,7 +173,7 @@ export default function Page() {
   useSiteMeta({ title: 'Модуль — кухни на заказ в Казани', color: '#A8743E', letter: 'М', fonts: 'family=Montserrat:wght@300;400;500;600;700&family=Inter:wght@400;500;600' })
   return (
     <SiteShell slug="kitchen">
-      <BizLayout base={base} logo={<span className="kt-logo">МОДУЛЬ<small>кухни на заказ</small></span>} links={[{ to: 'projects', label: 'Проекты' }, { to: 'process', label: 'Как работаем' }, { to: 'about', label: 'О компании' }, { to: 'contacts', label: 'Контакты' }]} cta={{ label: 'Бесплатный замер', to: 'contacts' }} info={info}>
+      <BizLayout base={base} brand="МОДУЛЬ" logo={<span className="kt-logo">МОДУЛЬ<small>кухни на заказ</small></span>} links={[{ to: 'projects', label: 'Проекты' }, { to: 'process', label: 'Как работаем' }, { to: 'about', label: 'О компании' }, { to: 'contacts', label: 'Контакты' }]} cta={{ label: 'Бесплатный замер', to: 'contacts' }} info={info}>
         <Routes>
           <Route index element={<Home />} />
           <Route path="projects" element={<Projects />} />

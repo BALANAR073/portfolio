@@ -24,3 +24,10 @@
   .site footer{padding-bottom:96px!important}
 }
 .site{overflow-x:clip}
+
+@keyframes ui-mq{to{transform:translateX(-50%)}}
+.mq{overflow:hidden;white-space:nowrap;padding:18px 0;border-block:1px solid var(--mq-line,rgba(127,127,127,.25));background:var(--mq-bg,transparent);color:var(--mq-fg,inherit)}
+.mq>div{display:inline-flex;animation:ui-mq linear infinite}
+.mq span{display:inline-flex;align-items:center;gap:28px;padding-right:28px;font:var(--mq-weight,500) var(--mq-size,22px)/1 var(--mq-font,inherit);letter-spacing:-.01em}
+.mq i{font-style:normal;font-size:.6em;color:var(--mq-accent,currentColor);opacity:.8}
+.wordmark{display:block;overflow:hidden;font-size:clamp(64px,17vw,260px);line-height:.78;letter-spacing:-.05em;text-align:center;padding-top:30px;margin-bottom:-.06em;white-space:nowrap;user-select:none;opacity:.95}
