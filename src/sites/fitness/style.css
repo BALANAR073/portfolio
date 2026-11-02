@@ -134,7 +134,8 @@
     .zone.w2{grid-column:auto}
     .cls{grid-template-columns:auto minmax(0,1fr) auto;gap:2px 12px;padding:16px}
     .cls time{grid-column:1;grid-row:1/3;font-size:17px}
-    .cls b{grid-column:2;grid-row:1;font-size:16px;overflow-wrap:anywhere}
+    .cls b{grid-column:2;grid-row:1;font-size:16px;overflow-wrap:normal;hyphens:auto;-webkit-hyphens:auto}
+    .cls time{font-size:15px}
     .cls>span{grid-column:2;grid-row:2;font-size:14px}
     .cls .lvl{display:none}
     .cls button{grid-column:3;grid-row:1/3;padding:9px 13px}
