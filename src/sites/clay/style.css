@@ -1,0 +1,32 @@
+/* Глина — керамика: тёплый камень, олива, антиква Spectral */
+.s-clay .shop{--s-bg:#EFEBE4;--s-fg:#2B2A25;--s-muted:#77736A;--s-line:#DAD4C9;--s-card:#E4DED3;--s-accent:#5F6B3A;--s-accent-fg:#fff;--s-radius:6px;--s-btn-r:6px;--s-font:Jost,system-ui,sans-serif;--s-display:Spectral,Georgia,serif;--s-dw:400;--s-announce:#5F6B3A;--s-badge:#2B2A25;--s-ratio:4/5}
+.s-clay .cl-logo{font:400 30px/1 Spectral,serif;font-style:italic;letter-spacing:-.01em}
+.s-clay .cl-kick{text-transform:uppercase;letter-spacing:.2em;font-size:12px;font-weight:500;color:var(--s-accent);margin-bottom:20px}
+.s-clay .cl-hero{padding:56px 0 0}
+.s-clay .cl-hero h1{font:400 clamp(52px,10vw,160px)/.92 Spectral,serif;letter-spacing:-.04em}
+.s-clay .cl-hero h1>span{display:block;overflow:hidden;padding-bottom:.06em}
+.s-clay .cl-hero h1>span:nth-child(2){padding-left:12%;font-style:italic;color:var(--s-accent)}
+.s-clay .cl-hero h1>span>span{display:block}
+.s-clay .cl-hero-row{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin:36px 0 50px}
+.s-clay .cl-hero-row p{max-width:440px;font-size:18px;color:var(--s-muted)}
+.s-clay .cl-hero-img img{width:100%;height:min(70vh,640px);object-fit:cover;display:block}
+.s-clay .cl-proc{padding:90px 0;background:#2B2A25;color:#EFEBE4}
+.s-clay .cl-proc-list{position:relative;margin-top:40px}
+.s-clay .cl-line{position:absolute;left:23px;top:10px;bottom:10px;width:2px;background:rgba(255,255,255,.12)}
+.s-clay .cl-line i{display:block;width:100%;background:#B5C27F}
+.s-clay .cl-proc-i{position:relative;display:grid;grid-template-columns:48px 1fr 240px;gap:28px;align-items:center;padding:22px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.s-clay .cl-proc-i>span{width:48px;height:48px;border-radius:50%;background:#2B2A25;border:2px solid #B5C27F;display:grid;place-items:center;font:500 15px Jost;color:#B5C27F;z-index:1}
+.s-clay .cl-proc-i h3{font:400 34px Spectral;margin-bottom:6px}
+.s-clay .cl-proc-i p{color:#B3AEA3}
+.s-clay .cl-proc-i img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:6px}
+.s-clay .cl-class-in{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.s-clay .cl-class-img img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:200px 200px 6px 6px}
+.s-clay .cl-class p{color:var(--s-muted);font-size:18px;max-width:460px}
+.s-clay .cl-class-meta{display:flex;gap:32px;margin:28px 0;flex-wrap:wrap}
+.s-clay .cl-class-meta b{display:block;font:400 30px Spectral}
+.s-clay .cl-class-meta small{color:var(--s-muted)}
+@media (max-width:900px){
+  .s-clay .cl-class-in{grid-template-columns:1fr}
+  .s-clay .cl-proc-i{grid-template-columns:48px 1fr}
+  .s-clay .cl-proc-i img{grid-column:2}
+}

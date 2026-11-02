@@ -1,0 +1,37 @@
+/* Glow — косметика: пудровый, лиловый, мягкие формы */
+.s-glow .shop{--s-bg:#FBF7F6;--s-fg:#2D2229;--s-muted:#85737D;--s-line:#EFE4E6;--s-card:#F3E9EA;--s-accent:#8E5C74;--s-accent-fg:#fff;--s-radius:24px;--s-font:"Nunito Sans",system-ui,sans-serif;--s-display:Lora,Georgia,serif;--s-dw:500;--s-announce:#8E5C74;--s-badge:#2D2229;--s-like:#8E5C74}
+.s-glow .gl-logo{font:600 32px/1 Lora,serif;letter-spacing:-.03em}
+.s-glow .gl-logo i{color:var(--s-accent);font-style:normal}
+.s-glow .gl-hero{padding:40px 0 20px;overflow:hidden}
+.s-glow .gl-hero-in{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.s-glow .gl-hero h1{font-size:clamp(42px,5.6vw,80px);font-weight:500;line-height:1.02;letter-spacing:-.02em}
+.s-glow .gl-hero h1 em{color:var(--s-accent)}
+.s-glow .gl-lead{font-size:19px;color:var(--s-muted);max-width:460px;margin:24px 0 32px}
+.s-glow .gl-acts{display:flex;gap:12px;flex-wrap:wrap}
+.s-glow .gl-hero-art{position:relative;padding:30px}
+.s-glow .gl-hero-art img{position:relative;z-index:1;width:100%;aspect-ratio:1;object-fit:cover;border-radius:50%}
+.s-glow .gl-blob{position:absolute;inset:0;background:linear-gradient(135deg,#EBC9D3,#D8C3E6);z-index:0}
+.s-glow .gl-chip{position:absolute;z-index:2;background:#fff;border-radius:40px;padding:10px 16px;font-weight:700;font-size:14px;display:flex;gap:8px;align-items:center;box-shadow:0 14px 34px rgba(45,34,41,.14)}
+.s-glow .gl-chip svg{color:var(--s-accent)}
+.s-glow .gl-chip.c1{left:0;top:16%}
+.s-glow .gl-chip.c2{right:0;bottom:12%}
+.s-glow .tile b{font-family:Lora;font-weight:500;font-size:24px}
+.s-glow .gl-routine{background:#2D2229;color:#FBF7F6;padding:90px 0}
+.s-glow .gl-r-head{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:36px}
+.s-glow .gl-r-head .s-h2{margin:0}
+.s-glow .gl-tabs{display:flex;background:rgba(255,255,255,.08);border-radius:40px;padding:5px}
+.s-glow .gl-tabs button{position:relative;display:flex;gap:8px;align-items:center;background:none;border:0;color:#D9C9D1;font:700 15px var(--s-font);padding:10px 22px;border-radius:40px;cursor:pointer}
+.s-glow .gl-tabs button[aria-pressed=true]{color:#2D2229}
+.s-glow .gl-tabs button i{position:absolute;inset:0;background:#F3E1E7;border-radius:40px;z-index:-1}
+.s-glow .gl-tabs button{isolation:isolate}
+.s-glow .gl-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.s-glow .gl-step{display:block;height:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:24px;padding:30px;color:inherit;text-decoration:none;transition:.3s}
+.s-glow .gl-step:hover{background:rgba(255,255,255,.12);transform:translateY(-4px)}
+.s-glow .gl-step span{font:500 50px/1 Lora;color:#D59BB4}
+.s-glow .gl-step b{display:block;font:500 26px Lora;margin:18px 0 8px}
+.s-glow .gl-step p{color:#BCA9B3}
+.s-glow .gl-step em{display:block;margin-top:20px;font-style:normal;font-weight:700;color:#F3E1E7}
+@media (max-width:900px){
+  .s-glow .gl-hero-in{grid-template-columns:1fr}
+  .s-glow .gl-steps{grid-template-columns:1fr}
+}

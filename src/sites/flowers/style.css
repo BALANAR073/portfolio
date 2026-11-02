@@ -1,0 +1,33 @@
+/* Пион — цветочная мастерская: молочный фон, глубокий винно-розовый, антиква Playfair */
+.s-flowers .shop{--s-bg:#FCFAF8;--s-fg:#231C1E;--s-muted:#7A6E71;--s-line:#EDE6E3;--s-card:#F4EEEA;--s-accent:#9E2A4A;--s-accent-fg:#fff;--s-radius:18px;--s-font:Manrope,system-ui,sans-serif;--s-display:"Playfair Display",Georgia,serif;--s-dw:500;--s-announce:#231C1E;--s-like:#9E2A4A}
+.s-flowers .fl-logo{font:600 30px/1 "Playfair Display",serif;letter-spacing:-.01em}
+.s-flowers .fl-logo i{color:var(--s-accent);font-style:normal}
+.s-flowers .fl-hero{padding:40px 0 30px}
+.s-flowers .fl-hero-in{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.s-flowers .fl-kicker{color:var(--s-accent);font-weight:600;margin-bottom:18px}
+.s-flowers .fl-hero h1{font-size:clamp(46px,6.4vw,92px);font-weight:500;letter-spacing:-.02em}
+.s-flowers .fl-hero h1 em{color:var(--s-accent)}
+.s-flowers .fl-lead{font-size:19px;color:var(--s-muted);max-width:470px;margin:24px 0 32px}
+.s-flowers .fl-acts{display:flex;gap:12px;flex-wrap:wrap}
+.s-flowers .fl-hero-img{position:relative}
+.s-flowers .fl-hero-img img{width:100%;aspect-ratio:4/4.6;object-fit:cover;border-radius:300px 300px 24px 24px}
+.s-flowers .fl-note{position:absolute;left:-26px;bottom:40px;background:#fff;border-radius:18px;padding:16px 20px;box-shadow:0 20px 50px rgba(35,28,30,.15);font-size:15px}
+.s-flowers .fl-note b{font:600 24px "Playfair Display";color:var(--s-accent)}
+.s-flowers .fl-note small{color:var(--s-muted)}
+.s-flowers .fl-perks{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+.s-flowers .fl-perk{display:flex;gap:14px;align-items:center;padding:20px;border-radius:18px;background:var(--s-card)}
+.s-flowers .fl-perk svg{color:var(--s-accent);flex:none}
+.s-flowers .fl-perk b{display:block}
+.s-flowers .fl-perk small{color:var(--s-muted)}
+.s-flowers .fl-band{background:var(--s-accent);color:#fff;padding:90px 0}
+.s-flowers .fl-band-in{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.s-flowers .fl-band-img img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:24px}
+.s-flowers .fl-band p{color:#F3D6DE;font-size:18px;margin-bottom:20px;max-width:460px}
+.s-flowers .fl-band ul{margin-bottom:28px;display:grid;gap:8px}
+.s-flowers .fl-band li::before{content:"✿ ";color:#F7B5C6}
+@media (max-width:900px){
+  .s-flowers .fl-hero-in,.s-flowers .fl-band-in{grid-template-columns:1fr}
+  .s-flowers .fl-perks{grid-template-columns:1fr 1fr}
+  .s-flowers .fl-note{left:12px}
+}
+@media (max-width:560px){.s-flowers .fl-perks{grid-template-columns:1fr}}

@@ -1,0 +1,42 @@
+/* Зерно — обжарочная: крафт, эспрессо, бутылочно-зелёный */
+.s-coffee .shop{--s-bg:#F3EDE3;--s-fg:#2A1E17;--s-muted:#7C6B5E;--s-line:#E2D7C6;--s-card:#EADFCD;--s-accent:#2F5D3A;--s-accent-fg:#fff;--s-radius:14px;--s-font:"Golos Text",system-ui,sans-serif;--s-display:Alegreya,Georgia,serif;--s-dw:700;--s-announce:#2A1E17;--s-badge:#C9752E;--s-ratio:1/1}
+.s-coffee .cf-logo{font:700 28px/1 Alegreya,serif;display:flex;flex-direction:column}
+.s-coffee .cf-logo small{font:500 10px "Golos Text";letter-spacing:.24em;text-transform:uppercase;color:var(--s-muted);margin-top:2px}
+.s-coffee .cf-kick{text-transform:uppercase;letter-spacing:.14em;font-size:13px;font-weight:600;color:#C9752E;margin-bottom:16px}
+.s-coffee .cf-hero{padding:48px 0 20px}
+.s-coffee .cf-hero-in{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+.s-coffee .cf-hero h1{font-size:clamp(44px,6vw,86px);line-height:.98;letter-spacing:-.02em}
+.s-coffee .cf-lead{font-size:19px;color:var(--s-muted);max-width:480px;margin:24px 0 32px}
+.s-coffee .cf-acts{display:flex;gap:12px;flex-wrap:wrap}
+.s-coffee .cf-hero-img{position:relative;border-radius:200px 200px 20px 20px;overflow:visible}
+.s-coffee .cf-hero-img img{width:100%;aspect-ratio:1/1.1;object-fit:cover;border-radius:220px 220px 20px 20px}
+.s-coffee .cf-stamp{position:absolute;right:-10px;top:30px;width:128px;height:128px;border-radius:50%;background:#C9752E;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:13px;text-transform:uppercase;letter-spacing:.08em;box-shadow:0 14px 34px rgba(42,30,23,.25);border:3px dashed rgba(255,255,255,.5)}
+.s-coffee .cf-stamp b{font:700 38px/1 Alegreya;letter-spacing:0;text-transform:none}
+.s-coffee .cf-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:50px auto 10px;border-top:1px solid var(--s-line);border-bottom:1px solid var(--s-line)}
+.s-coffee .cf-steps>div{padding:26px 20px;border-left:1px solid var(--s-line)}
+.s-coffee .cf-steps>div:first-child{border-left:0}
+.s-coffee .cf-steps b{font:700 28px Alegreya;color:var(--s-accent)}
+.s-coffee .cf-steps p{color:var(--s-muted);font-size:15px;margin-top:4px}
+.s-coffee .cf-finder{background:var(--s-accent);color:#fff;padding:90px 0}
+.s-coffee .cf-finder-in{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center}
+.s-coffee .cf-finder .cf-kick{color:#F0C38E}
+.s-coffee .cf-q{margin:26px 0 12px;font-weight:600;color:#D9E7DC}
+.s-coffee .cf-opts{display:flex;flex-wrap:wrap;gap:10px}
+.s-coffee .cf-opts button{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.35);border-radius:40px;padding:11px 18px;font:500 15px var(--s-font);cursor:pointer;transition:.2s}
+.s-coffee .cf-opts button:hover{border-color:#fff}
+.s-coffee .cf-opts button[aria-pressed=true]{background:#fff;color:var(--s-accent);border-color:#fff}
+.s-coffee .cf-empty{border:2px dashed rgba(255,255,255,.3);border-radius:20px;padding:60px 30px;text-align:center;color:#C5D9CA;font-size:18px}
+.s-coffee .cf-card{background:var(--s-bg);color:var(--s-fg);border-radius:20px;overflow:hidden;display:grid;grid-template-columns:200px 1fr;box-shadow:0 30px 60px rgba(0,0,0,.25)}
+.s-coffee .cf-card img{width:100%;height:100%;object-fit:cover;min-height:220px}
+.s-coffee .cf-card>div{padding:26px}
+.s-coffee .cf-card small{color:#C9752E;font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:12px}
+.s-coffee .cf-card h3{font:700 28px/1.1 Alegreya;margin:6px 0 8px}
+.s-coffee .cf-card p{color:var(--s-muted);margin-bottom:18px}
+@media (max-width:900px){
+  .s-coffee .cf-hero-in,.s-coffee .cf-finder-in{grid-template-columns:1fr}
+  .s-coffee .cf-steps{grid-template-columns:1fr 1fr}
+  .s-coffee .cf-steps>div:nth-child(3){border-left:0}
+  .s-coffee .cf-steps>div:nth-child(n+3){border-top:1px solid var(--s-line)}
+  .s-coffee .cf-stamp{right:10px;width:104px;height:104px}
+}
+@media (max-width:520px){.s-coffee .cf-card{grid-template-columns:1fr}.s-coffee .cf-card img{min-height:180px;max-height:200px}}

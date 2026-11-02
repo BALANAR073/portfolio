@@ -1,0 +1,46 @@
+/* Борода — барбершоп: графит, латунь, узкий гротеск Oswald */
+.s-barber .biz{--b-bg:#141414;--b-fg:#EDE8E0;--b-muted:#9A948A;--b-line:#2C2A27;--b-card:#1D1C1A;--b-accent:#C8A165;--b-accent-fg:#141414;--b-radius:4px;--b-btn-r:2px;--b-font:Inter,system-ui,sans-serif;--b-display:Oswald,Inter,sans-serif;--b-dw:600;--b-head:rgba(20,20,20,.85);--b-dark:#0C0C0C;--b-dark-fg:#EDE8E0}
+.s-barber .biz h1,.s-barber .biz h2,.s-barber .biz h3{text-transform:uppercase;letter-spacing:.01em}
+.s-barber .bbtn{text-transform:uppercase;letter-spacing:.08em;font-size:15px}
+.s-barber .bb-logo{display:flex;flex-direction:column;font:700 26px/1 Oswald;letter-spacing:.08em}
+.s-barber .bb-logo small{font:500 10px Inter;letter-spacing:.42em;color:var(--b-accent);margin-top:3px}
+.s-barber .bb-hero{position:relative;height:100vh;min-height:620px;max-height:960px;margin-top:-76px;overflow:hidden;display:flex;align-items:flex-end}
+.s-barber .bb-hero>img{position:absolute;inset:0;width:100%;height:115%;object-fit:cover;filter:brightness(.4) saturate(.8)}
+.s-barber .bb-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 40%,#141414)}
+.s-barber .bb-hero-in{position:relative;z-index:1;padding-bottom:70px}
+.s-barber .bb-est{color:var(--b-accent);font-weight:600;font-size:14px;margin-bottom:22px}
+.s-barber .bb-hero h1{font-size:clamp(56px,10vw,150px);line-height:.92}
+.s-barber .bb-hero h1>span{display:block;overflow:hidden}
+.s-barber .bb-hero h1>span>span{display:block}
+.s-barber .bb-hero h1>span:nth-child(2){color:var(--b-accent)}
+.s-barber .bb-hero-row{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-top:32px}
+.s-barber .bb-hero-row p{max-width:420px;font-size:18px;color:#CFC8BD}
+.s-barber .bb-stats{border-top:1px solid var(--b-line);border-bottom:1px solid var(--b-line)}
+.s-barber .bb-stats .bwrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.s-barber .bb-stats .bwrap>div{padding:34px 20px;border-left:1px solid var(--b-line)}
+.s-barber .bb-stats .bwrap>div:first-child{border-left:0}
+.s-barber .bb-stats b{display:block;font:600 52px/1 Oswald;color:var(--b-accent)}
+.s-barber .bb-stats span{color:var(--b-muted)}
+.s-barber .bb-why{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.s-barber .bb-why-i{padding:30px;background:var(--b-card);border-top:2px solid var(--b-accent)}
+.s-barber .bb-why-i svg{color:var(--b-accent);width:30px;height:30px}
+.s-barber .bb-why-i h3{font-size:22px;margin:20px 0 10px}
+.s-barber .bb-why-i p{color:var(--b-muted)}
+.s-barber .bb-dark{background:#0F0F0F}
+.s-barber .pr-g{border:1px solid var(--b-line)}
+.s-barber .pr-row b{color:var(--b-accent);font-family:Oswald;font-size:20px;font-weight:500}
+.s-barber .tm-img img{filter:grayscale(1);transition:filter .5s,transform .7s}
+.s-barber .tm-i:hover .tm-img img{filter:none}
+.s-barber .cta-band{background:var(--b-accent);color:#141414}
+.s-barber .cta-band .bbtn{background:#141414;color:var(--b-accent)!important}
+.s-barber .ph:not(.has-img){border-bottom:1px solid var(--b-line)}
+.s-barber .bb-chips{display:flex;flex-wrap:wrap;gap:8px}
+.s-barber .bb-chips button{background:none;border:1px solid var(--b-line);color:var(--b-fg);padding:8px 14px;cursor:pointer;font:500 14px Inter}
+.s-barber .bb-chips button[aria-pressed=true]{border-color:var(--b-accent);color:var(--b-accent)}
+@media (max-width:900px){
+  .s-barber .bb-hero{margin-top:-64px}
+  .s-barber .bb-stats .bwrap,.s-barber .bb-why{grid-template-columns:1fr 1fr}
+  .s-barber .bb-stats .bwrap>div:nth-child(3){border-left:0}
+  .s-barber .bb-stats .bwrap>div:nth-child(n+3){border-top:1px solid var(--b-line)}
+}
+@media (max-width:520px){.s-barber .bb-why{grid-template-columns:1fr}.s-barber .bb-stats b{font-size:40px}}

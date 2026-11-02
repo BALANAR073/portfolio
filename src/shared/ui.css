@@ -1,0 +1,26 @@
+/* Общие элементы интерфейса для всех демо-сайтов. Цвета задаёт каждый сайт через CSS-переменные. */
+.ui-burger{display:none;width:44px;height:44px;border:0;background:transparent;cursor:pointer;position:relative;color:inherit;flex:none;z-index:120}
+.ui-burger span,.ui-burger::before,.ui-burger::after{content:"";position:absolute;left:11px;right:11px;height:2px;border-radius:2px;background:currentColor;transition:transform .25s,opacity .2s,top .25s}
+.ui-burger::before{top:15px}.ui-burger span{top:21px}.ui-burger::after{top:27px}
+.ui-burger.is-open{color:var(--mnav-fg,#111);position:fixed;right:14px;top:14px}
+.ui-burger.is-open::before{top:21px;transform:rotate(45deg)}
+.ui-burger.is-open span{opacity:0}
+.ui-burger.is-open::after{top:21px;transform:rotate(-45deg)}
+.ui-mnav{position:fixed;inset:0;z-index:110;background:var(--mnav-bg,#fff);color:var(--mnav-fg,#111);display:flex;flex-direction:column;justify-content:center;padding:90px 28px 40px;overflow:auto}
+.ui-mnav a{display:block;font-size:30px;line-height:1.2;text-decoration:none;color:inherit;padding:14px 0;border-bottom:1px solid rgba(127,127,127,.22);font-weight:700;font-family:var(--mnav-font,inherit)}
+.ui-mnav-extra{margin-top:28px}
+.ui-mnav-extra a{border:0;font-size:20px}
+.ui-toast{position:fixed;left:50%;bottom:24px;z-index:200;background:var(--toast-bg,#111);color:var(--toast-fg,#fff);padding:15px 22px 15px 16px;border-radius:14px;width:max-content;max-width:calc(100% - 32px);box-shadow:0 18px 40px rgba(0,0,0,.25);display:flex;gap:12px;align-items:center;font-size:16px;line-height:1.4}
+.ui-toast-ic{display:grid;place-items:center;flex:none;width:28px;height:28px;border-radius:50%;background:var(--toast-ic,#2fbf71);color:var(--toast-bg,#fff)}
+.ui-mcta{display:none}
+.ui-back{position:fixed;left:16px;bottom:16px;z-index:90;display:inline-flex;align-items:center;gap:6px;background:rgba(16,20,24,.86);color:#fff;backdrop-filter:blur(8px);padding:9px 14px 9px 11px;border-radius:40px;font:500 13px/1 system-ui,sans-serif;text-decoration:none;opacity:.75;transition:opacity .2s}
+.ui-back:hover{opacity:1}
+@media (max-width:960px){.ui-burger{display:block}}
+@media (max-width:760px){
+  .ui-mcta{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:80;justify-content:center;align-items:center;gap:8px;text-decoration:none;transform:translateY(160%);transition:transform .35s ease;box-shadow:0 12px 30px rgba(0,0,0,.25)}
+  .ui-mcta.is-shown{transform:none}
+  .ui-toast{bottom:84px}
+  .ui-back{top:auto;bottom:auto;display:none}
+  .site footer{padding-bottom:96px!important}
+}
+.site{overflow-x:clip}

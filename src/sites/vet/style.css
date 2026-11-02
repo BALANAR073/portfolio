@@ -1,0 +1,48 @@
+/* Лапа — ветклиника: тёплый кремовый, глубокий бирюзовый, коралловый для срочного */
+.s-vet .biz{--b-bg:#FFFBF5;--b-fg:#17302F;--b-muted:#5E716F;--b-line:#EBE3D6;--b-card:#F6EFE3;--b-accent:#0E7C7B;--b-accent-fg:#fff;--b-radius:24px;--b-btn-r:40px;--b-font:Manrope,system-ui,sans-serif;--b-display:Fraunces,Georgia,serif;--b-dw:600;--b-head:rgba(255,251,245,.88);--b-dark:#17302F;--b-dark-fg:#FFFBF5}
+@keyframes vt-pulse{0%{box-shadow:0 0 0 0 rgba(39,174,96,.6)}100%{box-shadow:0 0 0 10px rgba(39,174,96,0)}}
+.s-vet .vt-logo{display:flex;align-items:center;gap:8px;font:600 28px Fraunces}
+.s-vet .vt-logo span{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:var(--b-accent);font-size:18px}
+.s-vet .vt-hero{padding:40px 0 40px}
+.s-vet .vt-hero-in{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
+.s-vet .vt-247{display:inline-flex;gap:10px;align-items:center;font-weight:700;color:#1E8A4C;background:#E5F6EC;padding:8px 16px;border-radius:30px;margin-bottom:24px}
+.s-vet .vt-247 i{width:9px;height:9px;border-radius:50%;background:#27AE60;animation:vt-pulse 1.6s infinite}
+.s-vet .vt-hero h1{font-size:clamp(42px,5.6vw,78px);letter-spacing:-.02em}
+.s-vet .vt-hero h1 em{color:var(--b-accent)}
+.s-vet .vt-lead{font-size:19px;color:var(--b-muted);max-width:500px;margin:24px 0 32px}
+.s-vet .vt-acts{display:flex;gap:12px;flex-wrap:wrap}
+.s-vet .vt-sos{color:#D9534F!important;box-shadow:inset 0 0 0 1.5px #F2C5C3!important}
+.s-vet .vt-hero-img{position:relative}
+.s-vet .vt-hero-img img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:46% 54% 42% 58% / 52% 44% 56% 48%}
+.s-vet .vt-bubble{position:absolute;left:0;bottom:30px;background:#fff;border-radius:22px;padding:16px 22px;box-shadow:0 20px 50px rgba(23,48,47,.15);display:flex;flex-direction:column}
+.s-vet .vt-bubble b{font:600 30px Fraunces;color:var(--b-accent)}
+.s-vet .vt-bubble span{color:var(--b-muted)}
+.s-vet .vt-srv{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.s-vet .vt-srv-i{background:var(--b-card);border-radius:var(--b-radius);padding:28px;transition:transform .3s,background .3s}
+.s-vet .vt-srv-i:hover{transform:translateY(-4px);background:#EFE5D4}
+.s-vet .vt-srv-i svg{color:var(--b-accent);width:32px;height:32px}
+.s-vet .vt-srv-i h3{font-size:24px;margin:18px 0 6px}
+.s-vet .vt-srv-i p{color:var(--b-muted)}
+.s-vet .vt-srv-i b{display:block;margin-top:16px;color:var(--b-accent)}
+.s-vet .vt-soft{background:var(--b-card)}
+.s-vet .vt-pets{display:grid;grid-template-columns:280px 1fr;gap:30px}
+.s-vet .vt-pet-tabs{display:grid;gap:10px;align-content:start}
+.s-vet .vt-pet-tabs button{display:flex;gap:12px;align-items:center;border:0;background:var(--b-bg);border-radius:18px;padding:18px 20px;font:600 18px var(--b-font);color:inherit;cursor:pointer;transition:.2s}
+.s-vet .vt-pet-tabs button[aria-pressed=true]{background:var(--b-accent);color:#fff}
+.s-vet .vt-plan{display:grid;gap:12px}
+.s-vet .vt-plan-i{display:grid;grid-template-columns:170px 1fr;gap:20px;background:var(--b-bg);border-radius:18px;padding:20px 24px;align-items:center}
+.s-vet .vt-plan-i b{font:600 22px Fraunces;color:var(--b-accent)}
+.s-vet .vt-prep{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.s-vet .vt-prep-i{padding:30px;border:1.5px solid var(--b-line);border-radius:var(--b-radius)}
+.s-vet .vt-prep-i span{font:600 44px Fraunces;color:#E8B59A}
+.s-vet .vt-prep-i h3{font-size:24px;margin:10px 0 8px}
+.s-vet .vt-prep-i p{color:var(--b-muted)}
+.s-vet .tm-img{border-radius:200px 200px 24px 24px}
+@media (max-width:900px){
+  .s-vet .vt-hero-in,.s-vet .vt-pets{grid-template-columns:1fr}
+  .s-vet .vt-srv{grid-template-columns:1fr 1fr}
+  .s-vet .vt-prep{grid-template-columns:1fr}
+  .s-vet .vt-pet-tabs{grid-template-columns:repeat(3,1fr)}
+  .s-vet .vt-pet-tabs button{flex-direction:column;font-size:15px;padding:14px 8px;gap:6px}
+}
+@media (max-width:560px){.s-vet .vt-srv{grid-template-columns:1fr}.s-vet .vt-plan-i{grid-template-columns:1fr;gap:4px}}

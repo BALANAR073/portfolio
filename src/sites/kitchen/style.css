@@ -1,0 +1,66 @@
+/* Модуль — кухни на заказ: светлый лён, тёмный графит, древесная медь, тонкий Montserrat */
+.s-kitchen .biz{--b-bg:#F7F5F1;--b-fg:#1E1F1D;--b-muted:#6F6E69;--b-line:#E3DFD7;--b-card:#EEEAE2;--b-accent:#A8743E;--b-accent-fg:#fff;--b-radius:4px;--b-btn-r:2px;--b-font:Inter,system-ui,sans-serif;--b-display:Montserrat,Inter,sans-serif;--b-dw:300;--b-head:rgba(247,245,241,.9);--b-dark:#1E1F1D;--b-dark-fg:#F7F5F1}
+.s-kitchen .biz h1 b,.s-kitchen .biz h2 b{font-weight:600}
+.s-kitchen .kt-logo{display:flex;flex-direction:column;font:600 22px/1 Montserrat;letter-spacing:.3em}
+.s-kitchen .kt-logo small{font:400 11px Inter;letter-spacing:.1em;color:var(--b-muted);margin-top:4px}
+.s-kitchen .kt-hero{padding:50px 0 0}
+.s-kitchen .kt-hero h1{font-size:clamp(42px,6.6vw,104px);letter-spacing:-.04em;line-height:1}
+.s-kitchen .kt-hero h1 span{font-weight:600;color:var(--b-accent)}
+.s-kitchen .kt-hero-row{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin:36px 0 50px}
+.s-kitchen .kt-hero-row p{max-width:460px;font-size:18px;color:var(--b-muted)}
+.s-kitchen .kt-acts{display:flex;gap:12px;flex-wrap:wrap}
+.s-kitchen .kt-hero-img{position:relative}
+.s-kitchen .kt-hero-img img{width:100%;aspect-ratio:21/9;object-fit:cover}
+.s-kitchen .kt-tag{position:absolute;display:flex;align-items:center;gap:10px;background:rgba(247,245,241,.94);padding:10px 16px;font-size:14px;font-weight:500}
+.s-kitchen .kt-tag i{width:12px;height:12px;border-radius:50%;background:var(--b-accent);box-shadow:0 0 0 5px rgba(168,116,62,.25)}
+.s-kitchen .kt-tag.t1{left:12%;top:30%}
+.s-kitchen .kt-tag.t2{right:12%;bottom:22%}
+.s-kitchen .kt-nums{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;padding-top:60px!important;padding-bottom:20px!important}
+.s-kitchen .kt-nums b{display:block;font:300 54px/1 Montserrat;letter-spacing:-.03em;margin-bottom:8px}
+.s-kitchen .kt-nums span{color:var(--b-muted)}
+.s-kitchen .kt-strip{overflow:hidden;margin-right:calc(50% - 50vw)}
+.s-kitchen .kt-strip-in{display:flex;gap:20px;width:max-content}
+.s-kitchen .kt-card{position:relative;display:block;width:min(440px,72vw);flex:none;text-decoration:none}
+.s-kitchen .kt-card img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.s-kitchen .kt-card span{display:block;margin-top:12px;font-weight:500}
+.s-kitchen .kt-soft{background:var(--b-card)}
+.s-kitchen .kt-est{display:grid;grid-template-columns:1.4fr 1fr;gap:24px}
+.s-kitchen .kt-est-l{display:grid;gap:28px;background:var(--b-bg);padding:34px}
+.s-kitchen .kt-est-l span{display:block;font-weight:500;margin-bottom:12px}
+.s-kitchen .kt-seg{display:flex;border:1px solid var(--b-line);width:fit-content;max-width:100%;flex-wrap:wrap}
+.s-kitchen .kt-seg button{background:none;border:0;padding:12px 20px;font:500 15px Inter;cursor:pointer;color:var(--b-muted);transition:.2s}
+.s-kitchen .kt-seg button[aria-pressed=true]{background:var(--b-fg);color:var(--b-bg)}
+.s-kitchen .kt-est input[type=range]{width:100%;accent-color:var(--b-accent)}
+.s-kitchen .kt-est-r{background:var(--b-dark);color:var(--b-dark-fg);padding:34px;display:flex;flex-direction:column;gap:14px}
+.s-kitchen .kt-est-r small{opacity:.6}
+.s-kitchen .kt-est-r b{font:300 clamp(36px,4vw,52px)/1 Montserrat;letter-spacing:-.03em}
+.s-kitchen .kt-est-r p{opacity:.65;margin-bottom:auto}
+.s-kitchen .kt-proc{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--b-line)}
+.s-kitchen .kt-proc-i{padding:30px 24px 30px 0;border-right:1px solid var(--b-line);margin-left:24px}
+.s-kitchen .kt-proc-i:first-child{margin-left:0}
+.s-kitchen .kt-proc-i:last-child{border-right:0}
+.s-kitchen .kt-proc-n{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;color:var(--b-accent)}
+.s-kitchen .kt-proc-n span{font:300 40px Montserrat;color:var(--b-line)}
+.s-kitchen .kt-proc-i h3{font-size:26px;font-weight:500;margin-bottom:10px}
+.s-kitchen .kt-proc-i p{color:var(--b-muted)}
+.s-kitchen .kt-proc-i small{display:inline-block;margin-top:16px;background:var(--b-card);padding:4px 10px;font-weight:600}
+.s-kitchen .kt-mats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.s-kitchen .kt-mat{background:var(--b-bg);padding:30px}
+.s-kitchen .kt-mat h3{font-size:24px;font-weight:500;margin-bottom:10px}
+.s-kitchen .kt-mat p{color:var(--b-muted);margin-bottom:20px}
+.s-kitchen .kt-mat b{color:var(--b-accent)}
+.s-kitchen .kt-about{display:grid;grid-template-columns:1.1fr 1fr;gap:50px;align-items:center}
+.s-kitchen .kt-about-img img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.s-kitchen .kt-about-txt p{font-size:18px;color:var(--b-muted);margin-bottom:18px}
+.s-kitchen .kt-about-txt ul{list-style:none;padding:0;margin:30px 0 0;display:grid;gap:14px}
+.s-kitchen .kt-about-txt li{border-top:1px solid var(--b-line);padding-top:14px}
+.s-kitchen .kt-about-txt li b{font:400 26px Montserrat;margin-right:10px}
+@media (max-width:900px){
+  .s-kitchen .kt-nums,.s-kitchen .kt-proc{grid-template-columns:1fr 1fr}
+  .s-kitchen .kt-proc-i{margin-left:0;padding:24px 16px 24px 0;border-right:0;border-bottom:1px solid var(--b-line)}
+  .s-kitchen .kt-est,.s-kitchen .kt-mats,.s-kitchen .kt-about{grid-template-columns:1fr}
+  .s-kitchen .kt-hero-img img{aspect-ratio:4/3}
+  .s-kitchen .kt-tag{font-size:12px;padding:8px 12px}
+  .s-kitchen .kt-tag.t1{left:16px;top:16px}.s-kitchen .kt-tag.t2{right:16px;bottom:16px}
+}
+@media (max-width:520px){.s-kitchen .kt-nums b{font-size:40px}.s-kitchen .kt-est-l,.s-kitchen .kt-est-r{padding:22px}}

@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Onest", ui-sans-serif, system-ui, sans-serif;
+  --color-ink: #0F1720;
+  --color-paper: #F4F5F7;
+  --color-accent: #FF4D1C;
+  --color-mute: #5E6673;
+}
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; }
+:focus-visible { outline: 3px solid currentColor; outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

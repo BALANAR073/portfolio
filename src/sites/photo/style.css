@@ -1,0 +1,83 @@
+/* Анна Ветрова — минимализм: белый, чёрный, антиква Prata */
+.s-photo {
+  --ink:#161616; --mute:#6E6E6E; --line:#E6E6E6; --soft:#F4F4F2;
+  --mnav-bg:#fff; --mnav-fg:#161616; --mnav-font:Prata; --toast-bg:#161616; --toast-ic:#fff;
+  font-family:"Golos Text",sans-serif; color:var(--ink); background:#fff; font-size:17px; line-height:1.6; overflow-x:clip;
+
+  h1,h2,h3{font-family:Prata,serif;font-weight:400;line-height:1.12}
+  .wrap{max-width:1260px;margin:0 auto;padding:0 24px}
+  :focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+  img{background:var(--soft)}
+  .btn{display:inline-block;background:var(--ink);color:#fff;border:0;padding:16px 30px;font:500 16px "Golos Text";text-decoration:none;cursor:pointer;transition:background .2s}
+  .btn:hover{background:#333}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);transition:box-shadow .3s}
+  header.is-scrolled{box-shadow:0 1px 0 var(--line)}
+  header .wrap{display:flex;justify-content:space-between;align-items:center;height:80px}
+  .logo{font-family:Prata;font-size:22px;text-decoration:none}
+  header nav{display:flex;gap:32px}
+  header nav a{text-decoration:none;color:var(--mute)}
+  header nav a:hover{color:var(--ink)}
+
+  .hero{padding:50px 0 70px}
+  .hero h1{font-size:clamp(46px,8vw,124px);letter-spacing:-.02em;max-width:1100px}
+  .hero h1 span{display:inline-block}
+  .row{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-top:34px;flex-wrap:wrap}
+  .row p{max-width:460px;color:var(--mute);font-size:18px}
+
+  .strip{display:grid;gap:12px;margin-bottom:110px;overflow:hidden}
+  .srow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;width:110%;margin-left:-5%}
+  .srow img{width:100%;height:340px;object-fit:cover}
+
+  section{padding:0 0 120px}
+  .head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:40px;flex-wrap:wrap}
+  h2.t{font-size:clamp(38px,5vw,68px);margin-bottom:14px}
+  p.s{color:var(--mute);max-width:520px;margin-bottom:44px}
+  .filters{display:flex;gap:6px;flex-wrap:wrap}
+  .filters button{background:none;border:1px solid var(--line);padding:8px 16px;font:inherit;font-size:15px;cursor:pointer;color:var(--mute);border-radius:40px;transition:.2s}
+  .filters button[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+  .gallery{columns:3 300px;column-gap:12px}
+  .gallery button{display:block;width:100%;border:0;padding:0;margin-bottom:12px;cursor:zoom-in;background:none;break-inside:avoid;overflow:hidden}
+  .gallery img{display:block;width:100%;height:auto;object-fit:cover;transition:transform .6s,opacity .3s}
+  .gallery button:hover img{transform:scale(1.03);opacity:.92}
+
+  .packs{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink)}
+  .pack{padding:30px 30px 30px 0}
+  .pack+.pack{padding-left:30px;border-left:1px solid var(--line)}
+  .pack h3{font-size:32px;margin-bottom:6px}
+  .pr{font-size:22px;margin-bottom:18px}
+  .pack li{padding:9px 0;border-bottom:1px solid var(--line);color:var(--mute)}
+
+  .about{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+  .about img{width:100%;aspect-ratio:4/5;object-fit:cover}
+  .about p{color:var(--mute);margin-bottom:16px;font-size:18px}
+  .about blockquote{font-family:Prata;font-size:28px;line-height:1.35;margin-top:30px;padding-left:24px;border-left:2px solid var(--ink)}
+
+  .contact{background:var(--ink);color:#fff;padding:100px 0}
+  .contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:70px}
+  .contact p{color:#A8A8A8}
+  .links{margin-top:30px;display:flex;gap:24px;flex-wrap:wrap}
+  .links a{color:#fff;text-underline-offset:5px}
+  .contact form{display:grid;gap:14px}
+  .contact input,.contact textarea,.contact select{background:transparent;border:0;border-bottom:1px solid #555;color:#fff;padding:14px 0;font:inherit;outline:none}
+  .contact input:focus,.contact textarea:focus{border-color:#fff}
+  .contact select option{color:var(--ink)}
+  .contact input::placeholder,.contact textarea::placeholder{color:#888}
+  .contact .btn{background:#fff;color:var(--ink);justify-self:start;margin-top:10px}
+  footer{padding:30px 0;color:#888;font-size:14px;background:var(--ink)}
+  footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid #333;padding-top:24px}
+
+  @media (max-width:900px){
+    header nav{display:none}
+    .srow img{height:240px}
+    .packs,.about,.contact .wrap{grid-template-columns:1fr}
+    .pack,.pack+.pack{padding:26px 0;border-left:0;border-bottom:1px solid var(--line)}
+  }
+  @media (max-width:560px){
+    .srow{grid-template-columns:repeat(4,46%);width:auto}
+    .srow img{height:200px}
+    section{padding-bottom:70px}
+    .strip{margin-bottom:70px}
+  }
+}
