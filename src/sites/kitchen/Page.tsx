@@ -1,5 +1,5 @@
-import { motion, useScroll, useTransform } from 'motion/react'
-import { useRef, useState } from 'react'
+import { motion } from 'motion/react'
+import { useState } from 'react'
 import { Link, Route, Routes } from 'react-router-dom'
 import { Ruler, PenTool, Factory, Wrench } from 'lucide-react'
 import { SiteShell } from '../../shared/SiteShell'
@@ -7,7 +7,7 @@ import { Reveal } from '../../shared/Reveal'
 import { useSiteMeta } from '../../shared/hooks'
 import { u } from '../../shared/img'
 import { BizLayout, type BizInfo } from '../../shared/biz/BizLayout'
-import { PageHead, Sec, Gallery, Faq, CtaBand, ContactBlock } from '../../shared/biz/blocks'
+import { PageHead, Sec, Gallery, Faq, CtaBand, ContactBlock, CardRail, MapReviews } from '../../shared/biz/blocks'
 import './style.css'
 
 const base = '/sites/kitchen'
@@ -44,9 +44,6 @@ function Estimate() {
 }
 
 function Home() {
-  const ref = useRef<HTMLDivElement>(null)
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] })
-  const x = useTransform(scrollYProgress, [0, 1], ['4%', '-30%'])
   return (
     <>
       <section className="kt-hero">
@@ -68,13 +65,27 @@ function Home() {
         {[['30', 'дней от замера до установки'], ['5 лет', 'гарантия на корпус и фурнитуру'], ['1 400+', 'кухонь установлено в Казани'], ['0 ₽', 'замер и 3D-проект']].map(([b, t], i) => <Reveal key={b} delay={i * 0.06}><b>{b}</b><span>{t}</span></Reveal>)}
       </section>
 
-      <Sec kicker="Проекты" title="Последние работы" more={<Link to={`${base}/projects`}>Все проекты →</Link>}>
-        <div className="kt-strip" ref={ref}>
-          <motion.div style={{ x }} className="kt-strip-in">{projects.slice(0, 6).map(p => <Link key={p.img} to={`${base}/projects`} className="kt-card"><img src={u(p.img, 900)} alt={p.title} loading="lazy" /><span>{p.title}</span></Link>)}</motion.div>
-        </div>
+      <Sec>
+        <CardRail title="Последние проекты" more={{ label: 'Все проекты', to: `${base}/projects` }} view={[1.1, 1.6, 2.4]} items={[
+          { img: '1759691337936-ef702afd0714', title: 'Кухня с островом, ЖК «Сказочный лес»', meta: ['18 м²', 'Эмаль + кварц', '412 000 ₽', '28 дней'] },
+          { img: '1759691337957-ebc9ed54dc44', title: 'Кухня «Графит», Ново-Савиновский', meta: ['12 м²', 'ЛДСП Egger', '186 000 ₽', '24 дня'] },
+          { img: '1781249144275-c04daed37031', title: 'Кухня «Фьорд», Приволжский', meta: ['8 м²', 'Шпон дуба', '238 000 ₽', '30 дней'] },
+          { img: '1755624222023-621f7718950b', title: 'Кухня-гостиная, Вахитовский', meta: ['24 м²', 'Эмаль', '465 000 ₽', '32 дня'] },
+          { img: '1759691554646-8155da2172ee', title: 'Кухня «Прованс», Дербышки', meta: ['9 м²', 'МДФ с фрезеровкой', '204 000 ₽', '26 дней'] },
+          { img: '1774578342017-3885f7f52825', title: 'Угловая кухня, Азино', meta: ['10 м²', 'ЛДСП + HPL', '158 000 ₽', '21 день'] },
+        ]} />
       </Sec>
 
       <Sec kicker="Калькулятор" title="Сколько стоит кухня" className="kt-soft"><Estimate /></Sec>
+      <Sec kicker="Отзывы" title="Кухни, в которых готовят каждый день">
+        <MapReviews rating="4,9" count="430" items={[
+          { name: 'Алия и Марат', date: '10 октября', text: 'Кухня встала идеально, хотя стены в доме кривые на 3 см. Дизайнер предложил скрытую ручку и выдвижной стол — пользуемся каждый день.', tag: 'Кухня с островом' },
+          { name: 'Светлана', date: '30 сентября', text: 'Сделали за 26 дней вместо обещанных 30. Монтажники убрали за собой, подключили мойку и духовку.', tag: 'Кухня «Прованс»' },
+          { name: 'Игорь', date: '14 сентября', text: 'Сравнивал с тремя салонами — у «Модуля» вышло на 70 тысяч дешевле с той же фурнитурой Blum.', tag: 'Угловая кухня' },
+          { name: 'Регина', date: '2 сентября', text: 'Через полгода отошла кромка на одном фасаде — приехали и заменили бесплатно за два дня.', tag: 'Гарантия' },
+        ]} />
+      </Sec>
+
       <CtaBand title="3D-проект в подарок" text="Дизайнер приедет с образцами, сделает замер и покажет кухню в 3D ещё до договора." to={`${base}/contacts`} btn="Записаться на замер" />
     </>
   )

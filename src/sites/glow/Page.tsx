@@ -1,17 +1,17 @@
 import { motion } from 'motion/react'
 import { useState } from 'react'
 import { Link, Route, Routes } from 'react-router-dom'
-import { Sparkles, Droplets, Sun, Leaf } from 'lucide-react'
+import { Sparkles, Sun } from 'lucide-react'
 import { SiteShell } from '../../shared/SiteShell'
 import { Reveal } from '../../shared/Reveal'
 import { useSiteMeta } from '../../shared/hooks'
-import { u } from '../../shared/img'
 import { ShopProvider } from '../../shared/shop/cart'
 import { ShopLayout } from '../../shared/shop/ShopLayout'
 import { Catalog } from '../../shared/shop/Catalog'
 import { ProductPage } from '../../shared/shop/ProductPage'
 import { Checkout } from '../../shared/shop/Checkout'
-import { Picks, CatTiles, DeliveryPage } from '../../shared/shop/blocks'
+import { ProductRail, QuickCats, DeliveryPage } from '../../shared/shop/blocks'
+import { HeroSlider } from '../../shared/sliders'
 import { cfg } from './data'
 import './style.css'
 
@@ -43,27 +43,17 @@ function Routine() {
 function Home() {
   return (
     <>
-      <section className="gl-hero">
-        <div className="swrap gl-hero-in">
-          <div>
-            <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9 }}>Уход, который<br /><em>понимает</em> вашу кожу</motion.h1>
-            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }} className="gl-lead">Корейские формулы и честные составы. Подберём средства под ваш тип кожи — бесплатно, в чате с косметологом.</motion.p>
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.45 }} className="gl-acts"><Link to={`${base}/catalog`} className="sbtn">В каталог</Link><Link to={`${base}/p/set`} className="sbtn ghost">Набор для старта</Link></motion.div>
-          </div>
-          <div className="gl-hero-art">
-            <motion.img initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} src={u('1596462502278-27bfdc403348', 1000)} alt="Баночки и флаконы уходовой косметики" />
-            <motion.span className="gl-blob" animate={{ borderRadius: ['60% 40% 55% 45%', '45% 55% 40% 60%', '60% 40% 55% 45%'] }} transition={{ duration: 8, repeat: Infinity }} />
-            <motion.div className="gl-chip c1" animate={{ y: [0, -8, 0] }} transition={{ duration: 4, repeat: Infinity }}><Droplets size={16} /> 0% отдушек</motion.div>
-            <motion.div className="gl-chip c2" animate={{ y: [0, 8, 0] }} transition={{ duration: 5, repeat: Infinity }}><Leaf size={16} /> Веган, без тестов на животных</motion.div>
-          </div>
-        </div>
-      </section>
+      <HeroSlider className="gl-slider" slides={[
+        { img: '1596462502278-27bfdc403348', dark: false, kicker: 'Новинка', title: <>Уход, который <em>понимает</em> вашу кожу</>, text: 'Корейские формулы и честные составы. Подберём средства под ваш тип кожи — бесплатно, в чате с косметологом.', cta: { label: 'В каталог', to: `${base}/catalog` } },
+        { img: '1580870069867-74c57ee1bb07', dark: false, kicker: 'Хит продаж', title: <>Сыворотка с витамином C</>, text: 'Ровный тон и сияние за 4 недели. Стабильная форма, не окисляется.', cta: { label: 'Подробнее', to: `${base}/p/serum-c` } },
+        { img: '1761864293811-d6e937225df4', dark: false, kicker: '−19% на наборы', title: <>Базовый уход в одной коробке</>, text: 'Пенка, сыворотка и крем — хороший подарок, даже если не знаете тип кожи.', cta: { label: 'Выбрать набор', to: `${base}/catalog?cat=${encodeURIComponent('Наборы')}` } },
+      ]} />
 
-      <section className="s-sec">
-        <div className="swrap"><CatTiles base={base} tiles={[{ cat: 'Очищение', img: '1598528738936-c50861cc75a9' }, { cat: 'Сыворотки', img: '1580870069867-74c57ee1bb07' }, { cat: 'Кремы', img: '1764694187688-454d172e5ca0' }, { cat: 'Наборы', img: '1761864293811-d6e937225df4' }]} /></div>
-      </section>
+      <QuickCats base={base} items={[{ cat: 'Очищение', img: '1598528738936-c50861cc75a9' }, { cat: 'Сыворотки', img: '1608571423902-eed4a5ad8108' }, { cat: 'Кремы', img: '1764694187688-454d172e5ca0' }, { cat: 'Маски', img: '1780952934157-f541e70c7ece' }, { cat: 'Наборы', img: '1761864293811-d6e937225df4' }]} />
+
+      <ProductRail base={base} title="Любимое покупательниц" ids={['serum-c', 'cream', 'foam', 'spf', 'serum-ha', 'set']} />
       <Routine />
-      <Picks base={base} ids={['serum-c', 'cream', 'foam', 'set']} title="Любимое покупательниц" />
+      <ProductRail base={base} title="Наборы и travel-версии" filter={p => p.cat === 'Наборы' || p.cat === 'Маски'} moreTo={`${base}/catalog?cat=${encodeURIComponent('Наборы')}`} />
       <section className="gl-consult">
         <div className="swrap"><div className="gl-consult-in">
           <Reveal><h2 className="s-h2">Не знаете, что подойдёт?</h2><p>Напишите в чат — косметолог бесплатно подберёт уход под ваш тип кожи и бюджет. Обычно отвечаем за 10 минут.</p></Reveal>

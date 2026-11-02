@@ -42,3 +42,9 @@
 .s-glow .gl-consult-steps div{display:flex;gap:16px;align-items:center;background:var(--s-bg);border-radius:18px;padding:18px 20px;font-weight:700}
 .s-glow .gl-consult-steps span{display:grid;place-items:center;flex:none;width:36px;height:36px;border-radius:50%;background:var(--s-accent);color:#fff}
 @media (max-width:900px){.s-glow .gl-consult-in{grid-template-columns:1fr;padding:28px;gap:24px}}
+.s-glow .gl-slider{--sl-accent:#8E5C74;--sl-accent-fg:#fff;--sl-fg:#2D2229;--sl-display:Lora,serif;--sl-dw:500}
+.s-glow .gl-slider .slh-slide.light::after{background:linear-gradient(90deg,rgba(251,247,246,.95),rgba(251,247,246,.7) 45%,rgba(251,247,246,0) 75%)}
+.s-glow .gl-slider h2 em{color:#8E5C74}
+.s-glow .gl-slider .slh-bars i{background:rgba(45,34,41,.2)}
+.s-glow .gl-slider .slh-bars i::after{background:#8E5C74}
+.s-glow .gl-slider .slh-arrows button{border-color:rgba(45,34,41,.25);color:#2D2229;background:rgba(255,255,255,.5)}

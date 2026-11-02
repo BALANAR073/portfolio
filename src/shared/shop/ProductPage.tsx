@@ -1,4 +1,8 @@
-import { AnimatePresence, motion } from 'motion/react'
+import { motion } from 'motion/react'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import type { Swiper as SwiperT } from 'swiper'
+import { A11y, Keyboard } from 'swiper/modules'
+import 'swiper/css'
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { Heart, Minus, Plus, Star, Truck, ShieldCheck, ChevronRight } from 'lucide-react'
@@ -15,6 +19,7 @@ export function ProductPage({ base }: { base: string }) {
   const toast = useToast()
   const p = find(id || '')
   const [img, setImg] = useState(0)
+  const [sw, setSw] = useState<SwiperT | null>(null)
   const [opt, setOpt] = useState<string | undefined>()
   const [qty, setQty] = useState(1)
   const [tab, setTab] = useState<'desc' | 'specs' | 'delivery'>('desc')
@@ -30,10 +35,13 @@ export function ProductPage({ base }: { base: string }) {
         <div className="pp-grid">
           <div className="pp-gal">
             <div className="pp-main">
-              <AnimatePresence mode="wait"><motion.img key={img} src={u(p.imgs[img], 1200)} alt={p.name} initial={{ opacity: 0, scale: 1.03 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.3 }} /></AnimatePresence>
+              <Swiper key={p.id} modules={[A11y, Keyboard]} keyboard onSwiper={setSw} onSlideChange={x => setImg(x.activeIndex)} speed={450}>
+                {p.imgs.map((x, i) => <SwiperSlide key={x + i}><img src={u(x, 1200)} alt={`${p.name}, фото ${i + 1}`} /></SwiperSlide>)}
+              </Swiper>
               {p.badge && <span className="pc-badge">{p.badge}</span>}
+              {p.imgs.length > 1 && <div className="pp-dots">{p.imgs.map((_, i) => <i key={i} className={img === i ? 'on' : ''} />)}</div>}
             </div>
-            {p.imgs.length > 1 && <div className="pp-thumbs">{p.imgs.map((x, i) => <button key={x + i} type="button" aria-pressed={img === i} onClick={() => setImg(i)} aria-label={`Фото ${i + 1}`}><img src={u(x, 200)} alt="" /></button>)}</div>}
+            {p.imgs.length > 1 && <div className="pp-thumbs">{p.imgs.map((x, i) => <button key={x + i} type="button" aria-pressed={img === i} onClick={() => sw?.slideTo(i)} aria-label={`Фото ${i + 1}`}><img src={u(x, 200)} alt="" /></button>)}</div>}
           </div>
           <div className="pp-info">
             <p className="pp-cat">{p.cat}</p>

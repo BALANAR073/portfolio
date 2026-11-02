@@ -1,6 +1,4 @@
-import { motion, useScroll, useTransform } from 'motion/react'
-import { useRef } from 'react'
-import { Link, Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import { SiteShell } from '../../shared/SiteShell'
 import { Reveal } from '../../shared/Reveal'
 import { useSiteMeta } from '../../shared/hooks'
@@ -10,29 +8,21 @@ import { ShopLayout } from '../../shared/shop/ShopLayout'
 import { Catalog } from '../../shared/shop/Catalog'
 import { ProductPage } from '../../shared/shop/ProductPage'
 import { Checkout } from '../../shared/shop/Checkout'
-import { Picks, CatTiles, DeliveryPage } from '../../shared/shop/blocks'
+import { ProductRail, CatTiles, DeliveryPage } from '../../shared/shop/blocks'
+import { HeroSlider } from '../../shared/sliders'
 import { cfg } from './data'
 import './style.css'
 
 const base = '/sites/base'
 
 function Home() {
-  const ref = useRef<HTMLElement>(null)
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
-  const y = useTransform(scrollYProgress, [0, 1], ['0%', '18%'])
   return (
     <>
-      <section className="bs-hero" ref={ref}>
-        <motion.img style={{ y }} src={u('1558769132-cb1aea458c5e', 1800)} alt="Модели в одежде BASE" />
-        <div className="swrap bs-hero-in">
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} className="bs-drop">Дроп 07 · осень</motion.p>
-          <h1>{['ОДЕЖДА', 'НА КАЖДЫЙ', 'ДЕНЬ'].map((w, i) => <motion.span key={w} initial={{ y: '110%' }} animate={{ y: 0 }} transition={{ delay: 0.1 + i * 0.1, duration: 0.8, ease: [0.2, 0.7, 0.2, 1] }}>{w}</motion.span>)}</h1>
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }} className="bs-hero-cta">
-            <p>Плотный хлопок, честный крой, шьём в Казани. Без логотипов на всю спину.</p>
-            <Link to={`${base}/catalog`} className="sbtn">Смотреть дроп</Link>
-          </motion.div>
-        </div>
-      </section>
+      <HeroSlider className="bs-slider" slides={[
+        { img: '1558769132-cb1aea458c5e', kicker: 'Дроп 07 · осень', title: <>Одежда<br />на каждый день</>, text: 'Плотный хлопок, честный крой, шьём в Казани. Без логотипов на всю спину.', cta: { label: 'Смотреть дроп', to: `${base}/catalog` } },
+        { img: '1677538537484-324385aff147', kicker: 'Худи Heavy', title: <>480 г/м²<br />держит форму</>, text: 'Трёхнитка с начёсом, двойной капюшон, усиленные швы. После 50 стирок — как новое.', cta: { label: 'Выбрать цвет', to: `${base}/p/hoodie-graphite` } },
+        { img: '1591047139829-d91aecb6caea', kicker: '−20% на верхнюю одежду', title: <>Бомберы<br />и пальто</>, text: 'Межсезонье до −10°. Примерка при получении, возврат 30 дней.', cta: { label: 'В каталог', to: `${base}/catalog?cat=${encodeURIComponent('Верхняя одежда')}` } },
+      ]} />
 
       <div className="bs-mq" aria-hidden><div>{Array.from({ length: 2 }).map((_, k) => <span key={k}>480 г/м² ✦ ШЬЁМ В КАЗАНИ ✦ ПРИМЕРКА ПРИ ПОЛУЧЕНИИ ✦ ВОЗВРАТ 30 ДНЕЙ ✦ БЕСПЛАТНАЯ ДОСТАВКА ОТ 5 000 ₽ ✦&nbsp;</span>)}</div></div>
 
@@ -42,7 +32,7 @@ function Home() {
         </div>
       </section>
 
-      <Picks base={base} ids={['hoodie-graphite', 'tee-white', 'jacket', 'cargo']} title="Бестселлеры" />
+      <ProductRail base={base} title="Бестселлеры" ids={['hoodie-graphite', 'tee-white', 'cargo', 'jacket', 'hoodie-sand', 'joggers']} />
 
       <section className="bs-look">
         <div className="swrap">
@@ -63,7 +53,7 @@ function Home() {
         </div>
       </section>
 
-      <Picks base={base} ids={['jacket', 'coat', 'tee-print', 'bag']} title="Новинки" />
+      <ProductRail base={base} title="Новинки" ids={['coat', 'tee-print', 'bag', 'cap', 'jacket']} />
     </>
   )
 }

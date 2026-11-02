@@ -7,7 +7,7 @@ import { Reveal } from '../../shared/Reveal'
 import { useSiteMeta } from '../../shared/hooks'
 import { u } from '../../shared/img'
 import { BizLayout, type BizInfo } from '../../shared/biz/BizLayout'
-import { PageHead, Sec, Team, Faq, CtaBand, ContactBlock, Gallery } from '../../shared/biz/blocks'
+import { PageHead, Sec, Team, Faq, CtaBand, ContactBlock, Gallery, PeopleRail, CardRail, MapReviews } from '../../shared/biz/blocks'
 import './style.css'
 
 const base = '/sites/kids'
@@ -75,7 +75,28 @@ function Home() {
         </div>
       </section>
 
-      <Sec kicker="Педагоги" title="Те, кому вы доверите ребёнка" more={<Link to={`${base}/teachers`}>Все педагоги →</Link>}><Team people={teachers} /></Sec>
+      <Sec>
+        <CardRail title="Как проходят занятия" view={[1.2, 2.2, 3.2]} items={[
+          { img: '1578349035260-9f3d4042f1f7', title: 'Изостудия', text: 'Рисуем гуашью и акварелью, раз в полгода — выставка для родителей.', meta: ['4–10 лет'] },
+          { img: '1588075592446-265fd1e6e76f', title: 'Подготовка к школе', text: 'Читаем по слогам, решаем примеры, учимся держать ручку.', meta: ['5–7 лет'] },
+          { img: '1484820540004-14229fe36ca4', title: 'Раннее развитие', text: 'Моторика, речь и первые друзья — вместе с мамой.', meta: ['1,5–3 года'] },
+          { img: '1605627079912-97c3810a11a4', title: 'Творческая мастерская', text: 'Лепим, клеим, мастерим поделки к праздникам.', meta: ['3–6 лет'] },
+          { img: '1761403942462-04b8b97f1fe9', title: 'Английский', text: 'Песни, игры и карточки — без зубрёжки и домашних заданий.', meta: ['4–10 лет'] },
+        ]} />
+      </Sec>
+
+      <Sec className="kd-soft">
+        <PeopleRail title="Педагоги" more={{ label: 'Все педагоги', to: `${base}/teachers` }} people={teachers.map((t, i) => ({ ...t, meta: ['Стаж 18 лет', 'Стаж 9 лет', 'Стаж 7 лет', 'Стаж 5 лет'][i] }))} />
+      </Sec>
+
+      <Sec kicker="Отзывы" title="Что говорят родители">
+        <MapReviews rating="5,0" count="318" items={[
+          { name: 'Эльмира, мама Самира', date: '11 октября', text: 'Ходим на подготовку к школе с сентября. Сын сам садится читать вечером — для нас это чудо.', tag: 'Подготовка к школе' },
+          { name: 'Анна, мама Вари', date: '2 октября', text: 'Дочка стеснительная, но в группе из пяти детей быстро освоилась. Видео с занятий в чате — очень спокойно.', tag: 'Изостудия' },
+          { name: 'Руслан, папа Амира', date: '20 сентября', text: 'Мини-сад выручает: забираем в обед, ребёнок накормлен и доволен. Педагоги внимательные.', tag: 'Мини-сад' },
+          { name: 'Ольга, мама Миши', date: '9 сентября', text: 'Английский без скучной зубрёжки — Миша поёт песенки и сам называет предметы дома.', tag: 'Английский' },
+        ]} />
+      </Sec>
       <CtaBand title="Приходите на пробное занятие" text="Бесплатно, 45 минут. Познакомитесь с педагогом и посмотрите, понравится ли ребёнку." to={`${base}/contacts`} btn="Записаться" />
     </>
   )

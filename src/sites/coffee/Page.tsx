@@ -10,7 +10,7 @@ import { ShopLayout } from '../../shared/shop/ShopLayout'
 import { Catalog } from '../../shared/shop/Catalog'
 import { ProductPage } from '../../shared/shop/ProductPage'
 import { Checkout } from '../../shared/shop/Checkout'
-import { Picks, DeliveryPage } from '../../shared/shop/blocks'
+import { ProductRail, DeliveryPage } from '../../shared/shop/blocks'
 import { cfg } from './data'
 import './style.css'
 
@@ -70,7 +70,8 @@ function Home() {
         {[['Вт и Пт', 'Обжариваем небольшими партиями по 15 кг'], ['48 часов', 'Отправляем, пока кофе на пике аромата'], ['SCA 83+', 'Только спешелти-зерно с оценкой выше 83'], ['от 2 500 ₽', 'Доставка бесплатно по всей России']].map(([b, t], i) => <Reveal key={b} delay={i * 0.06}><b>{b}</b><p>{t}</p></Reveal>)}
       </section>
 
-      <Picks base={base} ids={['brazil', 'ethiopia', 'blend', 'drip']} title="Сейчас в обжарке" />
+      <ProductRail base={base} title="Для эспрессо и молочных напитков" filter={p => p.cat === 'Эспрессо' || p.id === 'colombia' || p.id === 'drip'} moreTo={`${base}/catalog?cat=${encodeURIComponent('Эспрессо')}`} />
+      <ProductRail base={base} title="Для воронки и френч-пресса" filter={p => p.cat === 'Фильтр' || p.cat === 'Посуда'} moreTo={`${base}/catalog?cat=${encodeURIComponent('Фильтр')}`} />
       <Finder />
 
       <section className="s-sec">

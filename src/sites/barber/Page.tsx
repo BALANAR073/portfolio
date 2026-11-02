@@ -8,7 +8,7 @@ import { CountUp } from '../../shared/CountUp'
 import { useSiteMeta } from '../../shared/hooks'
 import { u } from '../../shared/img'
 import { BizLayout, type BizInfo } from '../../shared/biz/BizLayout'
-import { PageHead, Sec, Prices, Team, Gallery, Faq, CtaBand, ContactBlock } from '../../shared/biz/blocks'
+import { PageHead, Sec, Prices, Team, Gallery, Faq, CtaBand, ContactBlock, PeopleRail, CardRail, MapReviews } from '../../shared/biz/blocks'
 import './style.css'
 
 const base = '/sites/barber'
@@ -66,8 +66,27 @@ function Home() {
         <Prices groups={prices.slice(0, 2)} />
       </Sec>
 
-      <Sec kicker="Команда" title="Наши мастера" more={<Link to={`${base}/masters`}>Все мастера →</Link>}>
-        <Team people={masters.slice(0, 4)} />
+      <Sec>
+        <PeopleRail title="Наши мастера" more={{ label: 'Все мастера', to: `${base}/masters` }} people={masters.map((m, i) => ({ ...m, meta: ['★ 5,0 · 1 840 стрижек', '★ 4,9 · 960 стрижек', '★ 4,9 · 720 стрижек', '★ 5,0 · 410 стрижек'][i] }))} />
+      </Sec>
+
+      <Sec className="bb-dark">
+        <CardRail title="Свежие работы" more={{ label: 'Вся галерея', to: `${base}/works` }} view={[1.15, 2.2, 3.2]} items={[
+          { img: '1781455793310-8427c96454c7', title: 'Кроп с текстурой', meta: ['Артём', '1 500 ₽'] },
+          { img: '1759134198561-e2041049419c', title: 'Борода + контур', meta: ['Ильдар', '1 000 ₽'] },
+          { img: '1783908688260-0c47404926f3', title: 'Скин-фейд', meta: ['Артём', '1 700 ₽'] },
+          { img: '1657105052497-f996284ffff8', title: 'Королевское бритьё', meta: ['Тимур', '1 400 ₽'] },
+          { img: '1773904215697-e6c21fc27ac2', title: 'Классика с пробором', meta: ['Тимур', '1 500 ₽'] },
+        ]} />
+      </Sec>
+
+      <Sec kicker="Отзывы" title="Что говорят гости">
+        <MapReviews rating="4,9" count="1 240" items={[
+          { name: 'Алексей К.', date: '12 октября', text: 'Хожу к Тимуру третий год. Ни разу не ждал дольше пяти минут, стрижка держит форму до следующего визита.', tag: 'Мастер: Тимур' },
+          { name: 'Ринат', date: '3 октября', text: 'Первый раз доверил бороду — Ильдар подобрал форму под лицо, жена оценила. Кофе вкусный, атмосфера спокойная.', tag: 'Мастер: Ильдар' },
+          { name: 'Дмитрий С.', date: '28 сентября', text: 'Сделали скин-фейд ровно как на фото из Pinterest. Записался онлайн на 9 вечера — удобно после работы.', tag: 'Мастер: Артём' },
+          { name: 'Олег', date: '19 сентября', text: 'Привёл сына на первую стрижку. Руслан нашёл подход, сын не плакал и попросил прийти снова.', tag: 'Мастер: Руслан' },
+        ]} />
       </Sec>
 
       <CtaBand title="Первая стрижка — со скидкой 20%" text="Назовите кодовое слово «Борода» при записи. Действует для новых гостей." to={`${base}/contacts`} btn="Записаться" />

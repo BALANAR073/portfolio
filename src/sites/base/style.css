@@ -33,3 +33,8 @@
   .s-base .bs-look-i.i0{grid-row:auto}
   .s-base .bs-facts .swrap{grid-template-columns:1fr}
 }
+.s-base .bs-slider{--sl-accent:#FF5A1F;--sl-accent-fg:#fff;--sl-display:"Rubik Mono One",sans-serif;--sl-dw:400;--sl-btn-r:0}
+.s-base .bs-slider h2{text-transform:uppercase;letter-spacing:-.05em;font-size:clamp(40px,7vw,108px);line-height:.92}
+.s-base .bs-slider .slh-kick{border-radius:0}
+.s-base .bs-slider .slh-btn{background:#FF5A1F;color:#fff;text-transform:uppercase;letter-spacing:.04em}
+.s-base .rail-title{text-transform:uppercase;letter-spacing:-.02em}

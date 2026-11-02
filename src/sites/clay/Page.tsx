@@ -10,7 +10,7 @@ import { ShopLayout } from '../../shared/shop/ShopLayout'
 import { Catalog } from '../../shared/shop/Catalog'
 import { ProductPage } from '../../shared/shop/ProductPage'
 import { Checkout } from '../../shared/shop/Checkout'
-import { Picks, DeliveryPage } from '../../shared/shop/blocks'
+import { ProductRail, DeliveryPage } from '../../shared/shop/blocks'
 import { cfg } from './data'
 import './style.css'
 
@@ -57,7 +57,7 @@ function Home() {
         </motion.div>
       </section>
 
-      <Picks base={base} ids={['mug', 'plate', 'vase', 'set']} title="Из последнего обжига" />
+      <ProductRail base={base} title="Из последнего обжига" ids={['mug', 'plate', 'vase', 'bowl', 'cup', 'set']} />
       <Process />
 
       <section className="s-sec cl-class">
@@ -73,7 +73,7 @@ function Home() {
         </div>
       </section>
 
-      <Picks base={base} ids={['class', 'cert', 'vase-s', 'cup']} title="Для подарка" />
+      <ProductRail base={base} title="Для подарка" ids={['class', 'cert', 'vase-s', 'set', 'cup']} />
     </>
   )
 }

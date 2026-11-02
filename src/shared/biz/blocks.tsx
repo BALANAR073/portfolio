@@ -10,6 +10,7 @@ import { PhoneInput } from '../PhoneInput'
 import { useSubmit } from '../useForm'
 import { Accordion } from '../Accordion'
 import type { BizInfo } from './BizLayout'
+import { Rail } from '../sliders'
 
 /** Шапка внутренней страницы */
 export function PageHead({ kicker, title, text, img }: { kicker: string; title: ReactNode; text?: string; img?: string }) {
@@ -128,5 +129,58 @@ export function ContactBlock({ info, title = 'Оставьте заявку', no
         {children}
       </Reveal>
     </div>
+  )
+}
+
+/** Отзывы с карт: сводка рейтинга + карусель карточек. Для бизнеса услуг это нормальная практика. */
+export function MapReviews({ rating, count, src = 'Яндекс Картах', items }: { rating: string; count: string; src?: string; items: { name: string; text: string; date: string; tag?: string }[] }) {
+  return (
+    <div className="mr">
+      <Reveal className="mr-sum">
+        <b>{rating}</b>
+        <span className="mr-stars">{'★★★★★'}</span>
+        <p>{count} отзывов на {src}</p>
+        <small>Отзывы перенесены с карт без изменений</small>
+      </Reveal>
+      <div className="mr-rail">
+        <Rail view={[1.1, 1.8, 2.4]}>
+          {items.map(r => (
+            <article key={r.name} className="mr-i">
+              <header><span className="mr-ava">{r.name[0]}</span><div><b>{r.name}</b><small>{r.date}</small></div><span className="mr-stars sm">★★★★★</span></header>
+              <p>{r.text}</p>
+              {r.tag && <em>{r.tag}</em>}
+            </article>
+          ))}
+        </Rail>
+      </div>
+    </div>
+  )
+}
+
+/** Карусель людей: мастера, врачи, педагоги, клинеры */
+export function PeopleRail({ title, more, people }: { title?: ReactNode; more?: { label: string; to: string }; people: { name: string; role: string; img: string; text?: string; meta?: string }[] }) {
+  return (
+    <Rail title={title} more={more} view={[1.3, 2.4, 4]}>
+      {people.map(p => (
+        <div key={p.name} className="tm-i">
+          <div className="tm-img"><img src={u(p.img, 700)} alt={p.name} loading="lazy" />{p.meta && <span className="tm-meta">{p.meta}</span>}</div>
+          <h3>{p.name}</h3><p className="tm-role">{p.role}</p>{p.text && <p className="tm-text">{p.text}</p>}
+        </div>
+      ))}
+    </Rail>
+  )
+}
+
+/** Карусель больших карточек с фото: проекты, работы, истории */
+export function CardRail({ title, more, items, view = [1.1, 1.7, 2.6] }: { title?: ReactNode; more?: { label: string; to: string }; items: { img: string; title: string; text?: string; meta?: string[] }[]; view?: [number, number, number] }) {
+  return (
+    <Rail title={title} more={more} view={view}>
+      {items.map(it => (
+        <figure key={it.img + it.title} className="cr-i">
+          <div className="cr-img"><img src={u(it.img, 1000)} alt={it.title} loading="lazy" /></div>
+          <figcaption><b>{it.title}</b>{it.text && <span>{it.text}</span>}{it.meta && <div className="cr-meta">{it.meta.map(m => <i key={m}>{m}</i>)}</div>}</figcaption>
+        </figure>
+      ))}
+    </Rail>
   )
 }

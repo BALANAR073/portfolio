@@ -7,7 +7,7 @@ import { Reveal } from '../../shared/Reveal'
 import { useSiteMeta } from '../../shared/hooks'
 import { u } from '../../shared/img'
 import { BizLayout, type BizInfo } from '../../shared/biz/BizLayout'
-import { PageHead, Sec, Prices, Team, Faq, CtaBand, ContactBlock } from '../../shared/biz/blocks'
+import { PageHead, Sec, Prices, Team, Faq, CtaBand, ContactBlock, PeopleRail, CardRail, MapReviews } from '../../shared/biz/blocks'
 import './style.css'
 
 const base = '/sites/vet'
@@ -72,7 +72,28 @@ function Home() {
 
       <Sec kicker="Памятка" title="План прививок и процедур" className="vt-soft"><Pets /></Sec>
 
-      <Sec kicker="Врачи" title="Наша команда" more={<Link to={`${base}/doctors`}>Все врачи →</Link>}><Team people={doctors} /></Sec>
+      <Sec>
+        <CardRail title="Истории наших пациентов" view={[1.2, 2.2, 3.3]} items={[
+          { img: '1558788353-f76d92427f16', title: 'Ричи, 7 лет', text: 'Удалили инородное тело из желудка без полостной операции — эндоскопом. Домой ушёл на следующий день.', meta: ['Хирургия', 'Андрей Крылов'] },
+          { img: '1536589961747-e239b2abbec2', title: 'Муся, 12 лет', text: 'Подобрали диету и терапию при болезни почек. Анализы в норме уже полтора года.', meta: ['Терапия', 'Алсу Гарипова'] },
+          { img: '1529040181623-e04ebc611e25', title: 'Кролик Боня, 3 года', text: 'Подпилили зубы, которые мешали есть. Теперь проверяемся раз в полгода.', meta: ['Экзотология', 'Ринат Сафин'] },
+          { img: '1772606270537-6eb199b55aed', title: 'Корги Бакс, 5 лет', text: 'Нашли шумы в сердце на плановом чекапе. Вовремя начали лечение — бегает, как щенок.', meta: ['Кардиология', 'Мария Лебедева'] },
+          { img: '1498100152307-ce63fd6c5424', title: 'Оскар, 2 года', text: 'Привезли ночью после падения с балкона. Срастили лапу, через месяц снова лазил по шкафам.', meta: ['Экстренная помощь'] },
+        ]} />
+      </Sec>
+
+      <Sec className="vt-soft">
+        <PeopleRail title="Наши врачи" more={{ label: 'Все врачи', to: `${base}/doctors` }} people={doctors.map((d, i) => ({ ...d, meta: ['Стаж 14 лет', 'Стаж 11 лет', 'Стаж 8 лет', 'Стаж 6 лет'][i] }))} />
+      </Sec>
+
+      <Sec kicker="Отзывы" title="Что пишут владельцы">
+        <MapReviews rating="4,8" count="960" src="2ГИС" items={[
+          { name: 'Екатерина', date: '14 октября', text: 'Приехали в три ночи с котом, приняли сразу. Врач всё объяснил, показал снимки и не навязывал лишних анализов.', tag: 'Экстренный приём' },
+          { name: 'Артур', date: '6 октября', text: 'Делали стерилизацию собаке. Прислали фото после операции, через неделю сняли швы бесплатно.', tag: 'Хирургия' },
+          { name: 'Ирина', date: '29 сентября', text: 'Единственная клиника, где нормально лечат кроликов. Ринат Ильдарович — спасибо за Боню!', tag: 'Экзотолог' },
+          { name: 'Павел', date: '17 сентября', text: 'Анализы правда готовы за полчаса, не пришлось приезжать второй раз.', tag: 'Диагностика' },
+        ]} />
+      </Sec>
 
       <CtaBand title="Первичный осмотр — бесплатно" text="Для котят и щенков до 4 месяцев. Расскажем про питание, прививки и уход." to={`${base}/contacts`} btn="Записаться" />
     </>

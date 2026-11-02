@@ -1,4 +1,3 @@
-import { motion } from 'motion/react'
 import { Link, Route, Routes } from 'react-router-dom'
 import { Clock, Camera, Gift, Leaf } from 'lucide-react'
 import { SiteShell } from '../../shared/SiteShell'
@@ -10,7 +9,8 @@ import { ShopLayout } from '../../shared/shop/ShopLayout'
 import { Catalog } from '../../shared/shop/Catalog'
 import { ProductPage } from '../../shared/shop/ProductPage'
 import { Checkout } from '../../shared/shop/Checkout'
-import { Picks, CatTiles, DeliveryPage } from '../../shared/shop/blocks'
+import { ProductRail, QuickCats, PromoPair, DeliveryPage } from '../../shared/shop/blocks'
+import { HeroSlider } from '../../shared/sliders'
 import { cfg } from './data'
 import './style.css'
 
@@ -19,20 +19,15 @@ const base = '/sites/flowers'
 function Home() {
   return (
     <>
-      <section className="fl-hero">
-        <div className="swrap fl-hero-in">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <p className="fl-kicker">Цветочная мастерская в Казани</p>
-            <h1>Цветы, которые <em>говорят</em> за вас</h1>
-            <p className="fl-lead">Собираем букеты в день доставки из утренней поставки. Привезём за 2 часа и пришлём фото перед отправкой.</p>
-            <div className="fl-acts"><Link to={`${base}/catalog`} className="sbtn">Выбрать букет</Link><Link to={`${base}/catalog?cat=${encodeURIComponent('В коробке')}`} className="sbtn ghost">Цветы в коробке</Link></div>
-          </motion.div>
-          <motion.div className="fl-hero-img" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1 }}>
-            <img src={u('1498814117408-e396f5507073', 1100)} alt="Нежный букет в пастельных тонах" />
-            <motion.div className="fl-note" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7 }}><b>4,9 ★</b> 2 400 отзывов<br /><small>Яндекс Карты</small></motion.div>
-          </motion.div>
-        </div>
-      </section>
+      <HeroSlider slides={[
+        { img: '1523308458373-c6f61ae1fd21', kicker: 'Осенняя коллекция', title: <>Тёплые букеты <em>для холодных дней</em></>, text: 'Хризантемы, сухоцветы и розы оттенков терракоты — собираем из утренней поставки.', cta: { label: 'Смотреть букеты', to: `${base}/catalog?cat=${encodeURIComponent('Сезонные')}` } },
+        { img: '1558879787-4c4aea1fbb83', kicker: '−15% до конца недели', title: <>Цветы в коробке</>, text: 'Не нужна ваза — достаточно подливать немного воды. Стоят до 10 дней.', cta: { label: 'Выбрать коробку', to: `${base}/catalog?cat=${encodeURIComponent('В коробке')}` } },
+        { img: '1605477758687-973ba14c43b1', kicker: 'Доставка за 2 часа', title: <>Привезём сегодня, пришлём фото до отправки</>, text: 'По всей Казани с 8:00 до 22:00. Открытка с вашим текстом — бесплатно.', cta: { label: 'Заказать букет', to: `${base}/catalog` } },
+      ]} />
+
+      <QuickCats base={base} items={[{ cat: 'Букеты', img: '1564070814872-a2e801dbf413' }, { cat: 'Розы', img: '1605477758687-973ba14c43b1' }, { cat: 'Сезонные', img: '1604137488398-b1d691713d96' }, { cat: 'В коробке', img: '1558879787-4c4aea1fbb83' }, { cat: 'Свадебные', img: '1530488228536-37ae1dbb20a4' }]} />
+
+      <ProductRail base={base} title="Хиты недели" ids={['tender', 'red', 'box', 'garden', 'pink', 'spring']} />
 
       <div className="fl-perks swrap">
         {[[Clock, 'Доставка за 2 часа', 'по всей Казани'], [Camera, 'Фото букета', 'до отправки курьеру'], [Gift, 'Открытка в подарок', 'с вашим текстом'], [Leaf, 'Свежесть 7 дней', 'или заменим бесплатно']].map(([I, t, s], i) => {
@@ -41,14 +36,12 @@ function Home() {
         })}
       </div>
 
-      <section className="s-sec">
-        <div className="swrap">
-          <div className="s-head"><Reveal><h2 className="s-h2" style={{ margin: 0 }}>Выберите повод</h2></Reveal></div>
-          <CatTiles base={base} tiles={[{ cat: 'Букеты', img: '1564070814872-a2e801dbf413', note: 'от 2 400 ₽' }, { cat: 'Розы', img: '1605477758687-973ba14c43b1', note: 'от 3 400 ₽' }, { cat: 'В коробке', img: '1558879787-4c4aea1fbb83', note: 'от 4 800 ₽' }, { cat: 'Свадебные', img: '1530488228536-37ae1dbb20a4', note: 'от 3 700 ₽' }]} />
-        </div>
-      </section>
+      <ProductRail base={base} title="Недорогие букеты до 3 500 ₽" filter={p => p.price <= 3500} />
 
-      <Picks base={base} ids={['tender', 'red', 'box', 'spring']} title="Чаще всего дарят" />
+      <PromoPair items={[
+        { img: '1530488228536-37ae1dbb20a4', title: 'Свадебная флористика', text: 'Букет невесты, бутоньерки и оформление банкета', to: `${base}/catalog?cat=${encodeURIComponent('Свадебные')}`, btn: 'Подробнее' },
+        { img: '1457089328109-e5d9bd499191', title: 'Цветы для офиса', text: 'Еженедельная доставка композиций по договору', to: `${base}/catalog`, btn: 'Узнать условия' },
+      ]} />
 
       <section className="fl-band">
         <div className="swrap fl-band-in">
@@ -62,7 +55,7 @@ function Home() {
         </div>
       </section>
 
-      <Picks base={base} ids={['spring', 'garden', 'meadow', 'boxwhite']} title="Сезонная коллекция" />
+      <ProductRail base={base} title="Сезонная коллекция" ids={['spring', 'garden', 'meadow', 'boxwhite', 'table']} />
     </>
   )
 }

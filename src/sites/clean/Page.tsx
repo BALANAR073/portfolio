@@ -8,7 +8,7 @@ import { BeforeAfter } from '../../shared/BeforeAfter'
 import { useSiteMeta } from '../../shared/hooks'
 import { u } from '../../shared/img'
 import { BizLayout, type BizInfo } from '../../shared/biz/BizLayout'
-import { PageHead, Sec, Prices, Gallery, Faq, CtaBand, ContactBlock } from '../../shared/biz/blocks'
+import { PageHead, Sec, Prices, Gallery, Faq, CtaBand, ContactBlock, PeopleRail, MapReviews } from '../../shared/biz/blocks'
 import './style.css'
 
 const base = '/sites/clean'
@@ -80,6 +80,25 @@ function Home() {
 
       <Sec kicker="До и после" title="Результат говорит сам" more={<Link to={`${base}/works`}>Все работы →</Link>}>
         <Reveal className="cl-ba"><BeforeAfter before={u('1776535240825-ea0ad5dd10b9', 1400)} after={u('1556912173-3bb406ef7e77', 1400)} /></Reveal>
+      </Sec>
+
+      <Sec className="cl-soft">
+        <PeopleRail title="Наши клинеры" people={[
+          { name: 'Гульнара', role: 'Старший клинер · 5 лет с нами', img: '1758273238795-c284e5ae09b6', meta: '★ 4,98 · 1 320 уборок' },
+          { name: 'Светлана', role: 'Генеральные уборки', img: '1758273238738-9410f7e9d53c', meta: '★ 4,95 · 870 уборок' },
+          { name: 'Алина', role: 'Уборка после ремонта', img: '1758273238698-c98a45a8df9a', meta: '★ 4,97 · 640 уборок' },
+          { name: 'Наталья', role: 'Поддерживающие уборки', img: '1680728334131-220313e30370', meta: '★ 4,96 · 1 050 уборок' },
+          { name: 'Эльвира', role: 'Мытьё окон и химчистка', img: '1758273705627-937374bfa978', meta: '★ 4,94 · 520 уборок' },
+        ]} />
+      </Sec>
+
+      <Sec kicker="Отзывы" title="Нам доверяют ключи">
+        <MapReviews rating="4,9" count="1 812" src="Яндекс Картах" items={[
+          { name: 'Мария', date: '15 октября', text: 'Заказывала генеральную перед приездом родителей. Отмыли даже вытяжку и швы в ванной — я думала, они уже не отмоются.', tag: 'Генеральная уборка, 2-комнатная' },
+          { name: 'Андрей', date: '8 октября', text: 'После ремонта было по колено пыли. Бригада из трёх человек справилась за день, вывезли мусор. Цена совпала с калькулятором.', tag: 'После ремонта, 74 м²' },
+          { name: 'Лилия', date: '1 октября', text: 'Беру поддерживающую раз в две недели, всегда приходит Гульнара. Оставляю ключи консьержу и получаю фотоотчёт.', tag: 'Поддерживающая уборка' },
+          { name: 'Тимур', date: '22 сентября', text: 'Помыли окна в квартире и на балконе. Аккуратно, без разводов, подоконники тоже протёрли.', tag: 'Мытьё окон, 9 створок' },
+        ]} />
       </Sec>
 
       <CtaBand title="Первая уборка −15%" text="Скидка для новых клиентов по промокоду ЧИСТО. Действует на любой тип уборки." to={`${base}/contacts`} btn="Заказать со скидкой" />

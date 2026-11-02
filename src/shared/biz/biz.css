@@ -118,3 +118,35 @@
   .bsec{padding:60px 0}
 }
 @media (max-width:520px){.gal{gap:8px}.pr-g,.cb-form form{padding:22px}}
+/* Слайдеры в визитках */
+.biz{--sl-accent:var(--b-accent);--sl-accent-fg:var(--b-accent-fg);--sl-display:var(--b-display);--sl-dw:var(--b-dw);--sl-line:var(--b-line);--sl-btn-r:var(--b-btn-r)}
+.biz .rail-title{font-size:clamp(30px,3.8vw,50px)}
+.tm-img{position:relative}
+.tm-meta{position:absolute;left:12px;bottom:12px;background:var(--b-bg);color:var(--b-fg);font-size:13px;font-weight:700;padding:5px 10px;border-radius:30px}
+.mr{display:grid;grid-template-columns:260px 1fr;gap:28px;align-items:stretch}
+.mr-sum{background:var(--b-dark);color:var(--b-dark-fg);border-radius:var(--b-radius);padding:28px;display:flex;flex-direction:column;justify-content:center}
+.mr-sum>b{font:var(--b-dw) 64px/1 var(--b-display)}
+.mr-stars{color:#FFB800;letter-spacing:2px;font-size:20px;margin:6px 0 10px}
+.mr-stars.sm{font-size:13px;margin:0;letter-spacing:1px}
+.mr-sum p{font-weight:600}
+.mr-sum small{opacity:.55;margin-top:14px;font-size:12px}
+.mr-rail{min-width:0;overflow:hidden}
+.mr-rail .swiper{overflow:hidden}
+.mr-i{height:100%;background:var(--b-card);border-radius:var(--b-radius);padding:24px;display:flex;flex-direction:column;gap:14px}
+.mr-i header{display:flex;align-items:center;gap:12px}
+.mr-i header>div{flex:1;min-width:0}
+.mr-i header b{display:block}
+.mr-i header small{color:var(--b-muted);font-size:13px}
+.mr-ava{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--b-accent);color:var(--b-accent-fg);font-weight:700;flex:none}
+.mr-i p{line-height:1.6;flex:1}
+.mr-i em{font-style:normal;font-size:13px;color:var(--b-muted)}
+.cr-i{margin:0}
+.cr-img{border-radius:var(--b-radius);overflow:hidden;aspect-ratio:4/3;background:var(--b-card)}
+.cr-img img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.cr-i:hover .cr-img img{transform:scale(1.05)}
+.cr-i figcaption{padding-top:14px;display:flex;flex-direction:column;gap:4px}
+.cr-i figcaption b{font:var(--b-dw) 22px/1.2 var(--b-display)}
+.cr-i figcaption span{color:var(--b-muted)}
+.cr-meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.cr-meta i{font-style:normal;font-size:13px;font-weight:600;border:1px solid var(--b-line);border-radius:30px;padding:4px 10px}
+@media (max-width:900px){.mr{grid-template-columns:1fr}.mr-sum{flex-direction:row;flex-wrap:wrap;align-items:center;gap:6px 14px}.mr-sum>b{font-size:44px}.mr-sum small{width:100%;margin:0}}
