@@ -28,7 +28,7 @@ function Routine() {
   return (
     <section className="gl-routine">
       <div className="swrap">
-        <Reveal className="gl-r-head"><h2 className="s-h2">Ритуал в три шага</h2><div className="gl-tabs">{(Object.keys(routine) as (keyof typeof routine)[]).map(k => <button key={k} type="button" aria-pressed={t === k} onClick={() => setT(k)}>{k === 'Утро' ? <Sun size={16} /> : <Sparkles size={16} />}{k}{t === k && <motion.i layoutId="gl-tab" />}</button>)}</div></Reveal>
+        <Reveal className="gl-r-head"><h2 className="s-h2">Ритуал в три шага</h2><div className="gl-tabs">{(Object.keys(routine) as (keyof typeof routine)[]).map(k => <button key={k} type="button" aria-pressed={t === k} onClick={() => setT(k)}>{k === 'Утро' ? <Sun size={16} /> : <Sparkles size={16} />}{k}</button>)}</div></Reveal>
         <div className="gl-steps">
           {routine[t].map(([n, d, id], i) => (
             <motion.div key={t + id} initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }}>

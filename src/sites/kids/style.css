@@ -1,5 +1,5 @@
 /* Солнышко — детский центр: тёплый молочный, коралл, жёлтый, округлый Comfortaa */
-.s-kids .biz{--b-bg:#FFFAF2;--b-fg:#2B2340;--b-muted:#6E6782;--b-line:#F0E6D6;--b-card:#FFF1DC;--b-accent:#FF7A59;--b-accent-fg:#fff;--b-radius:28px;--b-btn-r:40px;--b-font:Nunito,system-ui,sans-serif;--b-display:Comfortaa,Nunito,sans-serif;--b-dw:700;--b-head:rgba(255,250,242,.9);--b-dark:#2B2340;--b-dark-fg:#FFFAF2}
+.s-kids .biz{--b-bg:#FFFAF2;--b-fg:#2B2340;--b-muted:#6E6782;--b-line:#F0E6D6;--b-card:#FFF1DC;--b-accent:#E8532E;--b-accent-fg:#fff;--b-radius:28px;--b-btn-r:40px;--b-font:Nunito,system-ui,sans-serif;--b-display:Comfortaa,Nunito,sans-serif;--b-dw:700;--b-head:rgba(255,250,242,.9);--b-dark:#2B2340;--b-dark-fg:#FFFAF2}
 .s-kids .bbtn{font-weight:800}
 .s-kids .kd-logo{display:flex;align-items:center;gap:10px;font:700 24px Comfortaa}
 .s-kids .kd-logo i{width:30px;height:30px;border-radius:50%;background:#FFB627;box-shadow:0 0 0 5px rgba(255,182,39,.25)}

@@ -21,7 +21,7 @@
 .s-glow .gl-r-head .s-h2{margin:0}
 .s-glow .gl-tabs{display:flex;background:rgba(255,255,255,.08);border-radius:40px;padding:5px}
 .s-glow .gl-tabs button{position:relative;display:flex;gap:8px;align-items:center;background:none;border:0;color:#D9C9D1;font:700 15px var(--s-font);padding:10px 22px;border-radius:40px;cursor:pointer}
-.s-glow .gl-tabs button[aria-pressed=true]{color:#2D2229}
+.s-glow .gl-tabs button[aria-pressed=true]{color:#2D2229;background:#F3E1E7}
 .s-glow .gl-tabs button i{position:absolute;inset:0;background:#F3E1E7;border-radius:40px;z-index:-1}
 .s-glow .gl-tabs button{isolation:isolate}
 .s-glow .gl-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}

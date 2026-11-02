@@ -317,3 +317,6 @@
 .pc-name{font-size:16px}
 .pc-img{border-radius:calc(var(--s-radius) * .8)}
 @media (max-width:640px){.s-sec{padding:72px 0}}
+
+.pc-rate,.pp-rate{color:var(--s-fg)}
+.pc-rate svg,.pp-rate svg{color:var(--s-star,#e3a008)}

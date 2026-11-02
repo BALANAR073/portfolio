@@ -1,6 +1,6 @@
 /* Гараж на Северной — технический стиль: петроль, оранжевый, Russo One */
 .s-auto {
-  --petrol:#0E3B43; --petrol-2:#14505A; --petrol-3:#1E6470; --orange:#FF7A1A; --orange-d:#E8630A; --mist:#EEF2F3; --ink:#132327; --mute:#5A6B70; --line:#D3DCDE;
+  --petrol:#0E3B43; --petrol-2:#14505A; --petrol-3:#1E6470; --orange:#E8630A; --orange-d:#C9530A; --mist:#EEF2F3; --ink:#132327; --mute:#5A6B70; --line:#D3DCDE;
   --mnav-bg:#0E3B43; --mnav-fg:#fff; --mnav-font:"Russo One"; --toast-bg:#0E3B43; --toast-ic:#FF7A1A;
   font-family:"PT Sans",sans-serif; color:var(--ink); background:var(--mist); font-size:18px; line-height:1.5;
 
@@ -67,7 +67,7 @@
 
   .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
   .tabs button{position:relative;background:#fff;border:1.5px solid var(--line);border-radius:10px;padding:11px 20px;font:700 16px "PT Sans";cursor:pointer;color:var(--ink)}
-  .tabs button[aria-selected="true"]{color:#fff;border-color:var(--petrol)}
+  .tabs button[aria-selected="true"]{color:#fff;border-color:var(--petrol);background:var(--petrol)}
   .tab-bg{position:absolute;inset:-1.5px;background:var(--petrol);border-radius:10px}
   .tab-tx{position:relative}
   .panel{background:#fff;border-radius:16px;overflow:hidden;border:1px solid var(--line)}

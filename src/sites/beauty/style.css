@@ -60,7 +60,7 @@
   .m:hover img{transform:scale(1.05)}
   .m h3{font-size:26px}
   .m p{color:#D8BFCD;font-size:15px}
-  .m small{color:var(--gold);font-size:13px}
+  .m small{color:#9A7552;font-size:13px}
 
   .quote{text-align:center;background:var(--blush)}
   .quote .wrap{max-width:860px}
@@ -75,7 +75,7 @@
   .wsteps li.done i{background:var(--blush);border-color:var(--blush);color:var(--plum)}
   .pane h3{font-size:32px;color:var(--plum);margin-bottom:18px}
   .wg{margin-bottom:16px}
-  .wg>small{display:block;color:var(--gold);font-weight:600;margin-bottom:8px}
+  .wg>small{display:block;color:#9A7552;font-weight:600;margin-bottom:8px}
   .opts{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px}
   .opts button{background:var(--blush-2);border:1px solid var(--line);padding:14px 16px;text-align:left;font:inherit;cursor:pointer;color:var(--ink);transition:border-color .2s,background .2s}
   .opts button:hover{border-color:var(--plum);background:#fff}

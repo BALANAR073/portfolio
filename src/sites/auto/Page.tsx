@@ -67,7 +67,7 @@ function Prices() {
         <div className="tabs" role="tablist">
           {keys.map(k => (
             <button key={k} role="tab" aria-selected={tab === k} onClick={() => setTab(k)}>
-              {tab === k && <motion.span layoutId="auto-tab" className="tab-bg" transition={{ type: 'spring', stiffness: 400, damping: 34 }} />}
+              
               <span className="tab-tx">{d.prices[k].tab}</span>
             </button>
           ))}

@@ -64,7 +64,7 @@ function Schedule() {
     <section id="schedule" style={{ paddingTop: 0 }}>
       <div className="wrap">
         <div className="head"><Reveal><h2 className="t">Расписание</h2></Reveal><Reveal delay={0.1}><p className="s">Групповые занятия входят в любой абонемент. Отметьтесь заранее — придёт напоминание.</p></Reveal></div>
-        <div className="days">{days.map(x => <button key={x} type="button" aria-pressed={day === x} onClick={() => setDay(x)}>{day === x && <motion.span layoutId="fit-day" className="pill-bg" />}<span>{x}</span></button>)}</div>
+        <div className="days">{days.map(x => <button key={x} type="button" aria-pressed={day === x} onClick={() => setDay(x)}><span>{x}</span></button>)}</div>
         <div className="filters">{['Все', 'Сила', 'Кардио', 'Йога', 'Вода'].map(f => <button key={f} type="button" aria-pressed={flt === f} onClick={() => setFlt(f)}>{f}</button>)}</div>
         <div className="sched" aria-live="polite">
           <AnimatePresence mode="popLayout">
@@ -138,7 +138,7 @@ export default function Page() {
         <div className="wrap">
           <div className="head"><Reveal><h2 className="t">Абонементы</h2></Reveal><Reveal delay={0.1}><p className="s">Заморозка до 30 дней в каждом абонементе. Оплата частями — без переплаты.</p></Reveal></div>
           <div className="toggle" role="group" aria-label="Период оплаты">
-            {[false, true].map(y => <button key={String(y)} type="button" aria-pressed={year === y} onClick={() => setYear(y)}>{year === y && <motion.span layoutId="fit-tg" className="tg-bg" />}<span>{y ? 'Сразу на год −25%' : 'Помесячно'}</span></button>)}
+            {[false, true].map(y => <button key={String(y)} type="button" aria-pressed={year === y} onClick={() => setYear(y)}><span>{y ? 'Сразу на год −25%' : 'Помесячно'}</span></button>)}
           </div>
           <div className="plans">
             {plans.map((p, i) => {
@@ -147,7 +147,7 @@ export default function Page() {
                 <Reveal key={p.n} delay={i * 0.1} className={'plan' + (p.hot ? ' hot' : '')}>
                   <h3>{p.n}</h3>
                   <div className="old">{year ? p.m.toLocaleString('ru-RU') + ' ₽' : ''}</div>
-                  <div className="p"><motion.span key={price} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>{price.toLocaleString('ru-RU')}</motion.span> ₽<small>/мес</small></div>
+                  <div className="p"><motion.span key={price} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>{price.toLocaleString('ru-RU')}</motion.span><span>&nbsp;₽</span><small>/мес</small></div>
                   <ul>{p.items.map(x => <li key={x}>{x}</li>)}</ul>
                   <Jump to="trial" className="btn">Выбрать</Jump>
                 </Reveal>

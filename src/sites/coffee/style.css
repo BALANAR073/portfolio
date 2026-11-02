@@ -2,7 +2,7 @@
 .s-coffee .shop{--s-bg:#F3EDE3;--s-fg:#2A1E17;--s-muted:#7C6B5E;--s-line:#E2D7C6;--s-card:#EADFCD;--s-accent:#2F5D3A;--s-accent-fg:#fff;--s-radius:14px;--s-font:"Golos Text",system-ui,sans-serif;--s-display:Alegreya,Georgia,serif;--s-dw:700;--s-announce:#2A1E17;--s-badge:#C9752E;--s-ratio:1/1}
 .s-coffee .cf-logo{font:700 28px/1 Alegreya,serif;display:flex;flex-direction:column}
 .s-coffee .cf-logo small{font:500 10px "Golos Text";letter-spacing:.24em;text-transform:uppercase;color:var(--s-muted);margin-top:2px}
-.s-coffee .cf-kick{text-transform:uppercase;letter-spacing:.14em;font-size:13px;font-weight:600;color:#C9752E;margin-bottom:16px}
+.s-coffee .cf-kick{text-transform:uppercase;letter-spacing:.14em;font-size:13px;font-weight:600;color:#A85E1F;margin-bottom:16px}
 .s-coffee .cf-hero{padding:48px 0 20px}
 .s-coffee .cf-hero-in{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
 .s-coffee .cf-hero h1{font-size:clamp(44px,6vw,86px);line-height:.98;letter-spacing:-.02em}

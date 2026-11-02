@@ -26,7 +26,7 @@
   .hero{padding:60px 0 0}
   .hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:64px;align-items:end}
   .hero h1{font-size:clamp(50px,6.8vw,96px);font-weight:500;letter-spacing:-.01em}
-  .hero h1 i{color:var(--brass)}
+  .hero h1 i{color:#9A7744}
   .hero p{font-size:21px;color:var(--mute);margin:28px 0 36px;max-width:580px}
   .acts{display:flex;gap:26px;align-items:center;flex-wrap:wrap;padding-bottom:70px}
   .portrait{position:relative}
@@ -51,7 +51,7 @@
   .area:hover{padding-left:10px}
   .area h3{font-size:31px}
   .area p{grid-column:1/-1;color:var(--mute);font-size:17px}
-  .area .pr{color:var(--brass);font-weight:600;white-space:nowrap;align-self:center}
+  .area .pr{color:#8A6A36;font-weight:600;white-space:nowrap;align-self:center}
 
   .approach{background:var(--paper-2)}
   .approach .wrap{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
@@ -90,7 +90,7 @@
 
   .quote{position:relative;overflow:hidden;color:#fff;isolation:isolate}
   .quote>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
-  .quote::before{content:"";position:absolute;inset:0;background:rgba(27,42,65,.86);z-index:-1}
+  .quote::before{content:"";position:absolute;inset:0;background:rgba(27,42,65,.78);z-index:-1}
   .quote .wrap{max-width:900px;text-align:center}
   .quote blockquote{font-family:"Cormorant Garamond";font-size:clamp(30px,3.8vw,46px);font-style:italic;font-weight:500;line-height:1.25}
   .quote cite{display:block;margin-top:28px;font-style:normal;color:var(--brass-l)}
@@ -137,6 +137,8 @@
   @media (max-width:540px){
     .stats .wrap>div{padding:26px 14px}
     .stats b{font-size:38px}
+    .stats .wrap>div{min-width:0}
+    .stats .wrap>div>span{font-size:14px;overflow-wrap:anywhere}
     section{padding:70px 0}
     form,.check-l,.check-r{padding:26px}
     .name small{display:none}

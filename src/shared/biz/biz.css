@@ -30,7 +30,7 @@
 .bm-foot a:first-child{font-weight:700;font-size:20px;text-decoration:none}
 .ph{position:relative;padding:70px 0 60px;overflow:hidden}
 .ph.has-img{padding:150px 0 80px;color:#fff;margin-top:-76px;background:var(--b-dark)}
-.ph.has-img>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.45)}
+.ph.has-img>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.58)}
 .ph-in{position:relative}
 .ph-kick,.bsec-kick{text-transform:uppercase;letter-spacing:.14em;font-size:13px;font-weight:600;color:var(--b-accent);margin-bottom:14px}
 .ph.has-img .ph-kick{color:inherit;opacity:.8}
@@ -154,3 +154,5 @@
 .bf-word{font-family:var(--b-display);font-weight:var(--b-dw);color:var(--b-dark-fg);opacity:.12;margin-top:30px}
 .bsec{padding:110px 0}
 @media (max-width:900px){.bsec{padding:70px 0}}
+.bh-logo{max-width:62vw;overflow:hidden}
+.gal-i span{background:rgba(0,0,0,.72)}

@@ -31,3 +31,8 @@
 .mq span{display:inline-flex;align-items:center;gap:28px;padding-right:28px;font:var(--mq-weight,500) var(--mq-size,22px)/1 var(--mq-font,inherit);letter-spacing:-.01em}
 .mq i{font-style:normal;font-size:.6em;color:var(--mq-accent,currentColor);opacity:.8}
 .wordmark{display:block;overflow:hidden;font-size:clamp(64px,17vw,260px);line-height:.78;letter-spacing:-.05em;text-align:center;padding-top:30px;margin-bottom:-.06em;white-space:nowrap;user-select:none;opacity:.95}
+/* Защита вёрстки на телефонах с увеличенным шрифтом: элементы сеток могут сжиматься, длинные слова переносятся */
+.site *,.home *{min-width:0}
+.site :is(h1,h2,h3,h4,p,li,dd,dt,blockquote,figcaption,label,b,strong,a),.home :is(h1,h2,h3,p,li,dd,dt){overflow-wrap:break-word}
+.site :is(input,select,textarea),.home :is(input,select,textarea){max-width:100%}
+.site select{width:100%}

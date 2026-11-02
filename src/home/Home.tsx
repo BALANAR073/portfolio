@@ -148,15 +148,15 @@ export default function Home() {
               <p className="mb-3 text-[14px] font-bold uppercase tracking-[.14em] text-accent">Обо мне</p>
               <h2 className="h2">IT-образование и любовь к аккуратной вёрстке</h2>
               <div className="mt-6 space-y-4 text-[18px] leading-relaxed text-mute">
-                <p>Я из Казани, по образованию — специалист по прикладной информатике. Сейчас получаю второе высшее по программной инженерии и пишу дипломную работу.</p>
+                <p>Я из Казани. Окончил колледж по специальности «Прикладная информатика», сейчас заканчиваю высшее образование по программной инженерии — пишу дипломную работу.</p>
                 <p>Сайты начал делать ещё на чистом HTML и CSS, сегодня работаю на современном стеке — React и TypeScript. Это значит быстрые сайты без конструкторов и абонентской платы, которые легко развивать.</p>
                 <p>Мне важно, чтобы сайт не просто красиво выглядел, а приводил клиентов: понятная структура, честные тексты и удобная форма заявки.</p>
               </div>
             </Reveal>
             <div className="grid gap-4 sm:grid-cols-2">
               {[
-                [GraduationCap, 'Высшее образование', '«Прикладная информатика»', 'Диплом по IT-направлению'],
-                [BookOpen, 'Второе высшее', '«Программная инженерия»', 'Пишу дипломную работу'],
+                [GraduationCap, 'Среднее профессиональное', '«Прикладная информатика»', 'Диплом колледжа по IT'],
+                [BookOpen, 'Высшее образование', '«Программная инженерия»', 'Заканчиваю, пишу диплом'],
                 [MapPin, 'Казань', 'Работаю удалённо', 'С клиентами из любого города'],
                 [MessagesSquare, 'Только переписка', 'Telegram без созвонов', 'Все договорённости — в чате'],
               ].map(([I, k, t, d], i) => {
@@ -185,7 +185,7 @@ export default function Home() {
             <div className="tabs mt-8" role="tablist" aria-label="Тип сайта">
               {kinds.map(k => (
                 <button key={k.id} role="tab" type="button" aria-selected={tab === k.id} onClick={() => setTab(k.id)} className={'tab ' + (tab === k.id ? 'tab-on' : '')}>
-                  {tab === k.id && <motion.span layoutId="tab-bg" className="tab-bg" transition={{ type: 'spring', stiffness: 400, damping: 34 }} />}
+                  
                   <k.icon size={18} /><span className="t-long">{k.label}</span><span className="t-short">{k.short}</span><em>{count(k.id)}</em>
                 </button>
               ))}
@@ -268,7 +268,7 @@ export default function Home() {
         </section>
 
         <section id="contact" className="px-5 py-24">
-          <Reveal className="relative mx-auto max-w-[1240px] overflow-hidden rounded-[36px] bg-ink px-8 py-16 text-white md:px-16">
+          <Reveal className="relative mx-auto max-w-[1240px] overflow-hidden rounded-[36px] bg-ink px-6 py-14 text-white sm:px-8 md:px-16">
             <div className="hero-glow !opacity-60" aria-hidden />
             <div className="relative grid items-end gap-10 lg:grid-cols-[1.2fr_.8fr]">
               <div>
