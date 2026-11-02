@@ -60,7 +60,7 @@
   .m:hover img{transform:scale(1.05)}
   .m h3{font-size:26px}
   .m p{color:#D8BFCD;font-size:15px}
-  .m small{color:#9A7552;font-size:13px}
+  .m small{color:var(--gold);font-size:13px}
 
   .quote{text-align:center;background:var(--blush)}
   .quote .wrap{max-width:860px}
