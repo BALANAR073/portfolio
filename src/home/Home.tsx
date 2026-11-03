@@ -1,7 +1,7 @@
 import { motion, AnimatePresence, MotionConfig } from 'motion/react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowUpRight, Send, FolderGit2 as Github, Smartphone, Zap, Search, MessageSquare, BarChart3, ShieldCheck, Check, GraduationCap, BookOpen, MapPin, MessagesSquare, Code2, LayoutTemplate, Store } from 'lucide-react'
+import { ArrowUpRight, Send, FolderGit2 as Github, Smartphone, Zap, Search, MessageSquare, BarChart3, ShieldCheck, Check, GraduationCap, BookOpen, MapPin, MessagesSquare, Code2, LayoutTemplate, Store, ClipboardList } from 'lucide-react'
 import { sites, type SiteInfo } from '../sites/registry'
 import { u } from '../shared/img'
 import { Jump } from '../shared/Jump'
@@ -217,7 +217,7 @@ export default function Home() {
                   <p className="text-[46px] font-black leading-none tracking-tight">{s.p} ₽</p>
                   <ul className="mt-7 flex-1 space-y-2.5">{s.f.map(x => <li key={x} className={'flex gap-2 text-[15px] ' + (s.main ? 'text-white/90' : 'text-white/70')}><Check size={18} className="mt-0.5 flex-none" />{x}</li>)}</ul>
                   <div className="mt-8 grid grid-cols-2 gap-2">
-                    <a href={contacts.telegramUrl} target="_blank" rel="noopener" className={'rounded-xl py-3.5 text-center font-bold transition ' + (s.main ? 'bg-white text-ink hover:bg-white/90' : 'bg-white text-ink hover:bg-white/90')}>Заказать</a>
+                    <a href={`#/brief?type=${s.id}`} className={'rounded-xl py-3.5 text-center font-bold transition ' + (s.main ? 'bg-white text-ink hover:bg-white/90' : 'bg-white text-ink hover:bg-white/90')}>Заказать</a>
                     <button type="button" onClick={() => showKind(s.id)} className={'rounded-xl py-3.5 text-center font-bold transition ' + (s.main ? 'bg-white/15 hover:bg-white/25' : 'bg-white/10 hover:bg-white/20')}>Примеры</button>
                   </div>
                 </Reveal>
@@ -273,9 +273,10 @@ export default function Home() {
             <div className="relative grid items-end gap-10 lg:grid-cols-[1.2fr_.8fr]">
               <div>
                 <h2 className="text-[clamp(36px,5vw,64px)] font-black leading-[1] tracking-[-0.03em]">Нужен сайт? Напишите мне</h2>
-                <p className="mt-5 max-w-[520px] text-[19px] text-white/65">Расскажите в паре сообщений о бизнесе — отвечу, сколько это будет стоить и сколько займёт. Ни к чему не обязывает.</p>
+                <p className="mt-5 max-w-[520px] text-[19px] text-white/65">Расскажите в паре сообщений о бизнесе или заполните короткий бриф — отвечу, сколько это будет стоить и сколько займёт. Ни к чему не обязывает.</p>
               </div>
               <div className="grid gap-3">
+                <a href="#/brief" className="contact-l bg-white text-ink hover:bg-white/90"><span className="flex items-center gap-3"><ClipboardList size={20} /> Заполнить бриф</span><span className="text-mute">5 минут</span></a>
                 <a href={contacts.telegramUrl} target="_blank" rel="noopener" className="contact-l bg-accent hover:brightness-110"><span className="flex items-center gap-3"><Send size={20} /> Telegram</span><span className="text-white/80">{contacts.telegram}</span></a>
                 <a href={contacts.githubUrl} target="_blank" rel="noopener" className="contact-l bg-white/[.08] hover:bg-white/[.14]"><span className="flex items-center gap-3"><Github size={20} /> GitHub</span><span className="text-white/60">{contacts.github}</span></a>
               </div>

@@ -4,6 +4,7 @@ import { sites } from './sites/registry'
 import { ToastProvider } from './shared/Toast'
 
 const Home = lazy(() => import('./home/Home'))
+const Brief = lazy(() => import('./home/Brief'))
 
 function ScrollTop() {
   const { pathname } = useLocation()
@@ -22,6 +23,7 @@ export default function App() {
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/brief" element={<Brief />} />
           {sites.map(s => <Route key={s.slug} path={`/sites/${s.slug}/*`} element={<s.page />} />)}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
