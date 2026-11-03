@@ -75,7 +75,7 @@ const hoodie: CardSet = {
       <div className="hd-shade" />
       <div className="hd-tag">BASE / KZN</div>
       <div className="hd-big"><span>HEAVY</span><span>HOODIE</span></div>
-      <div className="hd-row"><b>420</b><span>г/м²<br />футер</span><i /> <b>OVER</b><span>size<br />крой</span></div>
+      <div className="hd-row"><b>480</b><span>г/м²<br />футер</span><i /> <b>OVER</b><span>size<br />крой</span></div>
     </Frame>,
     <Frame key="2" className="mp mp-hd hd-2">
       <p className="hd-k">01 — ткань</p>
@@ -109,7 +109,7 @@ const hoodie: CardSet = {
 }
 
 /* ---------- 3. Кофе в зёрнах ---------- */
-const CF = '1553292218-4892c2e7e1ae'
+const CF = '1651761483492-7d2e26dd3455'
 const coffee: CardSet = {
   id: 'coffee', title: 'Кофе Эфиопия Иргачеффе', niche: 'Продукты', market: 'Ozon', raw: CF,
   task: 'Крафтовые карточки для обжарочной: профиль вкуса вместо скучного списка, способы заваривания и честные «свежая обжарка» и сорт.',
@@ -117,11 +117,11 @@ const coffee: CardSet = {
     <Frame key="1" className="mp mp-cf">
       <div className="cf-paper" />
       <Ph id={CF} pos="50% 50%" className="cf-ph" />
-      <div className="cf-stamp">свежая<br /><b>обжарка</b><br />каждый вт</div>
+      <div className="cf-stamp">свежая<br /><b>обжарка</b><br />вт и пт</div>
       <div className="cf-txt">
         <p>Эфиопия · Иргачеффе</p>
         <h3>Цветочный<br /><em>и сладкий</em></h3>
-        <div className="cf-notes">{['жасмин', 'бергамот', 'персик'].map(t => <span key={t}>{t}</span>)}</div>
+        <div className="cf-notes">{['бергамот', 'жасмин', 'лимон'].map(t => <span key={t}>{t}</span>)}</div>
       </div>
       <div className="cf-foot"><span>100% арабика</span><span>250 г · в зёрнах</span></div>
     </Frame>,
@@ -152,7 +152,7 @@ const coffee: CardSet = {
       <Ph id={CF} pos="50% 60%" className="cf-ph4" />
       <div className="cf-box">
         <h3>Почему он свежий</h3>
-        {[[Flame, 'Обжариваем по вторникам — не храним месяцами'], [Package, 'Пакет с клапаном держит аромат 2 месяца'], [Truck, 'Отправляем в день обжарки']].map(([C, t]) => <p key={t as string}><I c={C as typeof Sun} />{t as string}</p>)}
+        {[[Flame, 'Обжариваем по вторникам и пятницам — не храним месяцами'], [Package, 'Пакет с клапаном держит аромат 2 месяца'], [Truck, 'Отправляем в день обжарки']].map(([C, t]) => <p key={t as string}><I c={C as typeof Sun} />{t as string}</p>)}
         <div className="cf-date">дата обжарки — на каждой пачке</div>
       </div>
     </Frame>,
@@ -253,7 +253,7 @@ const drip: CardSet = {
         <h3>10 чашек<br />свежего кофе</h3>
         <p>без кофемашины — нужна только кружка и кипяток</p>
       </div>
-      <div className="dr-tags"><span>☕ 4 сорта</span><span>⏱ 3 минуты</span><span>🎁 в подарок</span></div>
+      <div className="dr-tags"><span>☕ 3 сорта</span><span>⏱ 3 минуты</span><span>🎁 в подарок</span></div>
     </Frame>,
     <Frame key="2" className="mp mp-dr dr-2">
       <h3 className="dr-h">Как заварить</h3>

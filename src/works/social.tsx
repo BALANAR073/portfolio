@@ -10,13 +10,13 @@ const story = (id: string, title: string, niche: string, note: string, node: Rea
 const banner = (id: string, title: string, niche: string, note: string, node: ReactNode): Social => ({ id, kind: 'banner', title, niche, note, ar: 16 / 9, node })
 
 export const social: Social[] = [
-  post('barber', 'Акция на будни', 'Барбершоп', 'Пост 4:5 для ВК и Telegram. Акция крупно, условия — мелко, но читаемо.',
+  post('barber', 'Скидка новым клиентам', 'Барбершоп', 'Пост 4:5 для ВК и Telegram. Акция крупно, условия — мелко, но читаемо.',
     <Frame ratio={P('4 / 5')} className="so so-br">
       <Ph id="1647140655214-e4a2d914971f" pos="50% 40%" />
       <div className="br-shade" />
       <p className="br-logo">БОРОДА<span>барбершоп</span></p>
-      <div className="br-off"><b>−20%</b><span>стрижка + борода</span></div>
-      <div className="br-foot"><p>Пн–Чт с 11:00 до 16:00</p><p><MapPin />ул. Баумана, 15</p></div>
+      <div className="br-off"><b>−20%</b><span>на первую стрижку</span></div>
+      <div className="br-foot"><p>Для новых клиентов</p><p><MapPin />ул. Баумана, 44</p></div>
     </Frame>),
   post('fitness', 'Первая тренировка', 'Фитнес-клуб', 'Яркий пост в фирменном неоне клуба: оффер, три причины и призыв.',
     <Frame ratio="4 / 5" className="so so-ft">
@@ -24,7 +24,7 @@ export const social: Social[] = [
       <div className="ft-txt">
         <p className="ft-k">ПУЛЬС · фитнес-клуб</p>
         <h3>Первая<br />тренировка<br /><em>бесплатно</em></h3>
-        <ul>{['Персональный разбор техники', 'Замер состава тела', 'План на первый месяц'].map(t => <li key={t}><Check />{t}</li>)}</ul>
+        <ul>{['Знакомство с тренером', 'Разбор техники', 'Подбор абонемента'].map(t => <li key={t}><Check />{t}</li>)}</ul>
       </div>
       <span className="ft-btn">Записаться <ArrowRight /></span>
     </Frame>),
@@ -34,7 +34,7 @@ export const social: Social[] = [
       <p className="cl-new">новый лот</p>
       <h3>Кения<br /><em>Ньери</em></h3>
       <p className="cl-notes">чёрная смородина · грейпфрут · тростниковый сахар</p>
-      <div className="cl-foot"><span>Зерно · обжарочная</span><span>от 690 ₽</span></div>
+      <div className="cl-foot"><span>Зерно · обжарочная</span><span>1 290 ₽ · 250 г</span></div>
     </Frame>),
   post('beauty', 'Свободные окна', 'Салон красоты', 'Пост для быстрого заполнения записи: окна на неделю — конкретные даты и время.',
     <Frame ratio="4 / 5" className="so so-bt">
@@ -59,7 +59,7 @@ export const social: Social[] = [
       <div className="kd-blob kd-b1" /><div className="kd-blob kd-b2" />
       <div className="kd-ph"><Ph id="1578349035260-9f3d4042f1f7" /></div>
       <h3>Набор<br />в группы!</h3>
-      <div className="kd-ages">{[['3–4', 'года'], ['5–6', 'лет'], ['7+', 'лет']].map(([a, b]) => <span key={a}><b>{a}</b>{b}</span>)}</div>
+      <div className="kd-ages">{[['1,5–3', 'года'], ['3–5', 'лет'], ['5–7', 'лет']].map(([a, b]) => <span key={a}><b>{a}</b>{b}</span>)}</div>
       <p className="kd-free"><Gift />Пробное занятие бесплатно</p>
     </Frame>),
   post('dental', 'Экспертный пост', 'Стоматология', 'Карусель «миф или правда» — формат, который сохраняют и пересылают.',
@@ -75,8 +75,8 @@ export const social: Social[] = [
       <Ph id="1583847268964-b28dc8f51f92" className="rm-ph" />
       <div className="rm-box">
         <p className="rm-k">КВАДРАТ / ремонт квартир</p>
-        <h3>Смета за 1 день.<br />Цена не растёт.</h3>
-        <div className="rm-nums"><div><b>3 года</b><span>гарантия</span></div><div><b>120+</b><span>объектов</span></div><div><b>0 ₽</b><span>замер</span></div></div>
+        <h3>Смета за 2 дня.<br />Цена не растёт.</h3>
+        <div className="rm-nums"><div><b>0 ₽</b><span>замер</span></div><div><b>2 дня</b><span>до сметы</span></div><div><b>87</b><span>объектов в 2025</span></div></div>
       </div>
     </Frame>),
   story('flowers', 'Предзаказ к Новому году', 'Доставка цветов', 'Сторис 9:16: всё важное — в центре, чтобы не закрывали кнопки Instagram и ВК.',
@@ -93,24 +93,24 @@ export const social: Social[] = [
       <div className="cy-card">
         <p>мастер-класс</p>
         <h3>Гончарный<br /><em>круг</em></h3>
-        <div className="cy-info"><span><CalendarDays />суббота, 14:00</span><span><Clock />2,5 часа</span><span><Sparkles />2 изделия ваши</span></div>
-        <b>2 900 ₽</b>
+        <div className="cy-info"><span><CalendarDays />суббота, 14:00</span><span><Clock />2,5 часа</span><span><Sparkles />2–3 изделия ваши</span></div>
+        <b>3 500 ₽</b>
       </div>
     </Frame>),
   story('gym', 'Расписание дня', 'Фитнес-клуб', 'Ежедневная сторис с расписанием — шаблон, который клуб заполняет сам.',
     <Frame ratio="9 / 16" className="so so-sc">
       <p className="sc-day">СЕГОДНЯ<br /><b>ЧТ</b></p>
-      <div className="sc-list">{[['07:30', 'Функционал', 'Артём'], ['10:00', 'Пилатес', 'Ольга'], ['18:30', 'Кроссфит', 'Марат'], ['19:30', 'Растяжка', 'Алина'], ['20:30', 'Бокс', 'Ильдар']].map(([t, n, c]) => <div key={t}><b>{t}</b><span>{n}</span><em>{c}</em></div>)}</div>
+      <div className="sc-list">{[['07:30', 'Функционал', 'Артём'], ['10:00', 'Пилатес', 'Юлия'], ['18:30', 'Кроссфит', 'Максим'], ['19:30', 'Растяжка', 'Ксения'], ['20:30', 'Бокс', 'Илья']].map(([t, n, c]) => <div key={t}><b>{t}</b><span>{n}</span><em>{c}</em></div>)}</div>
       <p className="sc-foot">ПУЛЬС · запись в приложении</p>
     </Frame>),
-  banner('auto', 'Баннер на сайт', 'Автосервис', 'Баннер 16:9 для первого экрана сайта и Яндекс Бизнеса: акция и телефон.',
+  banner('auto', 'Баннер на сайт', 'Автосервис', 'Баннер 16:9 для первого экрана сайта и Яндекс Бизнеса: услуга, цена и телефон.',
     <Frame ratio="16 / 9" className="so so-au">
       <Ph id="1727893119356-1702fe921cf9" pos="50% 50%" className="au-ph" />
       <div className="au-txt">
         <p className="au-k">ГАРАЖ НА СЕВЕРНОЙ</p>
-        <h3>Шиномонтаж<br /><em>от 1 600 ₽</em></h3>
-        <p className="au-s">4 колеса · балансировка · без записи</p>
-        <span className="au-ph2"><Phone />+7 (843) 200-00-00</span>
+        <h3>ТО-1<br /><em>от 3 200 ₽</em></h3>
+        <p className="au-s">масло, фильтры, проверка 30 узлов · 1,5 часа</p>
+        <span className="au-ph2"><Phone />+7 900 000-00-00</span>
       </div>
     </Frame>),
   banner('school', 'Рекламный баннер', 'Онлайн-школа', 'Баннер для рекламы во ВКонтакте: понятный оффер и кнопка.',
@@ -121,7 +121,7 @@ export const social: Social[] = [
         <span className="sh-btn">Пройти тест уровня</span>
       </div>
       <div className="sh-ph"><Ph id="1616587894289-86480e533129" /></div>
-      <div className="sh-rate"><Star /><b>4,9</b><span>1 200 учеников</span></div>
+      <div className="sh-rate"><Star /><b>Тест уровня</b><span>за 5 минут</span></div>
     </Frame>),
   { id: 'vk', kind: 'cover', title: 'Обложка сообщества ВК', niche: 'Кухни на заказ', note: 'Широкая обложка 3:1: название, оффер и контакты читаются и на телефоне.', ar: 3,
     node: (
