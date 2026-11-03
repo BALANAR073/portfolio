@@ -96,3 +96,20 @@
 .home .brief-card:hover { border-color: var(--color-ink); }
 .home .brief-card-on, .home .brief-card-on:hover { background: var(--color-ink); border-color: var(--color-ink); color: #fff; }
 .home .chip:focus-visible, .home .brief-card:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
+
+/* Превью дизайна и текстов на главной */
+.home .wp-grid { display: grid; gap: 20px; }
+.home .wp-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.home .wp-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 1000px) { .home .wp-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } .home .wp-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .home .wp-grid { gap: 12px; } .home .wp-3 { grid-template-columns: 1fr; } }
+.home .wp-i { display: block; border-radius: 18px; overflow: hidden; background: #fff; box-shadow: 0 14px 30px -18px rgba(15,23,32,.4); transition: transform .25s; }
+.home .wp-i:hover { transform: translateY(-4px); }
+.home .wp-cap { display: block; padding: 12px 14px 14px; font-size: 14px; color: var(--color-mute); line-height: 1.35; }
+.home .wp-cap b { display: block; color: var(--color-ink); font-size: 15px; }
+.home .wp-t { display: flex; flex-direction: column; gap: 10px; background: #fff; border-radius: 20px; padding: 22px; transition: transform .25s; }
+.home .wp-t:hover { transform: translateY(-4px); }
+.home .wp-k { align-self: flex-start; font-size: 13px; font-weight: 700; color: var(--color-accent); background: var(--color-paper); padding: 4px 10px; border-radius: 20px; }
+.home .wp-t b { font-size: 19px; line-height: 1.2; }
+.home .wp-t p { font-size: 15px; color: var(--color-mute); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+@media (max-width: 560px) { .home .tabs { grid-template-columns: repeat(3, 1fr); } }

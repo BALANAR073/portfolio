@@ -1,7 +1,7 @@
 import { motion, AnimatePresence, MotionConfig } from 'motion/react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowUpRight, Send, FolderGit2 as Github, Smartphone, Zap, Search, MessageSquare, BarChart3, ShieldCheck, Check, GraduationCap, BookOpen, MapPin, MessagesSquare, Code2, LayoutTemplate, Store, ClipboardList } from 'lucide-react'
+import { ArrowUpRight, Send, FolderGit2 as Github, Smartphone, Zap, Search, MessageSquare, BarChart3, ShieldCheck, Check, GraduationCap, BookOpen, MapPin, MessagesSquare, Code2, LayoutTemplate, Store, ClipboardList, ShoppingBag, Megaphone, PenLine } from 'lucide-react'
 import { sites, type SiteInfo } from '../sites/registry'
 import { u } from '../shared/img'
 import { Jump } from '../shared/Jump'
@@ -10,18 +10,28 @@ import { Accordion } from '../shared/Accordion'
 import { useScrolled } from '../shared/hooks'
 import { contacts } from './contacts'
 import { LivePreview } from './LivePreview'
+import { WorksPreview, worksCount, type WorkKind } from './WorksPreview'
 import './home.css'
 
 type Kind = SiteInfo['type']
-const kinds: { id: Kind; label: string; short: string; icon: typeof Code2; intro: string }[] = [
+type Tab = Kind | WorkKind
+const kinds: { id: Tab; label: string; short: string; icon: typeof Code2; intro: string }[] = [
   { id: 'landing', label: 'Лендинги', short: 'Лендинги', icon: Code2, intro: 'Одностраничные сайты под одну задачу: записаться, оставить заявку, рассчитать стоимость. Подходят для услуг, мастеров и небольших компаний.' },
   { id: 'bizcard', label: 'Сайты-визитки', short: 'Визитки', icon: LayoutTemplate, intro: 'Многостраничные сайты компаний: услуги и цены, команда, работы и контакты — каждое на своей странице. Внутри работает навигация по разделам.' },
   { id: 'shop', label: 'Интернет-магазины', short: 'Магазины', icon: Store, intro: 'Каталог с фильтрами, карточки товаров, избранное, корзина и оформление заказа с промокодом. Положите что-нибудь в корзину — всё работает.' },
+  { id: 'cards', label: 'Карточки', short: 'Карточки', icon: ShoppingBag, intro: 'Инфографика для Wildberries и Ozon: обложка, которая выделяется в выдаче, и слайды с преимуществами, составом, размерами и инструкцией.' },
+  { id: 'social', label: 'Соцсети', short: 'Соцсети', icon: Megaphone, intro: 'Посты, сторис, рекламные баннеры и обложки сообществ — в фирменном стиле бизнеса.' },
+  { id: 'texts', label: 'Тексты', short: 'Тексты', icon: PenLine, intro: 'Описания товаров для маркетплейсов, тексты для сайтов, SEO-статьи, контент-планы, ответы на отзывы и рекламные объявления.' },
 ]
 const prices = [
   { id: 'landing' as Kind, t: 'Лендинг', p: '8 000', d: 'от 3 дней', f: ['Одна страница под вашу задачу', 'Структура и тексты — с меня', 'Адаптив под телефоны', 'Форма заявки с отправкой в Telegram', 'Калькулятор, квиз или запись — по задаче'] },
   { id: 'bizcard' as Kind, t: 'Сайт-визитка', p: '20 000', d: 'от 1 недели', f: ['До 5–6 страниц', 'Услуги, цены, команда, галерея', 'Удобное меню на телефоне', 'Заявки в Telegram', 'Базовое SEO и Яндекс Метрика'], main: true },
   { id: 'shop' as Kind, t: 'Интернет-магазин', p: '50 000', d: 'от 3 недель', f: ['Каталог с фильтрами и поиском', 'Карточки товаров с вариантами', 'Корзина, избранное, промокоды', 'Оформление заказа и доставка', 'Заказы приходят в Telegram'] },
+]
+const quick: { id: WorkKind; t: string; items: [string, string][] }[] = [
+  { id: 'cards', t: 'Карточки для маркетплейсов', items: [['Один слайд инфографики', 'от 500 ₽'], ['Набор из 5 слайдов', 'от 2 000 ₽'], ['Редизайн готовой карточки', 'от 400 ₽']] },
+  { id: 'social', t: 'Соцсети и баннеры', items: [['Пост или сторис', 'от 400 ₽'], ['Баннер для сайта или рекламы', 'от 700 ₽'], ['Обложка сообщества ВК', 'от 1 000 ₽']] },
+  { id: 'texts', t: 'Тексты', items: [['Описание товара для WB / Ozon', 'от 300 ₽'], ['SEO-статья до 4 000 знаков', 'от 1 500 ₽'], ['Контент-план на неделю с текстами', 'от 2 500 ₽'], ['Ответ на отзыв', 'от 100 ₽']] },
 ]
 const extras = [
   ['Дополнительная страница', 'от 2 000 ₽'],
@@ -51,7 +61,8 @@ const faq = [
   ['Как проходит оплата?', 'Предоплата 50% после согласования брифа, остаток — когда сайт готов и вам нравится.'],
   ['Смогу сам менять тексты и цены?', 'Да. Сделаю так, чтобы основной контент правился в одном месте, и покажу, как это делать. Или правлю сам — первый месяц бесплатно.'],
   ['Работы в портфолио — реальные компании?', 'Это демо-проекты в популярных нишах, компании вымышленные. Зато все функции на них работают по-настоящему: калькуляторы, запись, фильтры, корзина.'],
-  ['Чего вы не делаете?', 'Сложные веб-сервисы, мобильные приложения и интеграции с 1С сейчас не беру — сосредоточен на лендингах, сайтах-визитках и небольших магазинах.'],
+  ['Чего вы не делаете?', 'Сложные веб-сервисы, мобильные приложения, 3D-визуализацию и интеграции с 1С сейчас не беру — сосредоточен на сайтах, карточках, дизайне для соцсетей и текстах.'],
+  ['Можно заказать одну карточку или один пост?', 'Да. Небольшие задачи беру от 100–500 ₽ — цены в прайсе выше. Часто с них и начинаем, а потом клиенты возвращаются за сайтом.'],
 ]
 
 function Browser({ s, className = '', live = false }: { s: SiteInfo; className?: string; live?: boolean }) {
@@ -87,11 +98,12 @@ function WorkCard({ s, i }: { s: SiteInfo; i: number }) {
 
 export default function Home() {
   const scrolled = useScrolled()
-  const [tab, setTab] = useState<Kind>('landing')
+  const [tab, setTab] = useState<Tab>('landing')
   const kind = kinds.find(k => k.id === tab)!
   const list = sites.filter(s => s.type === tab)
-  const count = (k: Kind) => sites.filter(s => s.type === k).length
-  const showKind = (k: Kind) => { setTab(k); document.getElementById('works')?.scrollIntoView({ behavior: 'smooth' }) }
+  const isSite = (k: Tab): k is Kind => k === 'landing' || k === 'bizcard' || k === 'shop'
+  const count = (k: Tab) => isSite(k) ? sites.filter(s => s.type === k).length : worksCount[k]
+  const showKind = (k: Tab) => { setTab(k); document.getElementById('works')?.scrollIntoView({ behavior: 'smooth' }) }
   const fan = (['landing', 'bizcard', 'shop'] as Kind[]).map((k, i) => sites.filter(s => s.type === k)[[1, 3, 0][i]] || sites.find(s => s.type === k)!)
 
   return (
@@ -99,7 +111,7 @@ export default function Home() {
       <div className="home">
         <header className={'fixed inset-x-0 top-0 z-50 transition-all ' + (scrolled ? 'bg-white/85 shadow-[0_1px_0_#e5e7eb] backdrop-blur-md' : '')}>
           <div className="mx-auto flex h-[72px] max-w-[1240px] items-center justify-between gap-6 px-5">
-            <a href="#/" className="flex items-center gap-2.5 text-[20px] font-black tracking-tight"><span className="grid h-9 w-9 place-items-center rounded-xl bg-ink text-accent">Д</span><span className="leading-none">Дмитрий<small className="block text-[12px] font-semibold tracking-normal text-mute">разработка сайтов</small></span></a>
+            <a href="#/" className="flex items-center gap-2.5 text-[20px] font-black tracking-tight"><span className="grid h-9 w-9 place-items-center rounded-xl bg-ink text-accent">Д</span><span className="leading-none">Дмитрий<small className="block text-[12px] font-semibold tracking-normal text-mute">сайты и дизайн</small></span></a>
             <nav className="hidden gap-8 text-[15px] font-medium text-mute md:flex">
               <Jump to="about" className="hover:text-ink">Обо мне</Jump><Jump to="works" className="hover:text-ink">Работы</Jump><Jump to="prices" className="hover:text-ink">Цены</Jump><Jump to="process" className="hover:text-ink">Как работаю</Jump><Jump to="contact" className="hover:text-ink">Контакты</Jump>
             </nav>
@@ -114,17 +126,17 @@ export default function Home() {
             <div className="min-w-0">
               <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="mb-6 inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-3.5 py-1.5 text-[14px] font-medium text-mute"><span className="h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_0_3px_rgba(16,185,129,.2)]" /> Беру первых клиентов по стартовым ценам</motion.p>
               <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.05 }} className="text-[clamp(42px,6vw,84px)] font-black leading-[0.98] tracking-[-0.035em]">
-                Привет, я Дмитрий. Делаю <span className="text-accent">сайты для бизнеса</span>
+                Привет, я Дмитрий. Делаю <span className="text-accent">сайты и дизайн для бизнеса</span>
               </motion.h1>
               <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }} className="mt-7 max-w-[560px] text-[20px] leading-relaxed text-mute">
-                Лендинги, сайты-визитки и интернет-магазины — современно, быстро и удобно на телефоне. Заявки с сайта приходят прямо в Telegram, а общаемся мы только в переписке.
+                Лендинги, сайты-визитки и интернет-магазины, а ещё карточки для маркетплейсов, посты, баннеры и тексты. Современно, быстро и удобно на телефоне, а общаемся мы только в переписке.
               </motion.p>
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.45 }} className="mt-9 flex flex-wrap gap-3">
                 <Jump to="works" className="btn-accent">Смотреть работы</Jump>
                 <a href={contacts.telegramUrl} target="_blank" rel="noopener" className="btn-line"><Send size={18} /> Обсудить сайт</a>
               </motion.div>
               <motion.dl initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className="mt-12 grid max-w-[540px] grid-cols-3 gap-6 border-t border-neutral-200 pt-6">
-                <div><dt className="text-[14px] text-mute">работ в портфолио</dt><dd className="text-[26px] sm:text-[34px] font-black whitespace-nowrap">{sites.length}</dd></div>
+                <div><dt className="text-[14px] text-mute">работ в портфолио</dt><dd className="text-[26px] sm:text-[34px] font-black whitespace-nowrap">{sites.length + worksCount.cards + worksCount.social + worksCount.texts}</dd></div>
                 <div><dt className="text-[14px] text-mute">лендинг от</dt><dd className="text-[26px] sm:text-[34px] font-black whitespace-nowrap">8 000 ₽</dd></div>
                 <div><dt className="text-[14px] text-mute">срок от</dt><dd className="text-[26px] sm:text-[34px] font-black whitespace-nowrap">3 дней</dd></div>
               </motion.dl>
@@ -173,7 +185,7 @@ export default function Home() {
             </div>
           </div>
           <Reveal className="mx-auto mt-16 flex max-w-[1240px] flex-wrap items-center justify-between gap-6 rounded-3xl border border-neutral-200 p-7 md:p-9">
-            <p className="max-w-[720px] text-[20px] font-semibold leading-snug">Предлагаю посмотреть мои работы: {sites.length} сайтов в популярных нишах — от барбершопа до магазина цветов. Каждый открывается и работает по-настоящему.</p>
+            <p className="max-w-[720px] text-[20px] font-semibold leading-snug">Предлагаю посмотреть мои работы: {sites.length} сайтов в популярных нишах, которые открываются и работают по-настоящему, а также {worksCount.cards} карточек для маркетплейсов, {worksCount.social} макетов для соцсетей и {worksCount.texts} примеров текстов.</p>
             <Jump to="works" className="btn-accent">К работам <ArrowUpRight size={18} /></Jump>
           </Reveal>
         </section>
@@ -193,11 +205,13 @@ export default function Home() {
             <AnimatePresence mode="wait">
               <motion.p key={tab} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} className="mt-6 max-w-[720px] text-[18px] leading-relaxed text-mute">{kind.intro}</motion.p>
             </AnimatePresence>
-            <motion.div layout className="mt-10 grid gap-6 md:grid-cols-2">
-              <AnimatePresence mode="popLayout">
-                {list.map((s, i) => <WorkCard key={s.slug} s={s} i={i} />)}
-              </AnimatePresence>
-            </motion.div>
+            {isSite(tab) ? (
+              <motion.div layout className="mt-10 grid gap-6 md:grid-cols-2">
+                <AnimatePresence mode="popLayout">
+                  {list.map((s, i) => <WorkCard key={s.slug} s={s} i={i} />)}
+                </AnimatePresence>
+              </motion.div>
+            ) : <WorksPreview kind={tab} />}
           </div>
         </section>
 
@@ -223,6 +237,18 @@ export default function Home() {
                 </Reveal>
               ))}
             </div>
+            <Reveal className="mt-6 rounded-3xl bg-white/[.06] p-8 ring-1 ring-white/10">
+              <div className="flex flex-wrap items-baseline justify-between gap-3"><h3 className="text-[24px] font-extrabold">Быстрые задачи</h3><p className="text-[15px] text-white/60">Срок — от одного дня</p></div>
+              <div className="mt-6 grid gap-8 md:grid-cols-3">
+                {quick.map(q => (
+                  <div key={q.id} className="flex flex-col">
+                    <p className="font-bold text-accent">{q.t}</p>
+                    <dl className="mt-2 flex-1">{q.items.map(([k, v]) => <div key={k} className="flex items-baseline justify-between gap-4 border-b border-white/10 py-3 last:border-0"><dt className="text-white/75">{k}</dt><dd className="whitespace-nowrap font-bold">{v}</dd></div>)}</dl>
+                    <button type="button" onClick={() => showKind(q.id)} className="mt-4 self-start rounded-xl bg-white/10 px-4 py-2.5 text-[15px] font-bold transition hover:bg-white/20">Примеры</button>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
             <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_1.4fr]">
               <Reveal className="rounded-3xl bg-white/[.06] p-8 ring-1 ring-white/10">
                 <h3 className="text-[22px] font-extrabold">Дополнительно</h3>

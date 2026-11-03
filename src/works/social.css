@@ -1,0 +1,156 @@
+/* Посты, сторис, баннеры. Размеры — в cqw от ширины макета. */
+.so { font-family: Manrope, Onest, sans-serif; }
+
+/* Барбершоп */
+.so-br { background: #111; color: #F1E9DC; }
+.so-br .br-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.1) 35%, rgba(0,0,0,.2) 55%, rgba(0,0,0,.88)); }
+.so-br .br-logo { position: absolute; left: 7cqw; top: 7cqw; font-family: Oswald, sans-serif; font-size: 7cqw; font-weight: 700; letter-spacing: .12em; line-height: 1; }
+.so-br .br-logo span { display: block; font-family: Manrope, sans-serif; font-size: 3cqw; font-weight: 600; letter-spacing: .3em; color: #C8A165; margin-top: 1.4cqw; }
+.so-br .br-off { position: absolute; left: 7cqw; right: 7cqw; bottom: 25cqw; }
+.so-br .br-off b { display: block; font-family: Oswald, sans-serif; font-size: 33cqw; line-height: .85; color: #C8A165; }
+.so-br .br-off span { font-family: Oswald, sans-serif; font-size: 7.4cqw; text-transform: uppercase; letter-spacing: .02em; }
+.so-br .br-foot { position: absolute; left: 7cqw; right: 7cqw; bottom: 7cqw; display: flex; justify-content: space-between; gap: 3cqw; border-top: .3cqw solid rgba(241,233,220,.35); padding-top: 4cqw; font-size: 3.4cqw; font-weight: 700; }
+.so-br .br-foot p { display: flex; align-items: center; gap: 1.4cqw; }
+.so-br .br-foot svg { color: #C8A165; }
+
+/* Фитнес */
+.so-ft { background: #5B21FF; color: #fff; }
+.so-ft .ft-ph { inset: 0 0 0 54%; width: 46%; filter: saturate(1.1); clip-path: polygon(18% 0, 100% 0, 100% 100%, 0 100%); }
+.so-ft .ft-txt { position: absolute; left: 7cqw; top: 8cqw; width: 48cqw; }
+.so-ft .ft-k { font-size: 3cqw; font-weight: 800; letter-spacing: .14em; color: #C6FF3D; }
+.so-ft h3 { font-family: Unbounded, sans-serif; font-size: 8cqw; font-weight: 900; line-height: .98; margin-top: 4cqw; letter-spacing: -.02em; }
+.so-ft h3 em { font-style: normal; background: #C6FF3D; color: #1A0A4A; padding: 0 1.6cqw; display: inline-block; margin-top: 1.6cqw; transform: rotate(-2deg); }
+.so-ft ul { margin-top: 8cqw; display: grid; gap: 3cqw; font-size: 3.4cqw; font-weight: 700; }
+.so-ft li { display: flex; gap: 2cqw; align-items: center; }
+.so-ft li svg { color: #C6FF3D; font-size: 4.6cqw; }
+.so-ft .ft-btn { position: absolute; left: 7cqw; bottom: 8cqw; display: inline-flex; align-items: center; gap: 2cqw; background: #C6FF3D; color: #1A0A4A; font-family: Unbounded, sans-serif; font-weight: 700; font-size: 4cqw; padding: 3.6cqw 6cqw; border-radius: 10cqw; }
+
+/* Кофейня */
+.so-cl { background: #2F5D3A; color: #F3E9D6; padding: 7cqw; font-family: Manrope, sans-serif; }
+.so-cl .cl-ph { position: absolute; right: 7cqw; top: 7cqw; width: 44cqw; height: 54cqw; border-radius: 25cqw 25cqw 3cqw 3cqw; overflow: hidden; }
+.so-cl .cl-new { font-family: Caveat, cursive; font-size: 9cqw; color: #F2C14E; transform: rotate(-6deg); margin-top: 6cqw; }
+.so-cl h3 { position: absolute; left: 7cqw; bottom: 30cqw; font-family: 'Playfair Display', serif; font-size: 17cqw; font-weight: 800; line-height: .9; }
+.so-cl h3 em { font-style: italic; font-weight: 600; color: #F2C14E; }
+.so-cl .cl-notes { position: absolute; left: 7cqw; right: 7cqw; bottom: 17cqw; font-size: 3.8cqw; font-weight: 600; line-height: 1.35; }
+.so-cl .cl-foot { position: absolute; left: 7cqw; right: 7cqw; bottom: 7cqw; display: flex; justify-content: space-between; border-top: .3cqw solid rgba(243,233,214,.35); padding-top: 3.4cqw; font-size: 3.4cqw; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; }
+
+/* Салон */
+.so-bt { background: #F4ECE6; color: #3A2A2E; }
+.so-bt .bt-ph { inset: 0 0 auto 0; height: 52%; }
+.so-bt .bt-card { position: absolute; left: 6cqw; right: 6cqw; bottom: 6cqw; background: #FFFBF7; border-radius: 4cqw; padding: 6cqw; box-shadow: 0 3cqw 8cqw rgba(58,42,46,.18); }
+.so-bt .bt-k { font-size: 2.9cqw; text-transform: uppercase; letter-spacing: .16em; color: #A47B5B; font-weight: 700; }
+.so-bt h3 { font-family: 'Playfair Display', serif; font-size: 7.6cqw; font-weight: 600; line-height: 1.05; margin-top: 2.4cqw; }
+.so-bt .bt-slots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2cqw; margin-top: 5cqw; }
+.so-bt .bt-slots div { border: .3cqw solid #E2CFC0; border-radius: 3cqw; padding: 3cqw 1cqw; text-align: center; display: grid; gap: .8cqw; }
+.so-bt .bt-slots b { font-size: 3.2cqw; color: #A47B5B; text-transform: uppercase; }
+.so-bt .bt-slots span { font-size: 4.6cqw; font-weight: 800; }
+.so-bt .bt-slots em { font-style: normal; font-size: 2.7cqw; color: #7d6a6e; }
+.so-bt .bt-cta { margin-top: 5cqw; font-size: 3.5cqw; font-weight: 700; color: #8E5C74; }
+
+/* Клининг */
+.so-cn { background: #1E7BF2; color: #fff; padding: 7cqw; }
+.so-cn .cn-num { position: absolute; right: -4cqw; top: -10cqw; font-family: Unbounded, sans-serif; font-size: 72cqw; font-weight: 900; line-height: 1; color: #5EA2FF; z-index: -1; }
+.so-cn h3 { font-family: Unbounded, sans-serif; font-weight: 700; font-size: 8.4cqw; line-height: 1.05; margin-top: 4cqw; }
+.so-cn .cn-ph { position: absolute; left: 7cqw; right: 7cqw; bottom: 16cqw; height: 56cqw; border-radius: 5cqw; overflow: hidden; border: 1.4cqw solid #fff; }
+.so-cn .cn-swipe { position: absolute; right: 7cqw; bottom: 6.4cqw; display: flex; gap: 1.6cqw; align-items: center; font-size: 3.6cqw; font-weight: 800; }
+.so-cn .cn-logo { position: absolute; left: 7cqw; bottom: 6.4cqw; font-size: 3.6cqw; font-weight: 800; opacity: .85; }
+
+/* Детский центр */
+.so-kd { background: #FFF3E0; color: #2B2340; font-family: Comfortaa, Manrope, sans-serif; }
+.so-kd .kd-blob { position: absolute; border-radius: 50%; z-index: -1; }
+.so-kd .kd-b1 { width: 60cqw; height: 60cqw; background: #FFC94D; left: -16cqw; top: -18cqw; }
+.so-kd .kd-b2 { width: 40cqw; height: 40cqw; background: #7FD1C7; right: -10cqw; bottom: 20cqw; }
+.so-kd .kd-ph { position: absolute; right: 7cqw; top: 8cqw; width: 52cqw; height: 52cqw; border-radius: 50%; overflow: hidden; border: 1.6cqw solid #fff; box-shadow: 0 2cqw 6cqw rgba(43,35,64,.15); }
+.so-kd h3 { position: absolute; left: 7cqw; top: 58cqw; font-size: 12cqw; font-weight: 700; line-height: 1; color: #FF7A59; }
+.so-kd .kd-ages { position: absolute; left: 7cqw; right: 7cqw; bottom: 20cqw; display: flex; gap: 2.4cqw; }
+.so-kd .kd-ages span { flex: 1; background: #fff; border-radius: 4cqw; padding: 3cqw; text-align: center; font-size: 3.2cqw; font-weight: 700; }
+.so-kd .kd-ages b { display: block; font-size: 7cqw; color: #2B2340; }
+.so-kd .kd-free { position: absolute; left: 7cqw; right: 7cqw; bottom: 7cqw; display: flex; gap: 2.4cqw; align-items: center; justify-content: center; background: #2B2340; color: #fff; border-radius: 10cqw; padding: 3.4cqw; font-size: 3.8cqw; font-weight: 700; }
+.so-kd .kd-free svg { color: #FFC94D; }
+
+/* Стоматология */
+.so-dn { background: #F2FAF8; color: #0F2E2A; padding: 8cqw 7cqw; }
+.so-dn .dn-k { font-size: 3cqw; font-weight: 800; text-transform: uppercase; letter-spacing: .12em; color: #2BB5A0; }
+.so-dn h3 { font-size: 7.6cqw; font-weight: 800; line-height: 1.12; margin-top: 4cqw; }
+.so-dn .dn-verdict { margin-top: 7cqw; background: #fff; border-radius: 5cqw; padding: 6cqw; border-left: 2cqw solid #E5533D; }
+.so-dn .dn-verdict b { display: inline-block; background: #E5533D; color: #fff; font-size: 4.6cqw; padding: 1cqw 4cqw; border-radius: 10cqw; }
+.so-dn .dn-verdict p { margin-top: 3.4cqw; font-size: 3.9cqw; line-height: 1.45; }
+.so-dn .dn-who { position: absolute; left: 7cqw; right: 7cqw; bottom: 8cqw; display: flex; gap: 3cqw; align-items: center; font-size: 3.4cqw; font-weight: 700; line-height: 1.3; color: #3d5b57; }
+.so-dn .dn-ph { position: relative; width: 13cqw; height: 13cqw; border-radius: 50%; overflow: hidden; flex: none; }
+
+/* Ремонт */
+.so-rm { background: #F3F1EC; color: #1C2733; font-family: Oswald, Manrope, sans-serif; }
+.so-rm .rm-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(28,39,51,.08) .2cqw, transparent .2cqw), linear-gradient(90deg, rgba(28,39,51,.08) .2cqw, transparent .2cqw); background-size: 5cqw 5cqw; z-index: -1; }
+.so-rm .rm-ph { inset: 6cqw 6cqw auto 6cqw; width: auto; height: 48cqw; border: .4cqw solid #1C2733; }
+.so-rm .rm-box { position: absolute; left: 6cqw; right: 6cqw; bottom: 6cqw; }
+.so-rm .rm-k { font-family: Manrope, sans-serif; font-size: 3cqw; font-weight: 800; letter-spacing: .14em; color: #E5533D; }
+.so-rm h3 { font-size: 9cqw; font-weight: 700; line-height: 1; text-transform: uppercase; margin-top: 2.4cqw; }
+.so-rm .rm-nums { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 4cqw; border: .4cqw solid #1C2733; }
+.so-rm .rm-nums div { padding: 3cqw; }
+.so-rm .rm-nums div + div { border-left: .4cqw solid #1C2733; }
+.so-rm .rm-nums b { display: block; font-size: 6.4cqw; color: #E5533D; }
+.so-rm .rm-nums span { font-family: Manrope, sans-serif; font-size: 3cqw; font-weight: 700; }
+
+/* Цветы, сторис */
+.so-fl { color: #fff; }
+.so-fl .fl-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(40,10,20,.45), rgba(40,10,20,.15) 35%, rgba(40,10,20,.6) 75%, rgba(40,10,20,.85)); }
+.so-fl .fl-logo { position: absolute; left: 0; right: 0; top: 18cqw; text-align: center; font-family: 'Playfair Display', serif; font-style: italic; font-size: 9cqw; }
+.so-fl .fl-mid { position: absolute; left: 8cqw; right: 8cqw; top: 54%; transform: translateY(-50%); text-align: center; }
+.so-fl .fl-mid p { font-size: 4.4cqw; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
+.so-fl .fl-mid h3 { font-family: 'Playfair Display', serif; font-weight: 800; font-size: 16cqw; line-height: .95; margin-top: 4cqw; }
+.so-fl .fl-mid span { display: inline-block; margin-top: 6cqw; background: #fff; color: #9E2A4A; font-weight: 800; font-size: 4.4cqw; padding: 2.4cqw 5cqw; border-radius: 10cqw; }
+.so-fl .fl-btn { position: absolute; left: 50%; bottom: 30cqw; transform: translateX(-50%); border: .5cqw solid #fff; border-radius: 10cqw; padding: 3.6cqw 8cqw; font-weight: 800; font-size: 4.6cqw; white-space: nowrap; }
+
+/* Керамика, сторис */
+.so-cy { background: #5F6B3A; color: #2C2E22; }
+.so-cy .cy-ph { inset: 0 0 40% 0; }
+.so-cy .cy-card { position: absolute; left: 6cqw; right: 6cqw; bottom: 22cqw; background: #F6F3EC; border-radius: 4cqw; padding: 8cqw 7cqw; }
+.so-cy .cy-card > p { font-size: 3.6cqw; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: #5F6B3A; }
+.so-cy h3 { font-family: Lora, serif; font-weight: 500; font-size: 14cqw; line-height: 1; margin-top: 3cqw; }
+.so-cy h3 em { color: #5F6B3A; }
+.so-cy .cy-info { display: grid; gap: 3cqw; margin-top: 7cqw; font-size: 4.6cqw; font-weight: 700; }
+.so-cy .cy-info span { display: flex; gap: 3cqw; align-items: center; }
+.so-cy .cy-info svg { color: #5F6B3A; }
+.so-cy .cy-card > b { display: block; margin-top: 7cqw; font-family: Lora, serif; font-size: 11cqw; font-weight: 500; color: #5F6B3A; }
+
+/* Расписание, сторис */
+.so-sc { background: #120A2E; color: #fff; font-family: Unbounded, Manrope, sans-serif; padding: 16cqw 8cqw; }
+.so-sc .sc-day { font-size: 5cqw; font-weight: 500; letter-spacing: .1em; color: #C6FF3D; line-height: 1; }
+.so-sc .sc-day b { display: block; font-size: 30cqw; font-weight: 900; color: #fff; letter-spacing: -.03em; }
+.so-sc .sc-list { margin-top: 8cqw; display: grid; gap: 3cqw; }
+.so-sc .sc-list div { display: grid; grid-template-columns: 21cqw 1fr auto; align-items: center; gap: 3cqw; background: rgba(255,255,255,.07); border-radius: 4cqw; padding: 5cqw; }
+.so-sc .sc-list b { font-size: 5.4cqw; color: #C6FF3D; }
+.so-sc .sc-list span { font-family: Manrope, sans-serif; font-size: 5cqw; font-weight: 800; }
+.so-sc .sc-list em { font-family: Manrope, sans-serif; font-style: normal; font-size: 3.8cqw; opacity: .6; }
+.so-sc .sc-foot { position: absolute; left: 0; right: 0; bottom: 10cqw; text-align: center; font-family: Manrope, sans-serif; font-size: 3.8cqw; font-weight: 700; opacity: .7; }
+
+/* Баннер автосервиса */
+.so-au { background: #15181C; color: #fff; }
+.so-au .au-ph { inset: 0 0 0 38%; width: 62%; }
+.so-au::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, #15181C 36%, rgba(21,24,28,.6) 52%, transparent 72%); }
+.so-au .au-txt { position: absolute; left: 5cqw; top: 50%; transform: translateY(-50%); z-index: 1; width: 48cqw; }
+.so-au .au-k { font-size: 1.5cqw; font-weight: 800; letter-spacing: .18em; color: #FF7A1A; }
+.so-au h3 { font-family: Unbounded, sans-serif; font-size: 5.4cqw; font-weight: 900; line-height: 1; margin-top: 1.6cqw; }
+.so-au h3 em { font-style: normal; color: #FF7A1A; }
+.so-au .au-s { margin-top: 2cqw; font-size: 1.9cqw; opacity: .8; font-weight: 600; }
+.so-au .au-ph2 { display: inline-flex; gap: 1cqw; align-items: center; margin-top: 3cqw; background: #FF7A1A; color: #15181C; font-weight: 800; font-size: 2cqw; padding: 1.4cqw 2.4cqw; border-radius: 1cqw; }
+
+/* Баннер школы */
+.so-sh { background: #3355FF; color: #fff; }
+.so-sh .sh-txt { position: absolute; left: 5cqw; top: 50%; transform: translateY(-50%); width: 50cqw; }
+.so-sh .sh-k { font-size: 1.6cqw; font-weight: 700; opacity: .85; }
+.so-sh h3 { font-family: Unbounded, sans-serif; font-size: 5.6cqw; font-weight: 700; line-height: 1.02; margin-top: 1.8cqw; }
+.so-sh .sh-btn { display: inline-block; margin-top: 3.4cqw; background: #FFD43B; color: #1a1a1a; font-weight: 800; font-size: 2cqw; padding: 1.6cqw 3cqw; border-radius: 4cqw; }
+.so-sh .sh-ph { position: absolute; right: 5cqw; top: 8cqw; bottom: 8cqw; width: 36cqw; border-radius: 4cqw; overflow: hidden; transform: rotate(3deg); border: .8cqw solid #fff; }
+.so-sh .sh-rate { position: absolute; right: 33cqw; bottom: 6cqw; display: flex; gap: 1cqw; align-items: center; background: #fff; color: #1a1a1a; padding: 1.2cqw 2cqw; border-radius: 3cqw; font-size: 1.6cqw; font-weight: 700; box-shadow: 0 1cqw 3cqw rgba(0,0,0,.2); }
+.so-sh .sh-rate svg { color: #FFB800; fill: #FFB800; }
+.so-sh .sh-rate b { font-size: 2.2cqw; }
+
+/* Обложка ВК */
+.so-vk { background: #2a211a; color: #fff; }
+.so-vk .vk-ph { inset: 0; }
+.so-vk::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(20,14,10,.85) 0%, rgba(20,14,10,.5) 45%, transparent 75%); }
+.so-vk .vk-txt { position: absolute; left: 6cqw; top: 50%; transform: translateY(-50%); z-index: 1; }
+.so-vk .vk-txt p { font-size: 1.5cqw; letter-spacing: .4em; font-weight: 800; color: #E2B984; }
+.so-vk h3 { font-family: 'Playfair Display', serif; font-size: 4.6cqw; font-weight: 800; line-height: 1.02; margin-top: 1cqw; }
+.so-vk .vk-txt span { display: inline-block; margin-top: 1.6cqw; font-size: 1.6cqw; font-weight: 700; background: #A8743E; padding: .8cqw 1.6cqw; border-radius: 1cqw; }
