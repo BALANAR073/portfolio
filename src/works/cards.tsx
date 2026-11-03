@@ -54,7 +54,7 @@ const serum: CardSet = {
     <Frame key="4" className="mp mp-vc vc-4">
       <Ph id={VC} pos="50% 60%" className="vc-ph4" />
       <div className="vc-steps">
-        <h3 className="vc-h">Как<br />применять</h3>
+        <h3 className="vc-h">Как применять</h3>
         {[['01', 'Очистите кожу', 'Утром, перед кремом'], ['02', '3–4 капли', 'Распределите по лицу и шее'], ['03', 'SPF обязательно', 'Витамин C усиливает защиту']].map(([n, t, d]) => (
           <div key={n} className="vc-step"><b>{n}</b><div><strong>{t}</strong><p>{d}</p></div></div>
         ))}
