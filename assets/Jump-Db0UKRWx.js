@@ -1,1 +1,0 @@
-import{r as e}from"./check-ur8-xFbI.js";var t=e();function n({to:e,onClick:n,...r}){return(0,t.jsx)(`a`,{href:`#${e}`,onClick:t=>{t.preventDefault(),document.getElementById(e)?.scrollIntoView({behavior:`smooth`,block:`start`}),n?.(t)},...r})}export{n as t};
