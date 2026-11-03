@@ -1,0 +1,1 @@
+import{t as e}from"./star-C0mJ5Wla.js";import{r as t}from"./check-ur8-xFbI.js";var n=t();function r({n:t=5,size:r=16,className:i=`stars`}){return(0,n.jsx)(`span`,{className:i,"aria-label":`Оценка ${t} из 5`,children:Array.from({length:5},(i,a)=>(0,n.jsx)(e,{size:r,fill:a<t?`currentColor`:`none`,strokeWidth:1.5},a))})}export{r as t};

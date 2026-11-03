@@ -1,0 +1,1 @@
+var e={telegram:`@BALANAR073`,telegramUrl:`https://t.me/BALANAR073`,github:`BALANAR073`,githubUrl:`https://github.com/BALANAR073`};export{e as t};

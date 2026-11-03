@@ -1,1 +1,0 @@
-import{t as e}from"./hooks-cGaolSXi.js";import{t}from"./Jump-CTG8EDqC.js";import{ot as n}from"./check-D0V-5w4W.js";var r=n();function i({to:n,children:i}){let a=e(typeof window<`u`?window.innerHeight*.6:500);return(0,r.jsx)(t,{to:n,className:`ui-mcta`+(a?` is-shown`:``),children:i})}export{i as t};
