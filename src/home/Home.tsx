@@ -157,8 +157,11 @@ export default function Home() {
         <section id="about" className="px-5 py-24">
           <div className="mx-auto grid max-w-[1240px] gap-12 lg:grid-cols-[1fr_1.1fr]">
             <Reveal className="min-w-0">
-              <p className="mb-3 text-[14px] font-bold uppercase tracking-[.14em] text-accent">Обо мне</p>
-              <h2 className="h2">IT-образование и любовь к аккуратной вёрстке</h2>
+              <div className="flex items-center gap-5">
+                <span role="img" aria-label="Фото: Дмитрий" className="block h-[96px] w-[96px] flex-none rounded-full bg-paper ring-4 ring-paper sm:h-[112px] sm:w-[112px]" style={{ backgroundImage: 'url(me.jpg)', backgroundSize: '300%', backgroundPosition: '42% 38%' }} />
+                <div><p className="text-[14px] font-bold uppercase tracking-[.14em] text-accent">Обо мне</p><p className="mt-1 text-[22px] font-extrabold leading-tight">Дмитрий</p><p className="text-[15px] text-mute">Казань · сайты и дизайн</p></div>
+              </div>
+              <h2 className="h2 mt-8">IT-образование и любовь к аккуратной вёрстке</h2>
               <div className="mt-6 space-y-4 text-[18px] leading-relaxed text-mute">
                 <p>Я из Казани. Окончил колледж по специальности «Прикладная информатика», сейчас заканчиваю высшее образование по программной инженерии — пишу дипломную работу.</p>
                 <p>Сайты начал делать ещё на чистом HTML и CSS, сегодня работаю на современном стеке — React и TypeScript. Это значит быстрые сайты без конструкторов и абонентской платы, которые легко развивать.</p>
